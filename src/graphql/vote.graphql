@@ -1,0 +1,27 @@
+query ideas(
+  $where: IdeaWhereInput
+  $skip: Int
+  $take: Int
+  $orderBy: [IdeaOrderByWithRelationInput!]
+) {
+  ideas(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
+    nodes {
+      id
+      title
+      content
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query idea($where: IdeaWhereUniqueInput!) {
+  idea(where: $where) {
+    id
+    title
+    content
+  }
+}
