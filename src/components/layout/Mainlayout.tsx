@@ -1,6 +1,5 @@
 'use client'
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Scrollbars from 'react-custom-scrollbars'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
