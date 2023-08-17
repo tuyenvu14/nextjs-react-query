@@ -11,7 +11,6 @@ export default function ListUsers() {
   })
 
   // console.log(data, '---------------hydrate-users')
-  console.log(ideas, '---------------ideas')
 
   return (
     <div className="lg:col-span-3">

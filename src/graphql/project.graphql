@@ -1,0 +1,46 @@
+# # dự án -> danh sách dự án
+# query ($take: Int, $skip: Int) {
+#   projects(take: $take, skip: $skip) {
+#     nodes {
+#       id
+#       name
+#       # tên chủ đầu tu
+#       investorName
+#       # tổng mức đầu tư
+#       totalInvestment
+#       # địa điểm thực hiện
+#       provinceCode
+#       province {
+#         code
+#       }
+#       # loại dự án
+#       groupCode
+#       # thời điểm công bố
+#       publishedAt
+#       # tổng số phiên banr
+#     }
+#   }
+# }
+
+query projects(
+  $where: ProjectWhereInput
+  $skip: Int
+  $take: Int
+  $orderBy: [ProjectOrderByWithRelationInput!]
+) {
+  projects(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
+    nodes {
+      id
+      name
+      investorName
+      totalInvestment
+      provinceCode
+      province {
+        code
+      }
+      groupCode
+      publishedAt
+    }
+    totalCount
+  }
+}

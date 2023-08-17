@@ -7,10 +7,7 @@ import { SlideShow } from './components/SlideShow'
 import { ConfigProvider } from 'antd'
 
 export const MainLayout = ({ children }: { children: React.ReactNode }) => {
-  // const queryClient = new QueryClient()
-
   return (
-    // <QueryClientProvider client={queryClient}>
     <ConfigProvider
       theme={{
         token: {
@@ -20,6 +17,9 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
           fontFamily: 'Inter, sans-serif',
         },
         components: {
+          Button: {
+            colorBorderBg: 'red',
+          },
           Tag: {
             colorBorder: '#FEDF89',
             colorText: '#B54708',
@@ -40,6 +40,5 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
         </Scrollbars>
       </div>
     </ConfigProvider>
-    // </QueryClientProvider>
   )
 }

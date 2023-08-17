@@ -1,18 +1,21 @@
 'use client'
 import React from 'react'
-import { useIdeasQuery } from '@/src/generated/graphql'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { InputMaybe, Project, useProjectsQuery } from '@/src/generated/graphql'
+import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Button } from 'antd'
+import { ProjectItem } from '@/src/components/project/ProjectItem'
+import { DataAnalysis } from '@/src/components/project/DataAnalysis'
+import { ProjectFooter } from '@/src/components/project/ProjectFooter'
+import { useUpdateSearch } from '@/src/hooks/useSearchParams'
+import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
 
 export default function ProjectContent() {
   const router = useRouter()
   const pathname = usePathname()
-  const searchParams = useSearchParams() // const data = await getData()
-  console.log(pathname, '-------------pathname')
-  console.log(searchParams.get('key'), '-------------searchParams')
-  console.log(searchParams.get('status'), '-------------searchParams')
-  console.log(searchParams.get('topicIds'), '-------------searchParams')
-  const { data: ideas } = useIdeasQuery({
+  const searchParams = useSearchParams()
+  const { handleSearchClick } = useUpdateSearch(pathname, router)
+
+  const { data: projects } = useProjectsQuery({
     where: {},
     skip: 0,
     take: 10,
@@ -22,17 +25,41 @@ export default function ProjectContent() {
     <>
       <div className="lg:col-span-2">
         <p className="mb-2 text-2xl font-semibold text-[#1F2937]">Dự án</p>
-        <p style={{ borderBottomWidth: 1 }} className="text-lg font-normal">
-          Tất cả (126.232)
+        <p style={{ borderBottomWidth: 1 }} className="text-lg font-normal mb-4">
+          Tất cả ({projects?.projects?.totalCount ?? '-'})
         </p>
-        {/* {data && data.map((user: any, index: any) => <div key={index}>{user.firstName}</div>)} */}
+        {projects?.projects?.nodes?.map((data) => (
+          <div className="mb-4" key={data.id}>
+            <ProjectItem data={data as Project} />
+          </div>
+        ))}
+        <div>
+          <ProjectFooter
+            onPageChange={(page: number, pageSize: number) =>
+              handleSearchClick({
+                pageIndex: page,
+                pageSize: pageSize,
+              })
+            }
+            pagination={{
+              pageIndex: 1,
+              pageSize: 10,
+              // pageIndex,
+              // pageSize: initPageSize,
+              total: projects?.projects.totalCount,
+            }}
+          />
+        </div>
       </div>
       <div className="lg:col-span-1">
-        <Button className="bg-[#F59E0B] text-white hover:!text-white" size="large">
-          Search
-        </Button>
-        {ideas &&
-          ideas?.ideas?.nodes?.map((user: any, index: any) => <div key={index}>{user.title}</div>)}
+        <DataAnalysis
+          data={{
+            count1: '276.268.005',
+            count2: '276.268.005',
+            count3: '276.268.005',
+            count4: '276.268.005',
+          }}
+        />
       </div>
     </>
   )

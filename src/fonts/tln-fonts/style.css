@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'tln';
+  src:  url('fonts/tln.eot?vhwmz9');
+  src:  url('fonts/tln.eot?vhwmz9#iefix') format('embedded-opentype'),
+    url('fonts/tln.ttf?vhwmz9') format('truetype'),
+    url('fonts/tln.woff?vhwmz9') format('woff'),
+    url('fonts/tln.svg?vhwmz9#tln') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="tln_"], [class*=" tln_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'tln' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tln_copy-03:before {
+  content: "\e944";
+}
+.tln_coins-stacked-01:before {
+  content: "\e900";
+}
+.tln_dots-vertical:before {
+  content: "\e901";
+}
+.tln_wallet-02:before {
+  content: "\e902";
+}
+.tln_gift-01:before {
+  content: "\e903";
+}
+.tln_medical-circle:before {
+  content: "\e904";
+}
+.tln_eye-off:before {
+  content: "\e905";
+}
+.tln_bank-note-03:before {
+  content: "\e906";
+}
+.tln_refresh-ccw-02:before {
+  content: "\e907";
+}
+.tln_check-circle-broken:before {
+  content: "\e908";
+}
+.tln_annotation-check:before {
+  content: "\e909";
+}
+.tln_annotation-info:before {
+  content: "\e90a";
+}
+.tln_plus:before {
+  content: "\e90b";
+}
+.tln_credit-card-refresh:before {
+  content: "\e90c";
+}
+.tln_share-01:before {
+  content: "\e90d";
+}
+.tln_square:before {
+  content: "\e90e";
+}
+.tln_check-square:before {
+  content: "\e90f";
+}
+.tln_x-close:before {
+  content: "\e910";
+}
+.tln_check:before {
+  content: "\e911";
+}
+.tln_coins-hand:before {
+  content: "\e912";
+}
+.tln_edit-05:before {
+  content: "\e913";
+}
+.tln_trash-01:before {
+  content: "\e914";
+}
+.tln_shopping-cart-01:before {
+  content: "\e915";
+}
+.tln_shopping-bag-01:before {
+  content: "\e916";
+}
+.tln_arrow-block-right:before {
+  content: "\e917";
+}
+.tln_chevron-up-double:before {
+  content: "\e918";
+}
+.tln_bank-note-031:before {
+  content: "\e919";
+}
+.tln_presentation-chart-01:before {
+  content: "\e91a";
+}
+.tln_bell-01:before {
+  content: "\e91b";
+}
+.tln_announcement-01:before {
+  content: "\e91c";
+}
+.tln_file-search-02:before {
+  content: "\e91d";
+}
+.tln_users-01:before {
+  content: "\e91e";
+}
+.tln_marker-pin-01:before {
+  content: "\e91f";
+}
+.tln_Icon-Stroke-12:before {
+  content: "\e920";
+}
+.tln_chevron-down-double:before {
+  content: "\e921";
+}
+.tln_bezier-curve-02:before {
+  content: "\e922";
+}
+.tln_file-check-02:before {
+  content: "\e923";
+}
+.tln_user-check-01:before {
+  content: "\e924";
+}
+.tln_building-05:before {
+  content: "\e925";
+}
+.tln_target-04:before {
+  content: "\e926";
+}
+.tln_user-x-01:before {
+  content: "\e927";
+}
+.tln_user-plus-01:before {
+  content: "\e928";
+}
+.tln_signal-02:before {
+  content: "\e929";
+}
+.tln_users-011:before {
+  content: "\e92a";
+}
+.tln_globe-02:before {
+  content: "\e92b";
+}
+.tln_download-01:before {
+  content: "\e92c";
+}
+.tln_eye:before {
+  content: "\e92d";
+}
+.tln_users-check:before {
+  content: "\e92e";
+}
+.tln_zap:before {
+  content: "\e92f";
+}
+.tln_clock-basic:before {
+  content: "\e930";
+}
+.tln_location:before {
+  content: "\e931";
+}
+.tln_menu:before {
+  content: "\e945";
+}
+.tln_arrow-left:before {
+  content: "\e935";
+}
+.tln_arrow-right:before {
+  content: "\e936";
+}
+.tln_like:before {
+  content: "\e932";
+}
+.tln_check-campaign:before {
+  content: "\e933";
+}
+.tln_cloud-upload:before {
+  content: "\e934";
+}
+.tln_camera:before {
+  content: "\e937";
+}
+.tln_minus-circle:before {
+  content: "\e938";
+}
+.tln_view-more:before {
+  content: "\e939";
+}
+.tln_original-version:before {
+  content: "\e93a";
+}
+.tln_latest-version:before {
+  content: "\e93b";
+}
+.tln_clock-campaign:before {
+  content: "\e93c";
+}
+.tln_check-submit:before {
+  content: "\e93d";
+}
+.tln_home:before {
+  content: "\e93e";
+}
+.tln_chevron-left:before {
+  content: "\e93f";
+}
+.tln_chevron-right:before {
+  content: "\e940";
+}
+.tln_search:before {
+  content: "\e941";
+}
+.tln_chevron-down:before {
+  content: "\e942";
+}
+.tln_chevron-up:before {
+  content: "\e943";
+}

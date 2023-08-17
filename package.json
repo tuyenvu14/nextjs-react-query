@@ -12,6 +12,8 @@
   "dependencies": {
     "@ant-design/cssinjs": "^1.16.2",
     "@ant-design/icons": "^5.2.5",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@graphql-codegen/typescript-operations": "^4.0.1",
     "@graphql-codegen/typescript-react-query": "^4.1.0",
     "@tanstack/react-query": "^4.32.6",
@@ -26,18 +28,22 @@
     "eslint-config-next": "13.4.13",
     "graphql-tag": "^2.12.6",
     "ky-universal": "^0.12.0",
+    "lodash": "^4.17.21",
     "next": "13.4.13",
     "postcss": "8.4.27",
+    "query-string": "^8.1.0",
     "react": "18.2.0",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "18.2.0",
     "react-query": "^3.39.3",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
-    "use-dehydrated-state": "^0.1.0"
+    "use-dehydrated-state": "^0.1.0",
+    "use-query-params": "^2.2.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
+    "@types/lodash": "^4.14.197",
     "@types/react-custom-scrollbars": "^4.0.10",
     "graphql": "^16.7.1"
   }
