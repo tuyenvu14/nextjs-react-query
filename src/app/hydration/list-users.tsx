@@ -1,15 +1,8 @@
 'use client'
 
-import { useIdeasQuery } from '@/src/generated/graphql'
 import React from 'react'
 
 export default function ListUsers() {
-  const { data: ideas } = useIdeasQuery({
-    where: {},
-    skip: 0,
-    take: 10,
-  })
-
   // console.log(data, '---------------hydrate-users')
 
   return (
@@ -35,9 +28,9 @@ export default function ListUsers() {
         </div>
       } */}
       <div>
-        {ideas &&
+        {/* {ideas &&
           // @ts-ignore
-          ideas.ideas?.nodes?.map((user: any, index: any) => <div key={index}>{user.title}</div>)}
+          ideas.ideas?.nodes?.map((user: any, index: any) => <div key={index}>{user.title}</div>)} */}
       </div>
     </div>
   )

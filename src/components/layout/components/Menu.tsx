@@ -21,7 +21,7 @@ import {
   searchOrganization,
   searchOrganizationContractorPath,
   searchOrganizationInvestorAndBidSolicitorPath,
-} from '@/src/constants/routes/layout'
+} from '@/src/constants/routes'
 
 export const Menu = () => {
   const pathname = usePathname()

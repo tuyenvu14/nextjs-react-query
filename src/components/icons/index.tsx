@@ -17,3 +17,11 @@ export const ZapIcon = ({ className }: { className?: string }) => (
 export const BankNoteIcon = ({ className }: { className?: string }) => (
   <span className={`tln_bank-note-03 ${className || ''}`} />
 )
+
+export const UsersIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_users-011 ${className || ''}`} />
+)
+
+export const UserPlusIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_user-plus-01 ${className || ''}`} />
+)

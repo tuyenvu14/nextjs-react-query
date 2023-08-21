@@ -1,0 +1,19 @@
+query statisticBidNotifications(
+  $orderBy: [BidNotificationOrderByWithRelationInput!]
+  $take: Int
+  $skip: Int
+  $where: BidNotificationWhereInput
+) {
+  statisticBidNotifications(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
+    nodes {
+      ...StatisticBidNotificationFields
+    }
+    totalCount
+  }
+}
+
+query bidNotification($where: BidNotificationWhereUniqueInput!) {
+  bidNotification(where: $where) {
+    ...BidNotificationFields
+  }
+}

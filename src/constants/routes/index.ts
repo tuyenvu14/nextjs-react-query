@@ -17,3 +17,5 @@ export const searchOrganizationInvestorAndBidSolicitorPath = '/search-organizati
 //đấu thầu
 export const biddingContractor = '/bidding/contractor'
 export const biddingInvestor = '/bidding/investor'
+
+export const biddingContractorNotification = '/bidding/contractor/bidding-notification'

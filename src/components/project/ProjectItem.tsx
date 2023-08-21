@@ -30,7 +30,7 @@ export const ProjectItem = (props: IProjectItemProps) => {
                   Tổng mức đầu tư: <span className="font-bold">{data?.totalInvestment ?? '-'}</span>
                 </span>
               </p>
-              <p className="mb-2">
+              <p className="">
                 <ZapIcon className="text-main mr-2" />
                 <span>Địa điểm: {data?.provinceCode ?? '-'}</span>
               </p>
@@ -44,7 +44,7 @@ export const ProjectItem = (props: IProjectItemProps) => {
                 <ZapIcon className="text-main mr-2" />
                 <span>Thời điểm công bố: {data?.publishedAt ?? '-'}</span>
               </p>
-              <p className="mb-2">
+              <p className="">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Tổng số phiên bản: <span className="font-bold">{data?.version ?? '-'}</span>

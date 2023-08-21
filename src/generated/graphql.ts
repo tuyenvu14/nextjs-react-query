@@ -29,6 +29,542 @@ export type Auth = {
   user: User;
 };
 
+export type BidLotResult = {
+  __typename?: 'BidLotResult';
+  _count: BidLotResultCount;
+  bidNotificationContractors?: Maybe<Array<BidNotificationContractor>>;
+  bidNotificationResult?: Maybe<BidNotificationResult>;
+  bidNotificationResultId?: Maybe<Scalars['String']['output']>;
+  bidPackageLotCode?: Maybe<Scalars['String']['output']>;
+  bidPackageLotId?: Maybe<Scalars['String']['output']>;
+  bidPackgeLot?: Maybe<BidPackageLot>;
+  bidSelectionPlan?: Maybe<BidSelectionPlan>;
+  bidSelectionPlanCode?: Maybe<Scalars['String']['output']>;
+  bidSelectionPlanId?: Maybe<Scalars['String']['output']>;
+  bidSelectionPlanName?: Maybe<Scalars['String']['output']>;
+  contractorMedicineList?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  createdBy?: Maybe<Scalars['String']['output']>;
+  goodsList?: Maybe<Scalars['String']['output']>;
+  goodsListEn?: Maybe<Scalars['String']['output']>;
+  id: Scalars['String']['output'];
+  listFailTechnique?: Maybe<Scalars['String']['output']>;
+  reason?: Maybe<Scalars['String']['output']>;
+  statusCode?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  updatedBy?: Maybe<Scalars['String']['output']>;
+  winningCode?: Maybe<Scalars['String']['output']>;
+};
+
+export type BidLotResultCount = {
+  __typename?: 'BidLotResultCount';
+  bidNotificationContractors: Scalars['Int']['output'];
+};
+
+export type BidLotResultCreateManyBidNotificationResultInput = {
+  bidPackageLotCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageLotId?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanId?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanName?: InputMaybe<Scalars['String']['input']>;
+  contractorMedicineList?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  goodsList?: InputMaybe<Scalars['String']['input']>;
+  goodsListEn?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  listFailTechnique?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  winningCode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidLotResultCreateManyBidNotificationResultInputEnvelope = {
+  data: Array<BidLotResultCreateManyBidNotificationResultInput>;
+  skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidLotResultCreateManyBidPackgeLotInput = {
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageLotCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanId?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanName?: InputMaybe<Scalars['String']['input']>;
+  contractorMedicineList?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  goodsList?: InputMaybe<Scalars['String']['input']>;
+  goodsListEn?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  listFailTechnique?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  winningCode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidLotResultCreateManyBidPackgeLotInputEnvelope = {
+  data: Array<BidLotResultCreateManyBidPackgeLotInput>;
+  skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidLotResultCreateManyBidSelectionPlanInput = {
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageLotCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageLotId?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanName?: InputMaybe<Scalars['String']['input']>;
+  contractorMedicineList?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  goodsList?: InputMaybe<Scalars['String']['input']>;
+  goodsListEn?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  listFailTechnique?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  winningCode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidLotResultCreateManyBidSelectionPlanInputEnvelope = {
+  data: Array<BidLotResultCreateManyBidSelectionPlanInput>;
+  skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidLotResultCreateNestedManyWithoutBidNotificationResultInput = {
+  connect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidLotResultCreateOrConnectWithoutBidNotificationResultInput>>;
+  create?: InputMaybe<Array<BidLotResultCreateWithoutBidNotificationResultInput>>;
+  createMany?: InputMaybe<BidLotResultCreateManyBidNotificationResultInputEnvelope>;
+};
+
+export type BidLotResultCreateNestedManyWithoutBidPackgeLotInput = {
+  connect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidLotResultCreateOrConnectWithoutBidPackgeLotInput>>;
+  create?: InputMaybe<Array<BidLotResultCreateWithoutBidPackgeLotInput>>;
+  createMany?: InputMaybe<BidLotResultCreateManyBidPackgeLotInputEnvelope>;
+};
+
+export type BidLotResultCreateNestedManyWithoutBidSelectionPlanInput = {
+  connect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidLotResultCreateOrConnectWithoutBidSelectionPlanInput>>;
+  create?: InputMaybe<Array<BidLotResultCreateWithoutBidSelectionPlanInput>>;
+  createMany?: InputMaybe<BidLotResultCreateManyBidSelectionPlanInputEnvelope>;
+};
+
+export type BidLotResultCreateNestedOneWithoutBidNotificationContractorsInput = {
+  connect?: InputMaybe<BidLotResultWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidLotResultCreateOrConnectWithoutBidNotificationContractorsInput>;
+  create?: InputMaybe<BidLotResultCreateWithoutBidNotificationContractorsInput>;
+};
+
+export type BidLotResultCreateOrConnectWithoutBidNotificationContractorsInput = {
+  create: BidLotResultCreateWithoutBidNotificationContractorsInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultCreateOrConnectWithoutBidNotificationResultInput = {
+  create: BidLotResultCreateWithoutBidNotificationResultInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultCreateOrConnectWithoutBidPackgeLotInput = {
+  create: BidLotResultCreateWithoutBidPackgeLotInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultCreateOrConnectWithoutBidSelectionPlanInput = {
+  create: BidLotResultCreateWithoutBidSelectionPlanInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultCreateWithoutBidNotificationContractorsInput = {
+  bidNotificationResult?: InputMaybe<BidNotificationResultCreateNestedOneWithoutBidLotResultsInput>;
+  bidPackageLotCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackgeLot?: InputMaybe<BidPackageLotCreateNestedOneWithoutBidLotResultsInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidLotResultsInput>;
+  bidSelectionPlanCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanName?: InputMaybe<Scalars['String']['input']>;
+  contractorMedicineList?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  goodsList?: InputMaybe<Scalars['String']['input']>;
+  goodsListEn?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  listFailTechnique?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  winningCode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidLotResultCreateWithoutBidNotificationResultInput = {
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidLotResultInput>;
+  bidPackageLotCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackgeLot?: InputMaybe<BidPackageLotCreateNestedOneWithoutBidLotResultsInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidLotResultsInput>;
+  bidSelectionPlanCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanName?: InputMaybe<Scalars['String']['input']>;
+  contractorMedicineList?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  goodsList?: InputMaybe<Scalars['String']['input']>;
+  goodsListEn?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  listFailTechnique?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  winningCode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidLotResultCreateWithoutBidPackgeLotInput = {
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidLotResultInput>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultCreateNestedOneWithoutBidLotResultsInput>;
+  bidPackageLotCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidLotResultsInput>;
+  bidSelectionPlanCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanName?: InputMaybe<Scalars['String']['input']>;
+  contractorMedicineList?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  goodsList?: InputMaybe<Scalars['String']['input']>;
+  goodsListEn?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  listFailTechnique?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  winningCode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidLotResultCreateWithoutBidSelectionPlanInput = {
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidLotResultInput>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultCreateNestedOneWithoutBidLotResultsInput>;
+  bidPackageLotCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackgeLot?: InputMaybe<BidPackageLotCreateNestedOneWithoutBidLotResultsInput>;
+  bidSelectionPlanCode?: InputMaybe<Scalars['String']['input']>;
+  bidSelectionPlanName?: InputMaybe<Scalars['String']['input']>;
+  contractorMedicineList?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  goodsList?: InputMaybe<Scalars['String']['input']>;
+  goodsListEn?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  listFailTechnique?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  winningCode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidLotResultListRelationFilter = {
+  every?: InputMaybe<BidLotResultWhereInput>;
+  none?: InputMaybe<BidLotResultWhereInput>;
+  some?: InputMaybe<BidLotResultWhereInput>;
+};
+
+export type BidLotResultOrderByRelationAggregateInput = {
+  _count?: InputMaybe<SortOrder>;
+};
+
+export type BidLotResultOrderByWithRelationInput = {
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorOrderByRelationAggregateInput>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultOrderByWithRelationInput>;
+  bidNotificationResultId?: InputMaybe<SortOrderInput>;
+  bidPackageLotCode?: InputMaybe<SortOrderInput>;
+  bidPackageLotId?: InputMaybe<SortOrderInput>;
+  bidPackgeLot?: InputMaybe<BidPackageLotOrderByWithRelationInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanOrderByWithRelationInput>;
+  bidSelectionPlanCode?: InputMaybe<SortOrderInput>;
+  bidSelectionPlanId?: InputMaybe<SortOrderInput>;
+  bidSelectionPlanName?: InputMaybe<SortOrderInput>;
+  contractorMedicineList?: InputMaybe<SortOrderInput>;
+  createdAt?: InputMaybe<SortOrderInput>;
+  createdBy?: InputMaybe<SortOrderInput>;
+  goodsList?: InputMaybe<SortOrderInput>;
+  goodsListEn?: InputMaybe<SortOrderInput>;
+  id?: InputMaybe<SortOrder>;
+  listFailTechnique?: InputMaybe<SortOrderInput>;
+  reason?: InputMaybe<SortOrderInput>;
+  statusCode?: InputMaybe<SortOrderInput>;
+  updatedAt?: InputMaybe<SortOrderInput>;
+  updatedBy?: InputMaybe<SortOrderInput>;
+  winningCode?: InputMaybe<SortOrderInput>;
+};
+
+export type BidLotResultScalarWhereInput = {
+  AND?: InputMaybe<Array<BidLotResultScalarWhereInput>>;
+  NOT?: InputMaybe<Array<BidLotResultScalarWhereInput>>;
+  OR?: InputMaybe<Array<BidLotResultScalarWhereInput>>;
+  bidNotificationResultId?: InputMaybe<StringNullableFilter>;
+  bidPackageLotCode?: InputMaybe<StringNullableFilter>;
+  bidPackageLotId?: InputMaybe<StringNullableFilter>;
+  bidSelectionPlanCode?: InputMaybe<StringNullableFilter>;
+  bidSelectionPlanId?: InputMaybe<StringNullableFilter>;
+  bidSelectionPlanName?: InputMaybe<StringNullableFilter>;
+  contractorMedicineList?: InputMaybe<StringNullableFilter>;
+  createdAt?: InputMaybe<DateTimeNullableFilter>;
+  createdBy?: InputMaybe<StringNullableFilter>;
+  goodsList?: InputMaybe<StringNullableFilter>;
+  goodsListEn?: InputMaybe<StringNullableFilter>;
+  id?: InputMaybe<StringFilter>;
+  listFailTechnique?: InputMaybe<StringNullableFilter>;
+  reason?: InputMaybe<StringNullableFilter>;
+  statusCode?: InputMaybe<IntNullableFilter>;
+  updatedAt?: InputMaybe<DateTimeNullableFilter>;
+  updatedBy?: InputMaybe<StringNullableFilter>;
+  winningCode?: InputMaybe<StringNullableFilter>;
+};
+
+export type BidLotResultUpdateManyMutationInput = {
+  bidPackageLotCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidSelectionPlanCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidSelectionPlanName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorMedicineList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsListEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  listFailTechnique?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  statusCode?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  winningCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidLotResultUpdateManyWithWhereWithoutBidNotificationResultInput = {
+  data: BidLotResultUpdateManyMutationInput;
+  where: BidLotResultScalarWhereInput;
+};
+
+export type BidLotResultUpdateManyWithWhereWithoutBidPackgeLotInput = {
+  data: BidLotResultUpdateManyMutationInput;
+  where: BidLotResultScalarWhereInput;
+};
+
+export type BidLotResultUpdateManyWithWhereWithoutBidSelectionPlanInput = {
+  data: BidLotResultUpdateManyMutationInput;
+  where: BidLotResultScalarWhereInput;
+};
+
+export type BidLotResultUpdateManyWithoutBidNotificationResultNestedInput = {
+  connect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidLotResultCreateOrConnectWithoutBidNotificationResultInput>>;
+  create?: InputMaybe<Array<BidLotResultCreateWithoutBidNotificationResultInput>>;
+  createMany?: InputMaybe<BidLotResultCreateManyBidNotificationResultInputEnvelope>;
+  delete?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<BidLotResultScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  set?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  update?: InputMaybe<Array<BidLotResultUpdateWithWhereUniqueWithoutBidNotificationResultInput>>;
+  updateMany?: InputMaybe<Array<BidLotResultUpdateManyWithWhereWithoutBidNotificationResultInput>>;
+  upsert?: InputMaybe<Array<BidLotResultUpsertWithWhereUniqueWithoutBidNotificationResultInput>>;
+};
+
+export type BidLotResultUpdateManyWithoutBidPackgeLotNestedInput = {
+  connect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidLotResultCreateOrConnectWithoutBidPackgeLotInput>>;
+  create?: InputMaybe<Array<BidLotResultCreateWithoutBidPackgeLotInput>>;
+  createMany?: InputMaybe<BidLotResultCreateManyBidPackgeLotInputEnvelope>;
+  delete?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<BidLotResultScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  set?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  update?: InputMaybe<Array<BidLotResultUpdateWithWhereUniqueWithoutBidPackgeLotInput>>;
+  updateMany?: InputMaybe<Array<BidLotResultUpdateManyWithWhereWithoutBidPackgeLotInput>>;
+  upsert?: InputMaybe<Array<BidLotResultUpsertWithWhereUniqueWithoutBidPackgeLotInput>>;
+};
+
+export type BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput = {
+  connect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidLotResultCreateOrConnectWithoutBidSelectionPlanInput>>;
+  create?: InputMaybe<Array<BidLotResultCreateWithoutBidSelectionPlanInput>>;
+  createMany?: InputMaybe<BidLotResultCreateManyBidSelectionPlanInputEnvelope>;
+  delete?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<BidLotResultScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  set?: InputMaybe<Array<BidLotResultWhereUniqueInput>>;
+  update?: InputMaybe<Array<BidLotResultUpdateWithWhereUniqueWithoutBidSelectionPlanInput>>;
+  updateMany?: InputMaybe<Array<BidLotResultUpdateManyWithWhereWithoutBidSelectionPlanInput>>;
+  upsert?: InputMaybe<Array<BidLotResultUpsertWithWhereUniqueWithoutBidSelectionPlanInput>>;
+};
+
+export type BidLotResultUpdateOneWithoutBidNotificationContractorsNestedInput = {
+  connect?: InputMaybe<BidLotResultWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidLotResultCreateOrConnectWithoutBidNotificationContractorsInput>;
+  create?: InputMaybe<BidLotResultCreateWithoutBidNotificationContractorsInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<BidLotResultUpdateWithoutBidNotificationContractorsInput>;
+  upsert?: InputMaybe<BidLotResultUpsertWithoutBidNotificationContractorsInput>;
+};
+
+export type BidLotResultUpdateWithWhereUniqueWithoutBidNotificationResultInput = {
+  data: BidLotResultUpdateWithoutBidNotificationResultInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultUpdateWithWhereUniqueWithoutBidPackgeLotInput = {
+  data: BidLotResultUpdateWithoutBidPackgeLotInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultUpdateWithWhereUniqueWithoutBidSelectionPlanInput = {
+  data: BidLotResultUpdateWithoutBidSelectionPlanInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultUpdateWithoutBidNotificationContractorsInput = {
+  bidNotificationResult?: InputMaybe<BidNotificationResultUpdateOneWithoutBidLotResultsNestedInput>;
+  bidPackageLotCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPackgeLot?: InputMaybe<BidPackageLotUpdateOneWithoutBidLotResultsNestedInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidLotResultsNestedInput>;
+  bidSelectionPlanCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidSelectionPlanName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorMedicineList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsListEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  listFailTechnique?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  statusCode?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  winningCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidLotResultUpdateWithoutBidNotificationResultInput = {
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidLotResultNestedInput>;
+  bidPackageLotCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPackgeLot?: InputMaybe<BidPackageLotUpdateOneWithoutBidLotResultsNestedInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidLotResultsNestedInput>;
+  bidSelectionPlanCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidSelectionPlanName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorMedicineList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsListEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  listFailTechnique?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  statusCode?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  winningCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidLotResultUpdateWithoutBidPackgeLotInput = {
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidLotResultNestedInput>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultUpdateOneWithoutBidLotResultsNestedInput>;
+  bidPackageLotCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidLotResultsNestedInput>;
+  bidSelectionPlanCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidSelectionPlanName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorMedicineList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsListEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  listFailTechnique?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  statusCode?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  winningCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidLotResultUpdateWithoutBidSelectionPlanInput = {
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidLotResultNestedInput>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultUpdateOneWithoutBidLotResultsNestedInput>;
+  bidPackageLotCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPackgeLot?: InputMaybe<BidPackageLotUpdateOneWithoutBidLotResultsNestedInput>;
+  bidSelectionPlanCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidSelectionPlanName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorMedicineList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsList?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  goodsListEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  listFailTechnique?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  statusCode?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  winningCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidLotResultUpsertWithWhereUniqueWithoutBidNotificationResultInput = {
+  create: BidLotResultCreateWithoutBidNotificationResultInput;
+  update: BidLotResultUpdateWithoutBidNotificationResultInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultUpsertWithWhereUniqueWithoutBidPackgeLotInput = {
+  create: BidLotResultCreateWithoutBidPackgeLotInput;
+  update: BidLotResultUpdateWithoutBidPackgeLotInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultUpsertWithWhereUniqueWithoutBidSelectionPlanInput = {
+  create: BidLotResultCreateWithoutBidSelectionPlanInput;
+  update: BidLotResultUpdateWithoutBidSelectionPlanInput;
+  where: BidLotResultWhereUniqueInput;
+};
+
+export type BidLotResultUpsertWithoutBidNotificationContractorsInput = {
+  create: BidLotResultCreateWithoutBidNotificationContractorsInput;
+  update: BidLotResultUpdateWithoutBidNotificationContractorsInput;
+};
+
+export type BidLotResultWhereInput = {
+  AND?: InputMaybe<Array<BidLotResultWhereInput>>;
+  NOT?: InputMaybe<Array<BidLotResultWhereInput>>;
+  OR?: InputMaybe<Array<BidLotResultWhereInput>>;
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorListRelationFilter>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultWhereInput>;
+  bidNotificationResultId?: InputMaybe<StringNullableFilter>;
+  bidPackageLotCode?: InputMaybe<StringNullableFilter>;
+  bidPackageLotId?: InputMaybe<StringNullableFilter>;
+  bidPackgeLot?: InputMaybe<BidPackageLotWhereInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanWhereInput>;
+  bidSelectionPlanCode?: InputMaybe<StringNullableFilter>;
+  bidSelectionPlanId?: InputMaybe<StringNullableFilter>;
+  bidSelectionPlanName?: InputMaybe<StringNullableFilter>;
+  contractorMedicineList?: InputMaybe<StringNullableFilter>;
+  createdAt?: InputMaybe<DateTimeNullableFilter>;
+  createdBy?: InputMaybe<StringNullableFilter>;
+  goodsList?: InputMaybe<StringNullableFilter>;
+  goodsListEn?: InputMaybe<StringNullableFilter>;
+  id?: InputMaybe<StringFilter>;
+  listFailTechnique?: InputMaybe<StringNullableFilter>;
+  reason?: InputMaybe<StringNullableFilter>;
+  statusCode?: InputMaybe<IntNullableFilter>;
+  updatedAt?: InputMaybe<DateTimeNullableFilter>;
+  updatedBy?: InputMaybe<StringNullableFilter>;
+  winningCode?: InputMaybe<StringNullableFilter>;
+};
+
+export type BidLotResultWhereUniqueInput = {
+  id?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type BidNotification = {
   __typename?: 'BidNotification';
   _count: BidNotificationCount;
@@ -46,6 +582,10 @@ export type BidNotification = {
   bidPetitionContractors?: Maybe<Array<BidPetitionContractor>>;
   bidPreConferences?: Maybe<Array<BidPreConference>>;
   bidSelectionPlan?: Maybe<BidSelectionPlan>;
+  briefFileId?: Maybe<Scalars['String']['output']>;
+  briefFileIdEn?: Maybe<Scalars['String']['output']>;
+  briefFileName?: Maybe<Scalars['String']['output']>;
+  briefFileNameEn?: Maybe<Scalars['String']['output']>;
   cancelByCode?: Maybe<Scalars['String']['output']>;
   cancelDate?: Maybe<Scalars['DateTime']['output']>;
   cancelDecisionAgency?: Maybe<Scalars['String']['output']>;
@@ -54,29 +594,45 @@ export type BidNotification = {
   cancelDecisionFileName?: Maybe<Scalars['String']['output']>;
   cancelDecisionNo?: Maybe<Scalars['DateTime']['output']>;
   cancelReason?: Maybe<Scalars['String']['output']>;
-  cancelStatusCode?: Maybe<Scalars['String']['output']>;
-  cancelStatusId?: Maybe<Scalars['String']['output']>;
   cancelType?: Maybe<Scalars['String']['output']>;
   closeDate?: Maybe<Scalars['DateTime']['output']>;
   code?: Maybe<Scalars['String']['output']>;
+  constructionType?: Maybe<CatConstructionType>;
+  constructionTypeCode?: Maybe<Scalars['String']['output']>;
+  constructionTypeId?: Maybe<Scalars['String']['output']>;
   contractors?: Maybe<Array<BidNotificationContractor>>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   createdBy?: Maybe<Scalars['String']['output']>;
   decisionAgency?: Maybe<Scalars['String']['output']>;
+  decisionAgencyEn?: Maybe<Scalars['String']['output']>;
   decisionDate?: Maybe<Scalars['DateTime']['output']>;
   decisionFileId?: Maybe<Scalars['String']['output']>;
+  decisionFileIdEn?: Maybe<Scalars['String']['output']>;
   decisionFileName?: Maybe<Scalars['String']['output']>;
+  decisionFileNameEn?: Maybe<Scalars['String']['output']>;
   decisionNo?: Maybe<Scalars['String']['output']>;
+  decisionNoEn?: Maybe<Scalars['String']['output']>;
   deletedAt?: Maybe<Scalars['DateTime']['output']>;
   guaranteeForm?: Maybe<Scalars['String']['output']>;
   guaranteeValue?: Maybe<Scalars['String']['output']>;
   id: Scalars['String']['output'];
-  investField?: Maybe<Scalars['String']['output']>;
+  investField?: Maybe<CatBidField>;
+  investFieldCode?: Maybe<Scalars['String']['output']>;
+  investFieldId?: Maybe<Scalars['String']['output']>;
+  investor?: Maybe<Organization>;
+  investorCode?: Maybe<Scalars['String']['output']>;
+  investorId?: Maybe<Scalars['String']['output']>;
+  investorName?: Maybe<Scalars['String']['output']>;
   isInviteInterest: Scalars['Boolean']['output'];
+  isLatest: Scalars['Boolean']['output'];
   isPreNotification: Scalars['Boolean']['output'];
   issueLocation?: Maybe<Scalars['String']['output']>;
   openDate?: Maybe<Scalars['DateTime']['output']>;
   openLocation?: Maybe<Scalars['String']['output']>;
+  otherFileId?: Maybe<Scalars['String']['output']>;
+  otherFileIdEn?: Maybe<Scalars['String']['output']>;
+  otherFileName?: Maybe<Scalars['String']['output']>;
+  otherFileNameEn?: Maybe<Scalars['String']['output']>;
   planCode?: Maybe<Scalars['String']['output']>;
   planId?: Maybe<Scalars['String']['output']>;
   planName?: Maybe<Scalars['String']['output']>;
@@ -94,6 +650,7 @@ export type BidNotification = {
   statusCode?: Maybe<Scalars['String']['output']>;
   statusId?: Maybe<Scalars['String']['output']>;
   submitFee?: Maybe<Scalars['String']['output']>;
+  totalContractor?: Maybe<Scalars['Int']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
   updatedBy?: Maybe<Scalars['String']['output']>;
   validityPeriod?: Maybe<Scalars['Int']['output']>;
@@ -119,6 +676,8 @@ export type BidNotificationChapter = {
   description?: Maybe<Scalars['String']['output']>;
   id: Scalars['String']['output'];
   level?: Maybe<Scalars['Int']['output']>;
+  medicalTypeCode?: Maybe<Scalars['Int']['output']>;
+  medicalTypeId?: Maybe<Scalars['String']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   orderIndex?: Maybe<Scalars['String']['output']>;
   parentCode?: Maybe<Scalars['String']['output']>;
@@ -143,6 +702,8 @@ export type BidNotificationChapterCreateManyBidNotificationInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
   level?: InputMaybe<Scalars['Int']['input']>;
+  medicalTypeCode?: InputMaybe<Scalars['Int']['input']>;
+  medicalTypeId?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   orderIndex?: InputMaybe<Scalars['String']['input']>;
   parentCode?: InputMaybe<Scalars['String']['input']>;
@@ -184,6 +745,8 @@ export type BidNotificationChapterCreateWithoutBidNotificationInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
   level?: InputMaybe<Scalars['Int']['input']>;
+  medicalTypeCode?: InputMaybe<Scalars['Int']['input']>;
+  medicalTypeId?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   orderIndex?: InputMaybe<Scalars['String']['input']>;
   parentCode?: InputMaybe<Scalars['String']['input']>;
@@ -222,6 +785,8 @@ export type BidNotificationChapterScalarWhereInput = {
   description?: InputMaybe<StringNullableFilter>;
   id?: InputMaybe<StringFilter>;
   level?: InputMaybe<IntNullableFilter>;
+  medicalTypeCode?: InputMaybe<IntNullableFilter>;
+  medicalTypeId?: InputMaybe<StringNullableFilter>;
   name?: InputMaybe<StringNullableFilter>;
   orderIndex?: InputMaybe<StringNullableFilter>;
   parentCode?: InputMaybe<StringNullableFilter>;
@@ -246,6 +811,8 @@ export type BidNotificationChapterUpdateManyMutationInput = {
   description?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
   level?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  medicalTypeCode?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  medicalTypeId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   orderIndex?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   parentCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -294,6 +861,8 @@ export type BidNotificationChapterUpdateWithoutBidNotificationInput = {
   description?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
   level?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  medicalTypeCode?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  medicalTypeId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   orderIndex?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   parentCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -329,6 +898,8 @@ export type BidNotificationChapterWhereInput = {
   description?: InputMaybe<StringNullableFilter>;
   id?: InputMaybe<StringFilter>;
   level?: InputMaybe<IntNullableFilter>;
+  medicalTypeCode?: InputMaybe<IntNullableFilter>;
+  medicalTypeId?: InputMaybe<StringNullableFilter>;
   name?: InputMaybe<StringNullableFilter>;
   orderIndex?: InputMaybe<StringNullableFilter>;
   parentCode?: InputMaybe<StringNullableFilter>;
@@ -522,18 +1093,23 @@ export type BidNotificationConnection = {
 
 export type BidNotificationContractor = {
   __typename?: 'BidNotificationContractor';
+  bidLotResult?: Maybe<BidLotResult>;
+  bidLotResultId?: Maybe<Scalars['String']['output']>;
   bidNotification?: Maybe<BidNotification>;
   bidNotificationCode?: Maybe<Scalars['String']['output']>;
   bidNotificationId?: Maybe<Scalars['String']['output']>;
   bidNotificationResult?: Maybe<BidNotificationResult>;
   bidNotificationResultId?: Maybe<Scalars['String']['output']>;
-  bidNotificationVersion?: Maybe<Scalars['String']['output']>;
+  contractSignDate?: Maybe<Scalars['DateTime']['output']>;
   contractorCode?: Maybe<Scalars['String']['output']>;
   contractorId?: Maybe<Scalars['String']['output']>;
   contractorName?: Maybe<Scalars['String']['output']>;
   discountPercent?: Maybe<Scalars['Decimal']['output']>;
+  evalBidPrice: Scalars['Decimal']['output'];
+  falsePhase?: Maybe<Scalars['String']['output']>;
   finalPrice?: Maybe<Scalars['Decimal']['output']>;
   id: Scalars['String']['output'];
+  newContractorName?: Maybe<Scalars['String']['output']>;
   price?: Maybe<Scalars['Decimal']['output']>;
   reason?: Maybe<Scalars['String']['output']>;
   result?: Maybe<Scalars['String']['output']>;
@@ -552,16 +1128,20 @@ export type BidNotificationContractorConnection = {
 };
 
 export type BidNotificationContractorCreateInput = {
+  bidLotResult?: InputMaybe<BidLotResultCreateNestedOneWithoutBidNotificationContractorsInput>;
   bidNotification?: InputMaybe<BidNotificationCreateNestedOneWithoutContractorsInput>;
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
   bidNotificationResult?: InputMaybe<BidNotificationResultCreateNestedOneWithoutBidNotificationContractorsInput>;
-  bidNotificationVersion?: InputMaybe<Scalars['String']['input']>;
+  contractSignDate?: InputMaybe<Scalars['DateTime']['input']>;
   contractorCode?: InputMaybe<Scalars['String']['input']>;
   contractorId?: InputMaybe<Scalars['String']['input']>;
   contractorName?: InputMaybe<Scalars['String']['input']>;
   discountPercent?: InputMaybe<Scalars['Decimal']['input']>;
+  evalBidPrice: Scalars['Decimal']['input'];
+  falsePhase?: InputMaybe<Scalars['String']['input']>;
   finalPrice?: InputMaybe<Scalars['Decimal']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  newContractorName?: InputMaybe<Scalars['String']['input']>;
   price?: InputMaybe<Scalars['Decimal']['input']>;
   reason?: InputMaybe<Scalars['String']['input']>;
   result?: InputMaybe<Scalars['String']['input']>;
@@ -572,16 +1152,49 @@ export type BidNotificationContractorCreateInput = {
   winningPrice?: InputMaybe<Scalars['Decimal']['input']>;
 };
 
-export type BidNotificationContractorCreateManyBidNotificationInput = {
+export type BidNotificationContractorCreateManyBidLotResultInput = {
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationId?: InputMaybe<Scalars['String']['input']>;
   bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
-  bidNotificationVersion?: InputMaybe<Scalars['String']['input']>;
+  contractSignDate?: InputMaybe<Scalars['DateTime']['input']>;
   contractorCode?: InputMaybe<Scalars['String']['input']>;
   contractorId?: InputMaybe<Scalars['String']['input']>;
   contractorName?: InputMaybe<Scalars['String']['input']>;
   discountPercent?: InputMaybe<Scalars['Decimal']['input']>;
+  evalBidPrice: Scalars['Decimal']['input'];
+  falsePhase?: InputMaybe<Scalars['String']['input']>;
   finalPrice?: InputMaybe<Scalars['Decimal']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  newContractorName?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['Decimal']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  result?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  techScore?: InputMaybe<Scalars['Decimal']['input']>;
+  ventureCode?: InputMaybe<Scalars['String']['input']>;
+  ventureName?: InputMaybe<Scalars['String']['input']>;
+  winningPrice?: InputMaybe<Scalars['Decimal']['input']>;
+};
+
+export type BidNotificationContractorCreateManyBidLotResultInputEnvelope = {
+  data: Array<BidNotificationContractorCreateManyBidLotResultInput>;
+  skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidNotificationContractorCreateManyBidNotificationInput = {
+  bidLotResultId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  contractSignDate?: InputMaybe<Scalars['DateTime']['input']>;
+  contractorCode?: InputMaybe<Scalars['String']['input']>;
+  contractorId?: InputMaybe<Scalars['String']['input']>;
+  contractorName?: InputMaybe<Scalars['String']['input']>;
+  discountPercent?: InputMaybe<Scalars['Decimal']['input']>;
+  evalBidPrice: Scalars['Decimal']['input'];
+  falsePhase?: InputMaybe<Scalars['String']['input']>;
+  finalPrice?: InputMaybe<Scalars['Decimal']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  newContractorName?: InputMaybe<Scalars['String']['input']>;
   price?: InputMaybe<Scalars['Decimal']['input']>;
   reason?: InputMaybe<Scalars['String']['input']>;
   result?: InputMaybe<Scalars['String']['input']>;
@@ -598,15 +1211,19 @@ export type BidNotificationContractorCreateManyBidNotificationInputEnvelope = {
 };
 
 export type BidNotificationContractorCreateManyBidNotificationResultInput = {
+  bidLotResultId?: InputMaybe<Scalars['String']['input']>;
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
   bidNotificationId?: InputMaybe<Scalars['String']['input']>;
-  bidNotificationVersion?: InputMaybe<Scalars['String']['input']>;
+  contractSignDate?: InputMaybe<Scalars['DateTime']['input']>;
   contractorCode?: InputMaybe<Scalars['String']['input']>;
   contractorId?: InputMaybe<Scalars['String']['input']>;
   contractorName?: InputMaybe<Scalars['String']['input']>;
   discountPercent?: InputMaybe<Scalars['Decimal']['input']>;
+  evalBidPrice: Scalars['Decimal']['input'];
+  falsePhase?: InputMaybe<Scalars['String']['input']>;
   finalPrice?: InputMaybe<Scalars['Decimal']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  newContractorName?: InputMaybe<Scalars['String']['input']>;
   price?: InputMaybe<Scalars['Decimal']['input']>;
   reason?: InputMaybe<Scalars['String']['input']>;
   result?: InputMaybe<Scalars['String']['input']>;
@@ -620,6 +1237,13 @@ export type BidNotificationContractorCreateManyBidNotificationResultInput = {
 export type BidNotificationContractorCreateManyBidNotificationResultInputEnvelope = {
   data: Array<BidNotificationContractorCreateManyBidNotificationResultInput>;
   skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidNotificationContractorCreateNestedManyWithoutBidLotResultInput = {
+  connect?: InputMaybe<Array<BidNotificationContractorWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationContractorCreateOrConnectWithoutBidLotResultInput>>;
+  create?: InputMaybe<Array<BidNotificationContractorCreateWithoutBidLotResultInput>>;
+  createMany?: InputMaybe<BidNotificationContractorCreateManyBidLotResultInputEnvelope>;
 };
 
 export type BidNotificationContractorCreateNestedManyWithoutBidNotificationInput = {
@@ -636,6 +1260,11 @@ export type BidNotificationContractorCreateNestedManyWithoutBidNotificationResul
   createMany?: InputMaybe<BidNotificationContractorCreateManyBidNotificationResultInputEnvelope>;
 };
 
+export type BidNotificationContractorCreateOrConnectWithoutBidLotResultInput = {
+  create: BidNotificationContractorCreateWithoutBidLotResultInput;
+  where: BidNotificationContractorWhereUniqueInput;
+};
+
 export type BidNotificationContractorCreateOrConnectWithoutBidNotificationInput = {
   create: BidNotificationContractorCreateWithoutBidNotificationInput;
   where: BidNotificationContractorWhereUniqueInput;
@@ -646,16 +1275,44 @@ export type BidNotificationContractorCreateOrConnectWithoutBidNotificationResult
   where: BidNotificationContractorWhereUniqueInput;
 };
 
-export type BidNotificationContractorCreateWithoutBidNotificationInput = {
+export type BidNotificationContractorCreateWithoutBidLotResultInput = {
+  bidNotification?: InputMaybe<BidNotificationCreateNestedOneWithoutContractorsInput>;
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
   bidNotificationResult?: InputMaybe<BidNotificationResultCreateNestedOneWithoutBidNotificationContractorsInput>;
-  bidNotificationVersion?: InputMaybe<Scalars['String']['input']>;
+  contractSignDate?: InputMaybe<Scalars['DateTime']['input']>;
   contractorCode?: InputMaybe<Scalars['String']['input']>;
   contractorId?: InputMaybe<Scalars['String']['input']>;
   contractorName?: InputMaybe<Scalars['String']['input']>;
   discountPercent?: InputMaybe<Scalars['Decimal']['input']>;
+  evalBidPrice: Scalars['Decimal']['input'];
+  falsePhase?: InputMaybe<Scalars['String']['input']>;
   finalPrice?: InputMaybe<Scalars['Decimal']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  newContractorName?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['Decimal']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  result?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  techScore?: InputMaybe<Scalars['Decimal']['input']>;
+  ventureCode?: InputMaybe<Scalars['String']['input']>;
+  ventureName?: InputMaybe<Scalars['String']['input']>;
+  winningPrice?: InputMaybe<Scalars['Decimal']['input']>;
+};
+
+export type BidNotificationContractorCreateWithoutBidNotificationInput = {
+  bidLotResult?: InputMaybe<BidLotResultCreateNestedOneWithoutBidNotificationContractorsInput>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultCreateNestedOneWithoutBidNotificationContractorsInput>;
+  contractSignDate?: InputMaybe<Scalars['DateTime']['input']>;
+  contractorCode?: InputMaybe<Scalars['String']['input']>;
+  contractorId?: InputMaybe<Scalars['String']['input']>;
+  contractorName?: InputMaybe<Scalars['String']['input']>;
+  discountPercent?: InputMaybe<Scalars['Decimal']['input']>;
+  evalBidPrice: Scalars['Decimal']['input'];
+  falsePhase?: InputMaybe<Scalars['String']['input']>;
+  finalPrice?: InputMaybe<Scalars['Decimal']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  newContractorName?: InputMaybe<Scalars['String']['input']>;
   price?: InputMaybe<Scalars['Decimal']['input']>;
   reason?: InputMaybe<Scalars['String']['input']>;
   result?: InputMaybe<Scalars['String']['input']>;
@@ -667,15 +1324,19 @@ export type BidNotificationContractorCreateWithoutBidNotificationInput = {
 };
 
 export type BidNotificationContractorCreateWithoutBidNotificationResultInput = {
+  bidLotResult?: InputMaybe<BidLotResultCreateNestedOneWithoutBidNotificationContractorsInput>;
   bidNotification?: InputMaybe<BidNotificationCreateNestedOneWithoutContractorsInput>;
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
-  bidNotificationVersion?: InputMaybe<Scalars['String']['input']>;
+  contractSignDate?: InputMaybe<Scalars['DateTime']['input']>;
   contractorCode?: InputMaybe<Scalars['String']['input']>;
   contractorId?: InputMaybe<Scalars['String']['input']>;
   contractorName?: InputMaybe<Scalars['String']['input']>;
   discountPercent?: InputMaybe<Scalars['Decimal']['input']>;
+  evalBidPrice: Scalars['Decimal']['input'];
+  falsePhase?: InputMaybe<Scalars['String']['input']>;
   finalPrice?: InputMaybe<Scalars['Decimal']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  newContractorName?: InputMaybe<Scalars['String']['input']>;
   price?: InputMaybe<Scalars['Decimal']['input']>;
   reason?: InputMaybe<Scalars['String']['input']>;
   result?: InputMaybe<Scalars['String']['input']>;
@@ -697,18 +1358,23 @@ export type BidNotificationContractorOrderByRelationAggregateInput = {
 };
 
 export type BidNotificationContractorOrderByWithRelationInput = {
+  bidLotResult?: InputMaybe<BidLotResultOrderByWithRelationInput>;
+  bidLotResultId?: InputMaybe<SortOrderInput>;
   bidNotification?: InputMaybe<BidNotificationOrderByWithRelationInput>;
   bidNotificationCode?: InputMaybe<SortOrderInput>;
   bidNotificationId?: InputMaybe<SortOrderInput>;
   bidNotificationResult?: InputMaybe<BidNotificationResultOrderByWithRelationInput>;
   bidNotificationResultId?: InputMaybe<SortOrderInput>;
-  bidNotificationVersion?: InputMaybe<SortOrderInput>;
+  contractSignDate?: InputMaybe<SortOrderInput>;
   contractorCode?: InputMaybe<SortOrderInput>;
   contractorId?: InputMaybe<SortOrderInput>;
   contractorName?: InputMaybe<SortOrderInput>;
   discountPercent?: InputMaybe<SortOrderInput>;
+  evalBidPrice?: InputMaybe<SortOrder>;
+  falsePhase?: InputMaybe<SortOrderInput>;
   finalPrice?: InputMaybe<SortOrderInput>;
   id?: InputMaybe<SortOrder>;
+  newContractorName?: InputMaybe<SortOrderInput>;
   price?: InputMaybe<SortOrderInput>;
   reason?: InputMaybe<SortOrderInput>;
   result?: InputMaybe<SortOrderInput>;
@@ -720,16 +1386,20 @@ export type BidNotificationContractorOrderByWithRelationInput = {
 };
 
 export enum BidNotificationContractorScalarFieldEnum {
+  BidLotResultId = 'bidLotResultId',
   BidNotificationCode = 'bidNotificationCode',
   BidNotificationId = 'bidNotificationId',
   BidNotificationResultId = 'bidNotificationResultId',
-  BidNotificationVersion = 'bidNotificationVersion',
+  ContractSignDate = 'contractSignDate',
   ContractorCode = 'contractorCode',
   ContractorId = 'contractorId',
   ContractorName = 'contractorName',
   DiscountPercent = 'discountPercent',
+  EvalBidPrice = 'evalBidPrice',
+  FalsePhase = 'falsePhase',
   FinalPrice = 'finalPrice',
   Id = 'id',
+  NewContractorName = 'newContractorName',
   Price = 'price',
   Reason = 'reason',
   Result = 'result',
@@ -744,16 +1414,20 @@ export type BidNotificationContractorScalarWhereInput = {
   AND?: InputMaybe<Array<BidNotificationContractorScalarWhereInput>>;
   NOT?: InputMaybe<Array<BidNotificationContractorScalarWhereInput>>;
   OR?: InputMaybe<Array<BidNotificationContractorScalarWhereInput>>;
+  bidLotResultId?: InputMaybe<StringNullableFilter>;
   bidNotificationCode?: InputMaybe<StringNullableFilter>;
   bidNotificationId?: InputMaybe<StringNullableFilter>;
   bidNotificationResultId?: InputMaybe<StringNullableFilter>;
-  bidNotificationVersion?: InputMaybe<StringNullableFilter>;
+  contractSignDate?: InputMaybe<DateTimeNullableFilter>;
   contractorCode?: InputMaybe<StringNullableFilter>;
   contractorId?: InputMaybe<StringNullableFilter>;
   contractorName?: InputMaybe<StringNullableFilter>;
   discountPercent?: InputMaybe<DecimalNullableFilter>;
+  evalBidPrice?: InputMaybe<DecimalFilter>;
+  falsePhase?: InputMaybe<StringNullableFilter>;
   finalPrice?: InputMaybe<DecimalNullableFilter>;
   id?: InputMaybe<StringFilter>;
+  newContractorName?: InputMaybe<StringNullableFilter>;
   price?: InputMaybe<DecimalNullableFilter>;
   reason?: InputMaybe<StringNullableFilter>;
   result?: InputMaybe<StringNullableFilter>;
@@ -765,16 +1439,20 @@ export type BidNotificationContractorScalarWhereInput = {
 };
 
 export type BidNotificationContractorUpdateInput = {
+  bidLotResult?: InputMaybe<BidLotResultUpdateOneWithoutBidNotificationContractorsNestedInput>;
   bidNotification?: InputMaybe<BidNotificationUpdateOneWithoutContractorsNestedInput>;
   bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidNotificationResult?: InputMaybe<BidNotificationResultUpdateOneWithoutBidNotificationContractorsNestedInput>;
-  bidNotificationVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractSignDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   contractorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   discountPercent?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  evalBidPrice?: InputMaybe<DecimalFieldUpdateOperationsInput>;
+  falsePhase?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   finalPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  newContractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   price?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   result?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -787,13 +1465,16 @@ export type BidNotificationContractorUpdateInput = {
 
 export type BidNotificationContractorUpdateManyMutationInput = {
   bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  bidNotificationVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractSignDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   contractorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   discountPercent?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  evalBidPrice?: InputMaybe<DecimalFieldUpdateOperationsInput>;
+  falsePhase?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   finalPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  newContractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   price?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   result?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -804,6 +1485,11 @@ export type BidNotificationContractorUpdateManyMutationInput = {
   winningPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
 };
 
+export type BidNotificationContractorUpdateManyWithWhereWithoutBidLotResultInput = {
+  data: BidNotificationContractorUpdateManyMutationInput;
+  where: BidNotificationContractorScalarWhereInput;
+};
+
 export type BidNotificationContractorUpdateManyWithWhereWithoutBidNotificationInput = {
   data: BidNotificationContractorUpdateManyMutationInput;
   where: BidNotificationContractorScalarWhereInput;
@@ -812,6 +1498,20 @@ export type BidNotificationContractorUpdateManyWithWhereWithoutBidNotificationIn
 export type BidNotificationContractorUpdateManyWithWhereWithoutBidNotificationResultInput = {
   data: BidNotificationContractorUpdateManyMutationInput;
   where: BidNotificationContractorScalarWhereInput;
+};
+
+export type BidNotificationContractorUpdateManyWithoutBidLotResultNestedInput = {
+  connect?: InputMaybe<Array<BidNotificationContractorWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationContractorCreateOrConnectWithoutBidLotResultInput>>;
+  create?: InputMaybe<Array<BidNotificationContractorCreateWithoutBidLotResultInput>>;
+  createMany?: InputMaybe<BidNotificationContractorCreateManyBidLotResultInputEnvelope>;
+  delete?: InputMaybe<Array<BidNotificationContractorWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<BidNotificationContractorScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<BidNotificationContractorWhereUniqueInput>>;
+  set?: InputMaybe<Array<BidNotificationContractorWhereUniqueInput>>;
+  update?: InputMaybe<Array<BidNotificationContractorUpdateWithWhereUniqueWithoutBidLotResultInput>>;
+  updateMany?: InputMaybe<Array<BidNotificationContractorUpdateManyWithWhereWithoutBidLotResultInput>>;
+  upsert?: InputMaybe<Array<BidNotificationContractorUpsertWithWhereUniqueWithoutBidLotResultInput>>;
 };
 
 export type BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput = {
@@ -842,6 +1542,11 @@ export type BidNotificationContractorUpdateManyWithoutBidNotificationResultNeste
   upsert?: InputMaybe<Array<BidNotificationContractorUpsertWithWhereUniqueWithoutBidNotificationResultInput>>;
 };
 
+export type BidNotificationContractorUpdateWithWhereUniqueWithoutBidLotResultInput = {
+  data: BidNotificationContractorUpdateWithoutBidLotResultInput;
+  where: BidNotificationContractorWhereUniqueInput;
+};
+
 export type BidNotificationContractorUpdateWithWhereUniqueWithoutBidNotificationInput = {
   data: BidNotificationContractorUpdateWithoutBidNotificationInput;
   where: BidNotificationContractorWhereUniqueInput;
@@ -852,16 +1557,44 @@ export type BidNotificationContractorUpdateWithWhereUniqueWithoutBidNotification
   where: BidNotificationContractorWhereUniqueInput;
 };
 
-export type BidNotificationContractorUpdateWithoutBidNotificationInput = {
+export type BidNotificationContractorUpdateWithoutBidLotResultInput = {
+  bidNotification?: InputMaybe<BidNotificationUpdateOneWithoutContractorsNestedInput>;
   bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidNotificationResult?: InputMaybe<BidNotificationResultUpdateOneWithoutBidNotificationContractorsNestedInput>;
-  bidNotificationVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractSignDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   contractorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   discountPercent?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  evalBidPrice?: InputMaybe<DecimalFieldUpdateOperationsInput>;
+  falsePhase?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   finalPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  newContractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  price?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  result?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  role?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  techScore?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  ventureCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  ventureName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  winningPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+};
+
+export type BidNotificationContractorUpdateWithoutBidNotificationInput = {
+  bidLotResult?: InputMaybe<BidLotResultUpdateOneWithoutBidNotificationContractorsNestedInput>;
+  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationResult?: InputMaybe<BidNotificationResultUpdateOneWithoutBidNotificationContractorsNestedInput>;
+  contractSignDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  contractorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  discountPercent?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  evalBidPrice?: InputMaybe<DecimalFieldUpdateOperationsInput>;
+  falsePhase?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  finalPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  newContractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   price?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   result?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -873,15 +1606,19 @@ export type BidNotificationContractorUpdateWithoutBidNotificationInput = {
 };
 
 export type BidNotificationContractorUpdateWithoutBidNotificationResultInput = {
+  bidLotResult?: InputMaybe<BidLotResultUpdateOneWithoutBidNotificationContractorsNestedInput>;
   bidNotification?: InputMaybe<BidNotificationUpdateOneWithoutContractorsNestedInput>;
   bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  bidNotificationVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractSignDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   contractorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   discountPercent?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  evalBidPrice?: InputMaybe<DecimalFieldUpdateOperationsInput>;
+  falsePhase?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   finalPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  newContractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   price?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
   reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   result?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -890,6 +1627,12 @@ export type BidNotificationContractorUpdateWithoutBidNotificationResultInput = {
   ventureCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   ventureName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   winningPrice?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+};
+
+export type BidNotificationContractorUpsertWithWhereUniqueWithoutBidLotResultInput = {
+  create: BidNotificationContractorCreateWithoutBidLotResultInput;
+  update: BidNotificationContractorUpdateWithoutBidLotResultInput;
+  where: BidNotificationContractorWhereUniqueInput;
 };
 
 export type BidNotificationContractorUpsertWithWhereUniqueWithoutBidNotificationInput = {
@@ -908,18 +1651,23 @@ export type BidNotificationContractorWhereInput = {
   AND?: InputMaybe<Array<BidNotificationContractorWhereInput>>;
   NOT?: InputMaybe<Array<BidNotificationContractorWhereInput>>;
   OR?: InputMaybe<Array<BidNotificationContractorWhereInput>>;
+  bidLotResult?: InputMaybe<BidLotResultWhereInput>;
+  bidLotResultId?: InputMaybe<StringNullableFilter>;
   bidNotification?: InputMaybe<BidNotificationWhereInput>;
   bidNotificationCode?: InputMaybe<StringNullableFilter>;
   bidNotificationId?: InputMaybe<StringNullableFilter>;
   bidNotificationResult?: InputMaybe<BidNotificationResultWhereInput>;
   bidNotificationResultId?: InputMaybe<StringNullableFilter>;
-  bidNotificationVersion?: InputMaybe<StringNullableFilter>;
+  contractSignDate?: InputMaybe<DateTimeNullableFilter>;
   contractorCode?: InputMaybe<StringNullableFilter>;
   contractorId?: InputMaybe<StringNullableFilter>;
   contractorName?: InputMaybe<StringNullableFilter>;
   discountPercent?: InputMaybe<DecimalNullableFilter>;
+  evalBidPrice?: InputMaybe<DecimalFilter>;
+  falsePhase?: InputMaybe<StringNullableFilter>;
   finalPrice?: InputMaybe<DecimalNullableFilter>;
   id?: InputMaybe<StringFilter>;
+  newContractorName?: InputMaybe<StringNullableFilter>;
   price?: InputMaybe<DecimalNullableFilter>;
   reason?: InputMaybe<StringNullableFilter>;
   result?: InputMaybe<StringNullableFilter>;
@@ -959,6 +1707,10 @@ export type BidNotificationCreateInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -967,29 +1719,42 @@ export type BidNotificationCreateInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1003,6 +1768,7 @@ export type BidNotificationCreateInput = {
   result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1016,6 +1782,10 @@ export type BidNotificationCreateManyBidPackageInput = {
   bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
   bidPackageCode?: InputMaybe<Scalars['String']['input']>;
   bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1024,28 +1794,41 @@ export type BidNotificationCreateManyBidPackageInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeId?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investFieldId?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorId?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planId?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
@@ -1060,6 +1843,7 @@ export type BidNotificationCreateManyBidPackageInput = {
   statusCode?: InputMaybe<Scalars['String']['input']>;
   statusId?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1079,6 +1863,10 @@ export type BidNotificationCreateManyBidSelectionPlanInput = {
   bidPackageCode?: InputMaybe<Scalars['String']['input']>;
   bidPackageId?: InputMaybe<Scalars['String']['input']>;
   bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1087,28 +1875,41 @@ export type BidNotificationCreateManyBidSelectionPlanInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeId?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investFieldId?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorId?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1122,6 +1923,7 @@ export type BidNotificationCreateManyBidSelectionPlanInput = {
   statusCode?: InputMaybe<Scalars['String']['input']>;
   statusId?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1134,13 +1936,17 @@ export type BidNotificationCreateManyBidSelectionPlanInputEnvelope = {
   skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type BidNotificationCreateManyProcessApplyInput = {
+export type BidNotificationCreateManyConstructionTypeInput = {
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
   bidNotificationId?: InputMaybe<Scalars['String']['input']>;
   bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
   bidPackageCode?: InputMaybe<Scalars['String']['input']>;
   bidPackageId?: InputMaybe<Scalars['String']['input']>;
   bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1149,28 +1955,281 @@ export type BidNotificationCreateManyProcessApplyInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investFieldId?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorId?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  planCode?: InputMaybe<Scalars['String']['input']>;
+  planId?: InputMaybe<Scalars['String']['input']>;
+  planName?: InputMaybe<Scalars['String']['input']>;
+  planVersion?: InputMaybe<Scalars['String']['input']>;
+  processApplyCode?: InputMaybe<Scalars['String']['input']>;
+  processApplyId?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityId?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityName?: InputMaybe<Scalars['String']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  receiveLocation?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  statusId?: InputMaybe<Scalars['String']['input']>;
+  submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  validityPeriod?: InputMaybe<Scalars['Int']['input']>;
+  validityPeriodUnit?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationCreateManyConstructionTypeInputEnvelope = {
+  data: Array<BidNotificationCreateManyConstructionTypeInput>;
+  skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidNotificationCreateManyInvestFieldInput = {
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  cancelByCode?: InputMaybe<Scalars['String']['input']>;
+  cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionFileId?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelReason?: InputMaybe<Scalars['String']['input']>;
+  cancelType?: InputMaybe<Scalars['String']['input']>;
+  closeDate?: InputMaybe<Scalars['DateTime']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  guaranteeForm?: InputMaybe<Scalars['String']['input']>;
+  guaranteeValue?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorId?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
+  isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
+  issueLocation?: InputMaybe<Scalars['String']['input']>;
+  openDate?: InputMaybe<Scalars['DateTime']['input']>;
+  openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  planCode?: InputMaybe<Scalars['String']['input']>;
+  planId?: InputMaybe<Scalars['String']['input']>;
+  planName?: InputMaybe<Scalars['String']['input']>;
+  planVersion?: InputMaybe<Scalars['String']['input']>;
+  processApplyCode?: InputMaybe<Scalars['String']['input']>;
+  processApplyId?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityId?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityName?: InputMaybe<Scalars['String']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  receiveLocation?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  statusId?: InputMaybe<Scalars['String']['input']>;
+  submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  validityPeriod?: InputMaybe<Scalars['Int']['input']>;
+  validityPeriodUnit?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationCreateManyInvestFieldInputEnvelope = {
+  data: Array<BidNotificationCreateManyInvestFieldInput>;
+  skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidNotificationCreateManyInvestorInput = {
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  cancelByCode?: InputMaybe<Scalars['String']['input']>;
+  cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionFileId?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelReason?: InputMaybe<Scalars['String']['input']>;
+  cancelType?: InputMaybe<Scalars['String']['input']>;
+  closeDate?: InputMaybe<Scalars['DateTime']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  guaranteeForm?: InputMaybe<Scalars['String']['input']>;
+  guaranteeValue?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investFieldId?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
+  isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
+  issueLocation?: InputMaybe<Scalars['String']['input']>;
+  openDate?: InputMaybe<Scalars['DateTime']['input']>;
+  openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  planCode?: InputMaybe<Scalars['String']['input']>;
+  planId?: InputMaybe<Scalars['String']['input']>;
+  planName?: InputMaybe<Scalars['String']['input']>;
+  planVersion?: InputMaybe<Scalars['String']['input']>;
+  processApplyCode?: InputMaybe<Scalars['String']['input']>;
+  processApplyId?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityId?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityName?: InputMaybe<Scalars['String']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  receiveLocation?: InputMaybe<Scalars['String']['input']>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  statusId?: InputMaybe<Scalars['String']['input']>;
+  submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  validityPeriod?: InputMaybe<Scalars['Int']['input']>;
+  validityPeriodUnit?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationCreateManyInvestorInputEnvelope = {
+  data: Array<BidNotificationCreateManyInvestorInput>;
+  skipDuplicates?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BidNotificationCreateManyProcessApplyInput = {
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageId?: InputMaybe<Scalars['String']['input']>;
+  bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  cancelByCode?: InputMaybe<Scalars['String']['input']>;
+  cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionFileId?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelReason?: InputMaybe<Scalars['String']['input']>;
+  cancelType?: InputMaybe<Scalars['String']['input']>;
+  closeDate?: InputMaybe<Scalars['DateTime']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  guaranteeForm?: InputMaybe<Scalars['String']['input']>;
+  guaranteeValue?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investFieldId?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorId?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
+  isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
+  issueLocation?: InputMaybe<Scalars['String']['input']>;
+  openDate?: InputMaybe<Scalars['DateTime']['input']>;
+  openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planId?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
@@ -1184,6 +2243,7 @@ export type BidNotificationCreateManyProcessApplyInput = {
   statusCode?: InputMaybe<Scalars['String']['input']>;
   statusId?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1203,6 +2263,10 @@ export type BidNotificationCreateManyProcuringEntityInput = {
   bidPackageCode?: InputMaybe<Scalars['String']['input']>;
   bidPackageId?: InputMaybe<Scalars['String']['input']>;
   bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1211,28 +2275,41 @@ export type BidNotificationCreateManyProcuringEntityInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeId?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investFieldId?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorId?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planId?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
@@ -1246,6 +2323,7 @@ export type BidNotificationCreateManyProcuringEntityInput = {
   statusCode?: InputMaybe<Scalars['String']['input']>;
   statusId?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1270,6 +2348,27 @@ export type BidNotificationCreateNestedManyWithoutBidSelectionPlanInput = {
   connectOrCreate?: InputMaybe<Array<BidNotificationCreateOrConnectWithoutBidSelectionPlanInput>>;
   create?: InputMaybe<Array<BidNotificationCreateWithoutBidSelectionPlanInput>>;
   createMany?: InputMaybe<BidNotificationCreateManyBidSelectionPlanInputEnvelope>;
+};
+
+export type BidNotificationCreateNestedManyWithoutConstructionTypeInput = {
+  connect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationCreateOrConnectWithoutConstructionTypeInput>>;
+  create?: InputMaybe<Array<BidNotificationCreateWithoutConstructionTypeInput>>;
+  createMany?: InputMaybe<BidNotificationCreateManyConstructionTypeInputEnvelope>;
+};
+
+export type BidNotificationCreateNestedManyWithoutInvestFieldInput = {
+  connect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationCreateOrConnectWithoutInvestFieldInput>>;
+  create?: InputMaybe<Array<BidNotificationCreateWithoutInvestFieldInput>>;
+  createMany?: InputMaybe<BidNotificationCreateManyInvestFieldInputEnvelope>;
+};
+
+export type BidNotificationCreateNestedManyWithoutInvestorInput = {
+  connect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationCreateOrConnectWithoutInvestorInput>>;
+  create?: InputMaybe<Array<BidNotificationCreateWithoutInvestorInput>>;
+  createMany?: InputMaybe<BidNotificationCreateManyInvestorInputEnvelope>;
 };
 
 export type BidNotificationCreateNestedManyWithoutProcessApplyInput = {
@@ -1319,8 +2418,23 @@ export type BidNotificationCreateOrConnectWithoutBidSelectionPlanInput = {
   where: BidNotificationWhereUniqueInput;
 };
 
+export type BidNotificationCreateOrConnectWithoutConstructionTypeInput = {
+  create: BidNotificationCreateWithoutConstructionTypeInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
 export type BidNotificationCreateOrConnectWithoutContractorsInput = {
   create: BidNotificationCreateWithoutContractorsInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
+export type BidNotificationCreateOrConnectWithoutInvestFieldInput = {
+  create: BidNotificationCreateWithoutInvestFieldInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
+export type BidNotificationCreateOrConnectWithoutInvestorInput = {
+  create: BidNotificationCreateWithoutInvestorInput;
   where: BidNotificationWhereUniqueInput;
 };
 
@@ -1352,6 +2466,10 @@ export type BidNotificationCreateWithoutBidPackageInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1360,29 +2478,42 @@ export type BidNotificationCreateWithoutBidPackageInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1396,6 +2527,7 @@ export type BidNotificationCreateWithoutBidPackageInput = {
   result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1416,6 +2548,10 @@ export type BidNotificationCreateWithoutBidPetitionContractorsInput = {
   bidPackageName?: InputMaybe<Scalars['String']['input']>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1424,29 +2560,42 @@ export type BidNotificationCreateWithoutBidPetitionContractorsInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1460,6 +2609,7 @@ export type BidNotificationCreateWithoutBidPetitionContractorsInput = {
   result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1480,6 +2630,10 @@ export type BidNotificationCreateWithoutBidSelectionPlanInput = {
   bidPackageName?: InputMaybe<Scalars['String']['input']>;
   bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1488,29 +2642,42 @@ export type BidNotificationCreateWithoutBidSelectionPlanInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1524,6 +2691,89 @@ export type BidNotificationCreateWithoutBidSelectionPlanInput = {
   result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  validityPeriod?: InputMaybe<Scalars['Int']['input']>;
+  validityPeriodUnit?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationCreateWithoutConstructionTypeInput = {
+  bidNotificationChapters?: InputMaybe<BidNotificationChapterCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationClarifies?: InputMaybe<BidNotificationClarifyCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResultGoodsPrices?: InputMaybe<BidNotificationResultGoodsPriceCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationStatus?: InputMaybe<CatBidNotificationStatusCreateNestedOneWithoutBidNotificationsInput>;
+  bidPackage?: InputMaybe<BidPackageCreateNestedOneWithoutBidNotificationsInput>;
+  bidPackageCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
+  bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  cancelByCode?: InputMaybe<Scalars['String']['input']>;
+  cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionFileId?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelReason?: InputMaybe<Scalars['String']['input']>;
+  cancelType?: InputMaybe<Scalars['String']['input']>;
+  closeDate?: InputMaybe<Scalars['DateTime']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  guaranteeForm?: InputMaybe<Scalars['String']['input']>;
+  guaranteeValue?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
+  isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
+  issueLocation?: InputMaybe<Scalars['String']['input']>;
+  openDate?: InputMaybe<Scalars['DateTime']['input']>;
+  openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  planCode?: InputMaybe<Scalars['String']['input']>;
+  planName?: InputMaybe<Scalars['String']['input']>;
+  planVersion?: InputMaybe<Scalars['String']['input']>;
+  processApply?: InputMaybe<CatProcessApplyCreateNestedOneWithoutBidNotificationsInput>;
+  processApplyCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntity?: InputMaybe<OrganizationCreateNestedOneWithoutProcuringEntityInput>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityName?: InputMaybe<Scalars['String']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  receiveLocation?: InputMaybe<Scalars['String']['input']>;
+  result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1545,6 +2795,10 @@ export type BidNotificationCreateWithoutContractorsInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1553,28 +2807,41 @@ export type BidNotificationCreateWithoutContractorsInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1588,6 +2855,171 @@ export type BidNotificationCreateWithoutContractorsInput = {
   result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  validityPeriod?: InputMaybe<Scalars['Int']['input']>;
+  validityPeriodUnit?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationCreateWithoutInvestFieldInput = {
+  bidNotificationChapters?: InputMaybe<BidNotificationChapterCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationClarifies?: InputMaybe<BidNotificationClarifyCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResultGoodsPrices?: InputMaybe<BidNotificationResultGoodsPriceCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationStatus?: InputMaybe<CatBidNotificationStatusCreateNestedOneWithoutBidNotificationsInput>;
+  bidPackage?: InputMaybe<BidPackageCreateNestedOneWithoutBidNotificationsInput>;
+  bidPackageCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
+  bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  cancelByCode?: InputMaybe<Scalars['String']['input']>;
+  cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionFileId?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelReason?: InputMaybe<Scalars['String']['input']>;
+  cancelType?: InputMaybe<Scalars['String']['input']>;
+  closeDate?: InputMaybe<Scalars['DateTime']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  guaranteeForm?: InputMaybe<Scalars['String']['input']>;
+  guaranteeValue?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
+  isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
+  issueLocation?: InputMaybe<Scalars['String']['input']>;
+  openDate?: InputMaybe<Scalars['DateTime']['input']>;
+  openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  planCode?: InputMaybe<Scalars['String']['input']>;
+  planName?: InputMaybe<Scalars['String']['input']>;
+  planVersion?: InputMaybe<Scalars['String']['input']>;
+  processApply?: InputMaybe<CatProcessApplyCreateNestedOneWithoutBidNotificationsInput>;
+  processApplyCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntity?: InputMaybe<OrganizationCreateNestedOneWithoutProcuringEntityInput>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityName?: InputMaybe<Scalars['String']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  receiveLocation?: InputMaybe<Scalars['String']['input']>;
+  result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  validityPeriod?: InputMaybe<Scalars['Int']['input']>;
+  validityPeriodUnit?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationCreateWithoutInvestorInput = {
+  bidNotificationChapters?: InputMaybe<BidNotificationChapterCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationClarifies?: InputMaybe<BidNotificationClarifyCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationResultGoodsPrices?: InputMaybe<BidNotificationResultGoodsPriceCreateNestedManyWithoutBidNotificationInput>;
+  bidNotificationResultId?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationStatus?: InputMaybe<CatBidNotificationStatusCreateNestedOneWithoutBidNotificationsInput>;
+  bidPackage?: InputMaybe<BidPackageCreateNestedOneWithoutBidNotificationsInput>;
+  bidPackageCode?: InputMaybe<Scalars['String']['input']>;
+  bidPackageName?: InputMaybe<Scalars['String']['input']>;
+  bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
+  bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  cancelByCode?: InputMaybe<Scalars['String']['input']>;
+  cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelDecisionFileId?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
+  cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
+  cancelReason?: InputMaybe<Scalars['String']['input']>;
+  cancelType?: InputMaybe<Scalars['String']['input']>;
+  closeDate?: InputMaybe<Scalars['DateTime']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  guaranteeForm?: InputMaybe<Scalars['String']['input']>;
+  guaranteeValue?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
+  isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
+  issueLocation?: InputMaybe<Scalars['String']['input']>;
+  openDate?: InputMaybe<Scalars['DateTime']['input']>;
+  openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
+  planCode?: InputMaybe<Scalars['String']['input']>;
+  planName?: InputMaybe<Scalars['String']['input']>;
+  planVersion?: InputMaybe<Scalars['String']['input']>;
+  processApply?: InputMaybe<CatProcessApplyCreateNestedOneWithoutBidNotificationsInput>;
+  processApplyCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntity?: InputMaybe<OrganizationCreateNestedOneWithoutProcuringEntityInput>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityName?: InputMaybe<Scalars['String']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  receiveLocation?: InputMaybe<Scalars['String']['input']>;
+  result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1609,6 +3041,10 @@ export type BidNotificationCreateWithoutProcessApplyInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1617,29 +3053,42 @@ export type BidNotificationCreateWithoutProcessApplyInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1652,6 +3101,7 @@ export type BidNotificationCreateWithoutProcessApplyInput = {
   result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1673,6 +3123,10 @@ export type BidNotificationCreateWithoutProcuringEntityInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1681,29 +3135,42 @@ export type BidNotificationCreateWithoutProcuringEntityInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1716,6 +3183,7 @@ export type BidNotificationCreateWithoutProcuringEntityInput = {
   result?: InputMaybe<BidNotificationResultCreateNestedManyWithoutBidNotificationInput>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1737,6 +3205,10 @@ export type BidNotificationCreateWithoutResultInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutBidNotificationInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceCreateNestedManyWithoutBidNotificationInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput>;
+  briefFileId?: InputMaybe<Scalars['String']['input']>;
+  briefFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  briefFileName?: InputMaybe<Scalars['String']['input']>;
+  briefFileNameEn?: InputMaybe<Scalars['String']['input']>;
   cancelByCode?: InputMaybe<Scalars['String']['input']>;
   cancelDate?: InputMaybe<Scalars['DateTime']['input']>;
   cancelDecisionAgency?: InputMaybe<Scalars['String']['input']>;
@@ -1745,29 +3217,42 @@ export type BidNotificationCreateWithoutResultInput = {
   cancelDecisionFileName?: InputMaybe<Scalars['String']['input']>;
   cancelDecisionNo?: InputMaybe<Scalars['DateTime']['input']>;
   cancelReason?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusCode?: InputMaybe<Scalars['String']['input']>;
-  cancelStatusId?: InputMaybe<Scalars['String']['input']>;
   cancelType?: InputMaybe<Scalars['String']['input']>;
   closeDate?: InputMaybe<Scalars['DateTime']['input']>;
   code?: InputMaybe<Scalars['String']['input']>;
+  constructionType?: InputMaybe<CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput>;
+  constructionTypeCode?: InputMaybe<Scalars['String']['input']>;
   contractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionAgencyEn?: InputMaybe<Scalars['String']['input']>;
   decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
   decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileIdEn?: InputMaybe<Scalars['String']['input']>;
   decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionFileNameEn?: InputMaybe<Scalars['String']['input']>;
   decisionNo?: InputMaybe<Scalars['String']['input']>;
+  decisionNoEn?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   guaranteeForm?: InputMaybe<Scalars['String']['input']>;
   guaranteeValue?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
-  investField?: InputMaybe<Scalars['String']['input']>;
+  investField?: InputMaybe<CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput>;
+  investFieldCode?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidNotificationInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
   isInviteInterest?: InputMaybe<Scalars['Boolean']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   isPreNotification?: InputMaybe<Scalars['Boolean']['input']>;
   issueLocation?: InputMaybe<Scalars['String']['input']>;
   openDate?: InputMaybe<Scalars['DateTime']['input']>;
   openLocation?: InputMaybe<Scalars['String']['input']>;
+  otherFileId?: InputMaybe<Scalars['String']['input']>;
+  otherFileIdEn?: InputMaybe<Scalars['String']['input']>;
+  otherFileName?: InputMaybe<Scalars['String']['input']>;
+  otherFileNameEn?: InputMaybe<Scalars['String']['input']>;
   planCode?: InputMaybe<Scalars['String']['input']>;
   planName?: InputMaybe<Scalars['String']['input']>;
   planVersion?: InputMaybe<Scalars['String']['input']>;
@@ -1780,6 +3265,7 @@ export type BidNotificationCreateWithoutResultInput = {
   receiveLocation?: InputMaybe<Scalars['String']['input']>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   submitFee?: InputMaybe<Scalars['String']['input']>;
+  totalContractor?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   validityPeriod?: InputMaybe<Scalars['Int']['input']>;
@@ -1812,6 +3298,10 @@ export type BidNotificationOrderByWithRelationInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorOrderByRelationAggregateInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceOrderByRelationAggregateInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanOrderByWithRelationInput>;
+  briefFileId?: InputMaybe<SortOrderInput>;
+  briefFileIdEn?: InputMaybe<SortOrderInput>;
+  briefFileName?: InputMaybe<SortOrderInput>;
+  briefFileNameEn?: InputMaybe<SortOrderInput>;
   cancelByCode?: InputMaybe<SortOrderInput>;
   cancelDate?: InputMaybe<SortOrderInput>;
   cancelDecisionAgency?: InputMaybe<SortOrderInput>;
@@ -1820,29 +3310,45 @@ export type BidNotificationOrderByWithRelationInput = {
   cancelDecisionFileName?: InputMaybe<SortOrderInput>;
   cancelDecisionNo?: InputMaybe<SortOrderInput>;
   cancelReason?: InputMaybe<SortOrderInput>;
-  cancelStatusCode?: InputMaybe<SortOrderInput>;
-  cancelStatusId?: InputMaybe<SortOrderInput>;
   cancelType?: InputMaybe<SortOrderInput>;
   closeDate?: InputMaybe<SortOrderInput>;
   code?: InputMaybe<SortOrderInput>;
+  constructionType?: InputMaybe<CatConstructionTypeOrderByWithRelationInput>;
+  constructionTypeCode?: InputMaybe<SortOrderInput>;
+  constructionTypeId?: InputMaybe<SortOrderInput>;
   contractors?: InputMaybe<BidNotificationContractorOrderByRelationAggregateInput>;
   createdAt?: InputMaybe<SortOrderInput>;
   createdBy?: InputMaybe<SortOrderInput>;
   decisionAgency?: InputMaybe<SortOrderInput>;
+  decisionAgencyEn?: InputMaybe<SortOrderInput>;
   decisionDate?: InputMaybe<SortOrderInput>;
   decisionFileId?: InputMaybe<SortOrderInput>;
+  decisionFileIdEn?: InputMaybe<SortOrderInput>;
   decisionFileName?: InputMaybe<SortOrderInput>;
+  decisionFileNameEn?: InputMaybe<SortOrderInput>;
   decisionNo?: InputMaybe<SortOrderInput>;
+  decisionNoEn?: InputMaybe<SortOrderInput>;
   deletedAt?: InputMaybe<SortOrderInput>;
   guaranteeForm?: InputMaybe<SortOrderInput>;
   guaranteeValue?: InputMaybe<SortOrderInput>;
   id?: InputMaybe<SortOrder>;
-  investField?: InputMaybe<SortOrderInput>;
+  investField?: InputMaybe<CatBidFieldOrderByWithRelationInput>;
+  investFieldCode?: InputMaybe<SortOrderInput>;
+  investFieldId?: InputMaybe<SortOrderInput>;
+  investor?: InputMaybe<OrganizationOrderByWithRelationInput>;
+  investorCode?: InputMaybe<SortOrderInput>;
+  investorId?: InputMaybe<SortOrderInput>;
+  investorName?: InputMaybe<SortOrderInput>;
   isInviteInterest?: InputMaybe<SortOrder>;
+  isLatest?: InputMaybe<SortOrder>;
   isPreNotification?: InputMaybe<SortOrder>;
   issueLocation?: InputMaybe<SortOrderInput>;
   openDate?: InputMaybe<SortOrderInput>;
   openLocation?: InputMaybe<SortOrderInput>;
+  otherFileId?: InputMaybe<SortOrderInput>;
+  otherFileIdEn?: InputMaybe<SortOrderInput>;
+  otherFileName?: InputMaybe<SortOrderInput>;
+  otherFileNameEn?: InputMaybe<SortOrderInput>;
   planCode?: InputMaybe<SortOrderInput>;
   planId?: InputMaybe<SortOrderInput>;
   planName?: InputMaybe<SortOrderInput>;
@@ -1860,6 +3366,7 @@ export type BidNotificationOrderByWithRelationInput = {
   statusCode?: InputMaybe<SortOrderInput>;
   statusId?: InputMaybe<SortOrderInput>;
   submitFee?: InputMaybe<SortOrderInput>;
+  totalContractor?: InputMaybe<SortOrderInput>;
   updatedAt?: InputMaybe<SortOrderInput>;
   updatedBy?: InputMaybe<SortOrderInput>;
   validityPeriod?: InputMaybe<SortOrderInput>;
@@ -1870,6 +3377,7 @@ export type BidNotificationOrderByWithRelationInput = {
 export type BidNotificationResult = {
   __typename?: 'BidNotificationResult';
   _count: BidNotificationResultCount;
+  bidLotResults?: Maybe<Array<BidLotResult>>;
   bidNotification?: Maybe<BidNotification>;
   bidNotificationCode?: Maybe<Scalars['String']['output']>;
   bidNotificationContractors?: Maybe<Array<BidNotificationContractor>>;
@@ -1883,6 +3391,7 @@ export type BidNotificationResult = {
   decisionNo?: Maybe<Scalars['String']['output']>;
   deletedAt?: Maybe<Scalars['DateTime']['output']>;
   id: Scalars['String']['output'];
+  isLatest: Scalars['Boolean']['output'];
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   statusCode?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -1899,10 +3408,12 @@ export type BidNotificationResultConnection = {
 
 export type BidNotificationResultCount = {
   __typename?: 'BidNotificationResultCount';
+  bidLotResults: Scalars['Int']['output'];
   bidNotificationContractors: Scalars['Int']['output'];
 };
 
 export type BidNotificationResultCreateInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidNotificationResultInput>;
   bidNotification?: InputMaybe<BidNotificationCreateNestedOneWithoutResultInput>;
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
   bidNotificationContractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationResultInput>;
@@ -1915,6 +3426,7 @@ export type BidNotificationResultCreateInput = {
   decisionNo?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -1933,6 +3445,7 @@ export type BidNotificationResultCreateManyBidNotificationInput = {
   decisionNo?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -1952,10 +3465,21 @@ export type BidNotificationResultCreateNestedManyWithoutBidNotificationInput = {
   createMany?: InputMaybe<BidNotificationResultCreateManyBidNotificationInputEnvelope>;
 };
 
+export type BidNotificationResultCreateNestedOneWithoutBidLotResultsInput = {
+  connect?: InputMaybe<BidNotificationResultWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidNotificationResultCreateOrConnectWithoutBidLotResultsInput>;
+  create?: InputMaybe<BidNotificationResultCreateWithoutBidLotResultsInput>;
+};
+
 export type BidNotificationResultCreateNestedOneWithoutBidNotificationContractorsInput = {
   connect?: InputMaybe<BidNotificationResultWhereUniqueInput>;
   connectOrCreate?: InputMaybe<BidNotificationResultCreateOrConnectWithoutBidNotificationContractorsInput>;
   create?: InputMaybe<BidNotificationResultCreateWithoutBidNotificationContractorsInput>;
+};
+
+export type BidNotificationResultCreateOrConnectWithoutBidLotResultsInput = {
+  create: BidNotificationResultCreateWithoutBidLotResultsInput;
+  where: BidNotificationResultWhereUniqueInput;
 };
 
 export type BidNotificationResultCreateOrConnectWithoutBidNotificationContractorsInput = {
@@ -1968,26 +3492,8 @@ export type BidNotificationResultCreateOrConnectWithoutBidNotificationInput = {
   where: BidNotificationResultWhereUniqueInput;
 };
 
-export type BidNotificationResultCreateWithoutBidNotificationContractorsInput = {
+export type BidNotificationResultCreateWithoutBidLotResultsInput = {
   bidNotification?: InputMaybe<BidNotificationCreateNestedOneWithoutResultInput>;
-  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  createdBy?: InputMaybe<Scalars['String']['input']>;
-  decisionAgency?: InputMaybe<Scalars['String']['input']>;
-  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
-  decisionFileId?: InputMaybe<Scalars['String']['input']>;
-  decisionFileName?: InputMaybe<Scalars['String']['input']>;
-  decisionNo?: InputMaybe<Scalars['String']['input']>;
-  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  id?: InputMaybe<Scalars['String']['input']>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  statusCode?: InputMaybe<Scalars['String']['input']>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  updatedBy?: InputMaybe<Scalars['String']['input']>;
-  version?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type BidNotificationResultCreateWithoutBidNotificationInput = {
   bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
   bidNotificationContractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationResultInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -1999,6 +3505,49 @@ export type BidNotificationResultCreateWithoutBidNotificationInput = {
   decisionNo?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationResultCreateWithoutBidNotificationContractorsInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidNotificationResultInput>;
+  bidNotification?: InputMaybe<BidNotificationCreateNestedOneWithoutResultInput>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BidNotificationResultCreateWithoutBidNotificationInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidNotificationResultInput>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorCreateNestedManyWithoutBidNotificationResultInput>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   statusCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -2167,6 +3716,7 @@ export type BidNotificationResultOrderByRelationAggregateInput = {
 };
 
 export type BidNotificationResultOrderByWithRelationInput = {
+  bidLotResults?: InputMaybe<BidLotResultOrderByRelationAggregateInput>;
   bidNotification?: InputMaybe<BidNotificationOrderByWithRelationInput>;
   bidNotificationCode?: InputMaybe<SortOrderInput>;
   bidNotificationContractors?: InputMaybe<BidNotificationContractorOrderByRelationAggregateInput>;
@@ -2180,6 +3730,7 @@ export type BidNotificationResultOrderByWithRelationInput = {
   decisionNo?: InputMaybe<SortOrderInput>;
   deletedAt?: InputMaybe<SortOrderInput>;
   id?: InputMaybe<SortOrder>;
+  isLatest?: InputMaybe<SortOrder>;
   publishedAt?: InputMaybe<SortOrderInput>;
   statusCode?: InputMaybe<SortOrderInput>;
   updatedAt?: InputMaybe<SortOrderInput>;
@@ -2199,6 +3750,7 @@ export enum BidNotificationResultScalarFieldEnum {
   DecisionNo = 'decisionNo',
   DeletedAt = 'deletedAt',
   Id = 'id',
+  IsLatest = 'isLatest',
   PublishedAt = 'publishedAt',
   StatusCode = 'statusCode',
   UpdatedAt = 'updatedAt',
@@ -2221,6 +3773,7 @@ export type BidNotificationResultScalarWhereInput = {
   decisionNo?: InputMaybe<StringNullableFilter>;
   deletedAt?: InputMaybe<DateTimeNullableFilter>;
   id?: InputMaybe<StringFilter>;
+  isLatest?: InputMaybe<BoolFilter>;
   publishedAt?: InputMaybe<DateTimeNullableFilter>;
   statusCode?: InputMaybe<StringNullableFilter>;
   updatedAt?: InputMaybe<DateTimeNullableFilter>;
@@ -2229,6 +3782,7 @@ export type BidNotificationResultScalarWhereInput = {
 };
 
 export type BidNotificationResultUpdateInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidNotificationResultNestedInput>;
   bidNotification?: InputMaybe<BidNotificationUpdateOneWithoutResultNestedInput>;
   bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidNotificationContractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationResultNestedInput>;
@@ -2241,6 +3795,7 @@ export type BidNotificationResultUpdateInput = {
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
@@ -2259,6 +3814,7 @@ export type BidNotificationResultUpdateManyMutationInput = {
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
@@ -2285,6 +3841,16 @@ export type BidNotificationResultUpdateManyWithoutBidNotificationNestedInput = {
   upsert?: InputMaybe<Array<BidNotificationResultUpsertWithWhereUniqueWithoutBidNotificationInput>>;
 };
 
+export type BidNotificationResultUpdateOneWithoutBidLotResultsNestedInput = {
+  connect?: InputMaybe<BidNotificationResultWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidNotificationResultCreateOrConnectWithoutBidLotResultsInput>;
+  create?: InputMaybe<BidNotificationResultCreateWithoutBidLotResultsInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<BidNotificationResultUpdateWithoutBidLotResultsInput>;
+  upsert?: InputMaybe<BidNotificationResultUpsertWithoutBidLotResultsInput>;
+};
+
 export type BidNotificationResultUpdateOneWithoutBidNotificationContractorsNestedInput = {
   connect?: InputMaybe<BidNotificationResultWhereUniqueInput>;
   connectOrCreate?: InputMaybe<BidNotificationResultCreateOrConnectWithoutBidNotificationContractorsInput>;
@@ -2300,26 +3866,8 @@ export type BidNotificationResultUpdateWithWhereUniqueWithoutBidNotificationInpu
   where: BidNotificationResultWhereUniqueInput;
 };
 
-export type BidNotificationResultUpdateWithoutBidNotificationContractorsInput = {
+export type BidNotificationResultUpdateWithoutBidLotResultsInput = {
   bidNotification?: InputMaybe<BidNotificationUpdateOneWithoutResultNestedInput>;
-  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
-  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
-  decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
-  id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
-  statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
-  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  version?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-};
-
-export type BidNotificationResultUpdateWithoutBidNotificationInput = {
   bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidNotificationContractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationResultNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
@@ -2331,6 +3879,49 @@ export type BidNotificationResultUpdateWithoutBidNotificationInput = {
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  version?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidNotificationResultUpdateWithoutBidNotificationContractorsInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidNotificationResultNestedInput>;
+  bidNotification?: InputMaybe<BidNotificationUpdateOneWithoutResultNestedInput>;
+  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  version?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidNotificationResultUpdateWithoutBidNotificationInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidNotificationResultNestedInput>;
+  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationContractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationResultNestedInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
@@ -2344,6 +3935,11 @@ export type BidNotificationResultUpsertWithWhereUniqueWithoutBidNotificationInpu
   where: BidNotificationResultWhereUniqueInput;
 };
 
+export type BidNotificationResultUpsertWithoutBidLotResultsInput = {
+  create: BidNotificationResultCreateWithoutBidLotResultsInput;
+  update: BidNotificationResultUpdateWithoutBidLotResultsInput;
+};
+
 export type BidNotificationResultUpsertWithoutBidNotificationContractorsInput = {
   create: BidNotificationResultCreateWithoutBidNotificationContractorsInput;
   update: BidNotificationResultUpdateWithoutBidNotificationContractorsInput;
@@ -2353,6 +3949,7 @@ export type BidNotificationResultWhereInput = {
   AND?: InputMaybe<Array<BidNotificationResultWhereInput>>;
   NOT?: InputMaybe<Array<BidNotificationResultWhereInput>>;
   OR?: InputMaybe<Array<BidNotificationResultWhereInput>>;
+  bidLotResults?: InputMaybe<BidLotResultListRelationFilter>;
   bidNotification?: InputMaybe<BidNotificationWhereInput>;
   bidNotificationCode?: InputMaybe<StringNullableFilter>;
   bidNotificationContractors?: InputMaybe<BidNotificationContractorListRelationFilter>;
@@ -2366,6 +3963,7 @@ export type BidNotificationResultWhereInput = {
   decisionNo?: InputMaybe<StringNullableFilter>;
   deletedAt?: InputMaybe<DateTimeNullableFilter>;
   id?: InputMaybe<StringFilter>;
+  isLatest?: InputMaybe<BoolFilter>;
   publishedAt?: InputMaybe<DateTimeNullableFilter>;
   statusCode?: InputMaybe<StringNullableFilter>;
   updatedAt?: InputMaybe<DateTimeNullableFilter>;
@@ -2384,6 +3982,10 @@ export enum BidNotificationScalarFieldEnum {
   BidPackageCode = 'bidPackageCode',
   BidPackageId = 'bidPackageId',
   BidPackageName = 'bidPackageName',
+  BriefFileId = 'briefFileId',
+  BriefFileIdEn = 'briefFileIdEn',
+  BriefFileName = 'briefFileName',
+  BriefFileNameEn = 'briefFileNameEn',
   CancelByCode = 'cancelByCode',
   CancelDate = 'cancelDate',
   CancelDecisionAgency = 'cancelDecisionAgency',
@@ -2392,28 +3994,41 @@ export enum BidNotificationScalarFieldEnum {
   CancelDecisionFileName = 'cancelDecisionFileName',
   CancelDecisionNo = 'cancelDecisionNo',
   CancelReason = 'cancelReason',
-  CancelStatusCode = 'cancelStatusCode',
-  CancelStatusId = 'cancelStatusId',
   CancelType = 'cancelType',
   CloseDate = 'closeDate',
   Code = 'code',
+  ConstructionTypeCode = 'constructionTypeCode',
+  ConstructionTypeId = 'constructionTypeId',
   CreatedAt = 'createdAt',
   CreatedBy = 'createdBy',
   DecisionAgency = 'decisionAgency',
+  DecisionAgencyEn = 'decisionAgencyEn',
   DecisionDate = 'decisionDate',
   DecisionFileId = 'decisionFileId',
+  DecisionFileIdEn = 'decisionFileIdEn',
   DecisionFileName = 'decisionFileName',
+  DecisionFileNameEn = 'decisionFileNameEn',
   DecisionNo = 'decisionNo',
+  DecisionNoEn = 'decisionNoEn',
   DeletedAt = 'deletedAt',
   GuaranteeForm = 'guaranteeForm',
   GuaranteeValue = 'guaranteeValue',
   Id = 'id',
-  InvestField = 'investField',
+  InvestFieldCode = 'investFieldCode',
+  InvestFieldId = 'investFieldId',
+  InvestorCode = 'investorCode',
+  InvestorId = 'investorId',
+  InvestorName = 'investorName',
   IsInviteInterest = 'isInviteInterest',
+  IsLatest = 'isLatest',
   IsPreNotification = 'isPreNotification',
   IssueLocation = 'issueLocation',
   OpenDate = 'openDate',
   OpenLocation = 'openLocation',
+  OtherFileId = 'otherFileId',
+  OtherFileIdEn = 'otherFileIdEn',
+  OtherFileName = 'otherFileName',
+  OtherFileNameEn = 'otherFileNameEn',
   PlanCode = 'planCode',
   PlanId = 'planId',
   PlanName = 'planName',
@@ -2428,6 +4043,7 @@ export enum BidNotificationScalarFieldEnum {
   StatusCode = 'statusCode',
   StatusId = 'statusId',
   SubmitFee = 'submitFee',
+  TotalContractor = 'totalContractor',
   UpdatedAt = 'updatedAt',
   UpdatedBy = 'updatedBy',
   ValidityPeriod = 'validityPeriod',
@@ -2445,6 +4061,10 @@ export type BidNotificationScalarWhereInput = {
   bidPackageCode?: InputMaybe<StringNullableFilter>;
   bidPackageId?: InputMaybe<StringNullableFilter>;
   bidPackageName?: InputMaybe<StringNullableFilter>;
+  briefFileId?: InputMaybe<StringNullableFilter>;
+  briefFileIdEn?: InputMaybe<StringNullableFilter>;
+  briefFileName?: InputMaybe<StringNullableFilter>;
+  briefFileNameEn?: InputMaybe<StringNullableFilter>;
   cancelByCode?: InputMaybe<StringNullableFilter>;
   cancelDate?: InputMaybe<DateTimeNullableFilter>;
   cancelDecisionAgency?: InputMaybe<StringNullableFilter>;
@@ -2453,28 +4073,41 @@ export type BidNotificationScalarWhereInput = {
   cancelDecisionFileName?: InputMaybe<StringNullableFilter>;
   cancelDecisionNo?: InputMaybe<DateTimeNullableFilter>;
   cancelReason?: InputMaybe<StringNullableFilter>;
-  cancelStatusCode?: InputMaybe<StringNullableFilter>;
-  cancelStatusId?: InputMaybe<StringNullableFilter>;
   cancelType?: InputMaybe<StringNullableFilter>;
   closeDate?: InputMaybe<DateTimeNullableFilter>;
   code?: InputMaybe<StringNullableFilter>;
+  constructionTypeCode?: InputMaybe<StringNullableFilter>;
+  constructionTypeId?: InputMaybe<StringNullableFilter>;
   createdAt?: InputMaybe<DateTimeNullableFilter>;
   createdBy?: InputMaybe<StringNullableFilter>;
   decisionAgency?: InputMaybe<StringNullableFilter>;
+  decisionAgencyEn?: InputMaybe<StringNullableFilter>;
   decisionDate?: InputMaybe<DateTimeNullableFilter>;
   decisionFileId?: InputMaybe<StringNullableFilter>;
+  decisionFileIdEn?: InputMaybe<StringNullableFilter>;
   decisionFileName?: InputMaybe<StringNullableFilter>;
+  decisionFileNameEn?: InputMaybe<StringNullableFilter>;
   decisionNo?: InputMaybe<StringNullableFilter>;
+  decisionNoEn?: InputMaybe<StringNullableFilter>;
   deletedAt?: InputMaybe<DateTimeNullableFilter>;
   guaranteeForm?: InputMaybe<StringNullableFilter>;
   guaranteeValue?: InputMaybe<BigIntNullableFilter>;
   id?: InputMaybe<StringFilter>;
-  investField?: InputMaybe<StringNullableFilter>;
+  investFieldCode?: InputMaybe<StringNullableFilter>;
+  investFieldId?: InputMaybe<StringNullableFilter>;
+  investorCode?: InputMaybe<StringNullableFilter>;
+  investorId?: InputMaybe<StringNullableFilter>;
+  investorName?: InputMaybe<StringNullableFilter>;
   isInviteInterest?: InputMaybe<BoolFilter>;
+  isLatest?: InputMaybe<BoolFilter>;
   isPreNotification?: InputMaybe<BoolFilter>;
   issueLocation?: InputMaybe<StringNullableFilter>;
   openDate?: InputMaybe<DateTimeNullableFilter>;
   openLocation?: InputMaybe<StringNullableFilter>;
+  otherFileId?: InputMaybe<StringNullableFilter>;
+  otherFileIdEn?: InputMaybe<StringNullableFilter>;
+  otherFileName?: InputMaybe<StringNullableFilter>;
+  otherFileNameEn?: InputMaybe<StringNullableFilter>;
   planCode?: InputMaybe<StringNullableFilter>;
   planId?: InputMaybe<StringNullableFilter>;
   planName?: InputMaybe<StringNullableFilter>;
@@ -2489,6 +4122,7 @@ export type BidNotificationScalarWhereInput = {
   statusCode?: InputMaybe<StringNullableFilter>;
   statusId?: InputMaybe<StringNullableFilter>;
   submitFee?: InputMaybe<BigIntNullableFilter>;
+  totalContractor?: InputMaybe<IntNullableFilter>;
   updatedAt?: InputMaybe<DateTimeNullableFilter>;
   updatedBy?: InputMaybe<StringNullableFilter>;
   validityPeriod?: InputMaybe<IntNullableFilter>;
@@ -2510,6 +4144,10 @@ export type BidNotificationUpdateInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2518,29 +4156,42 @@ export type BidNotificationUpdateInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2554,6 +4205,7 @@ export type BidNotificationUpdateInput = {
   result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -2567,6 +4219,10 @@ export type BidNotificationUpdateManyMutationInput = {
   bidNotificationResultId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidPackageCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidPackageName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2575,28 +4231,38 @@ export type BidNotificationUpdateManyMutationInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2607,6 +4273,7 @@ export type BidNotificationUpdateManyMutationInput = {
   receiveLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -2620,6 +4287,21 @@ export type BidNotificationUpdateManyWithWhereWithoutBidPackageInput = {
 };
 
 export type BidNotificationUpdateManyWithWhereWithoutBidSelectionPlanInput = {
+  data: BidNotificationUpdateManyMutationInput;
+  where: BidNotificationScalarWhereInput;
+};
+
+export type BidNotificationUpdateManyWithWhereWithoutConstructionTypeInput = {
+  data: BidNotificationUpdateManyMutationInput;
+  where: BidNotificationScalarWhereInput;
+};
+
+export type BidNotificationUpdateManyWithWhereWithoutInvestFieldInput = {
+  data: BidNotificationUpdateManyMutationInput;
+  where: BidNotificationScalarWhereInput;
+};
+
+export type BidNotificationUpdateManyWithWhereWithoutInvestorInput = {
   data: BidNotificationUpdateManyMutationInput;
   where: BidNotificationScalarWhereInput;
 };
@@ -2660,6 +4342,48 @@ export type BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput = {
   update?: InputMaybe<Array<BidNotificationUpdateWithWhereUniqueWithoutBidSelectionPlanInput>>;
   updateMany?: InputMaybe<Array<BidNotificationUpdateManyWithWhereWithoutBidSelectionPlanInput>>;
   upsert?: InputMaybe<Array<BidNotificationUpsertWithWhereUniqueWithoutBidSelectionPlanInput>>;
+};
+
+export type BidNotificationUpdateManyWithoutConstructionTypeNestedInput = {
+  connect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationCreateOrConnectWithoutConstructionTypeInput>>;
+  create?: InputMaybe<Array<BidNotificationCreateWithoutConstructionTypeInput>>;
+  createMany?: InputMaybe<BidNotificationCreateManyConstructionTypeInputEnvelope>;
+  delete?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<BidNotificationScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  set?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  update?: InputMaybe<Array<BidNotificationUpdateWithWhereUniqueWithoutConstructionTypeInput>>;
+  updateMany?: InputMaybe<Array<BidNotificationUpdateManyWithWhereWithoutConstructionTypeInput>>;
+  upsert?: InputMaybe<Array<BidNotificationUpsertWithWhereUniqueWithoutConstructionTypeInput>>;
+};
+
+export type BidNotificationUpdateManyWithoutInvestFieldNestedInput = {
+  connect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationCreateOrConnectWithoutInvestFieldInput>>;
+  create?: InputMaybe<Array<BidNotificationCreateWithoutInvestFieldInput>>;
+  createMany?: InputMaybe<BidNotificationCreateManyInvestFieldInputEnvelope>;
+  delete?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<BidNotificationScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  set?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  update?: InputMaybe<Array<BidNotificationUpdateWithWhereUniqueWithoutInvestFieldInput>>;
+  updateMany?: InputMaybe<Array<BidNotificationUpdateManyWithWhereWithoutInvestFieldInput>>;
+  upsert?: InputMaybe<Array<BidNotificationUpsertWithWhereUniqueWithoutInvestFieldInput>>;
+};
+
+export type BidNotificationUpdateManyWithoutInvestorNestedInput = {
+  connect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<BidNotificationCreateOrConnectWithoutInvestorInput>>;
+  create?: InputMaybe<Array<BidNotificationCreateWithoutInvestorInput>>;
+  createMany?: InputMaybe<BidNotificationCreateManyInvestorInputEnvelope>;
+  delete?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<BidNotificationScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  set?: InputMaybe<Array<BidNotificationWhereUniqueInput>>;
+  update?: InputMaybe<Array<BidNotificationUpdateWithWhereUniqueWithoutInvestorInput>>;
+  updateMany?: InputMaybe<Array<BidNotificationUpdateManyWithWhereWithoutInvestorInput>>;
+  upsert?: InputMaybe<Array<BidNotificationUpsertWithWhereUniqueWithoutInvestorInput>>;
 };
 
 export type BidNotificationUpdateManyWithoutProcessApplyNestedInput = {
@@ -2730,6 +4454,21 @@ export type BidNotificationUpdateWithWhereUniqueWithoutBidSelectionPlanInput = {
   where: BidNotificationWhereUniqueInput;
 };
 
+export type BidNotificationUpdateWithWhereUniqueWithoutConstructionTypeInput = {
+  data: BidNotificationUpdateWithoutConstructionTypeInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
+export type BidNotificationUpdateWithWhereUniqueWithoutInvestFieldInput = {
+  data: BidNotificationUpdateWithoutInvestFieldInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
+export type BidNotificationUpdateWithWhereUniqueWithoutInvestorInput = {
+  data: BidNotificationUpdateWithoutInvestorInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
 export type BidNotificationUpdateWithWhereUniqueWithoutProcessApplyInput = {
   data: BidNotificationUpdateWithoutProcessApplyInput;
   where: BidNotificationWhereUniqueInput;
@@ -2753,6 +4492,10 @@ export type BidNotificationUpdateWithoutBidPackageInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2761,29 +4504,42 @@ export type BidNotificationUpdateWithoutBidPackageInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2797,6 +4553,7 @@ export type BidNotificationUpdateWithoutBidPackageInput = {
   result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -2817,6 +4574,10 @@ export type BidNotificationUpdateWithoutBidPetitionContractorsInput = {
   bidPackageName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2825,29 +4586,42 @@ export type BidNotificationUpdateWithoutBidPetitionContractorsInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2861,6 +4635,7 @@ export type BidNotificationUpdateWithoutBidPetitionContractorsInput = {
   result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -2881,6 +4656,10 @@ export type BidNotificationUpdateWithoutBidSelectionPlanInput = {
   bidPackageName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2889,29 +4668,42 @@ export type BidNotificationUpdateWithoutBidSelectionPlanInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2925,6 +4717,89 @@ export type BidNotificationUpdateWithoutBidSelectionPlanInput = {
   result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  validityPeriodUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  version?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidNotificationUpdateWithoutConstructionTypeInput = {
+  bidNotificationChapters?: InputMaybe<BidNotificationChapterUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationClarifies?: InputMaybe<BidNotificationClarifyUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationResultGoodsPrices?: InputMaybe<BidNotificationResultGoodsPriceUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationResultId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationStatus?: InputMaybe<CatBidNotificationStatusUpdateOneWithoutBidNotificationsNestedInput>;
+  bidPackage?: InputMaybe<BidPackageUpdateOneWithoutBidNotificationsNestedInput>;
+  bidPackageCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPackageName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
+  bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelDecisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  processApply?: InputMaybe<CatProcessApplyUpdateOneWithoutBidNotificationsNestedInput>;
+  processApplyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntity?: InputMaybe<OrganizationUpdateOneWithoutProcuringEntityNestedInput>;
+  procuringEntityCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntityName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  receiveLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
+  statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -2946,6 +4821,10 @@ export type BidNotificationUpdateWithoutContractorsInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2954,28 +4833,41 @@ export type BidNotificationUpdateWithoutContractorsInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -2989,6 +4881,171 @@ export type BidNotificationUpdateWithoutContractorsInput = {
   result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  validityPeriodUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  version?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidNotificationUpdateWithoutInvestFieldInput = {
+  bidNotificationChapters?: InputMaybe<BidNotificationChapterUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationClarifies?: InputMaybe<BidNotificationClarifyUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationResultGoodsPrices?: InputMaybe<BidNotificationResultGoodsPriceUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationResultId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationStatus?: InputMaybe<CatBidNotificationStatusUpdateOneWithoutBidNotificationsNestedInput>;
+  bidPackage?: InputMaybe<BidPackageUpdateOneWithoutBidNotificationsNestedInput>;
+  bidPackageCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPackageName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
+  bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelDecisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  processApply?: InputMaybe<CatProcessApplyUpdateOneWithoutBidNotificationsNestedInput>;
+  processApplyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntity?: InputMaybe<OrganizationUpdateOneWithoutProcuringEntityNestedInput>;
+  procuringEntityCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntityName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  receiveLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
+  statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  validityPeriodUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  version?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type BidNotificationUpdateWithoutInvestorInput = {
+  bidNotificationChapters?: InputMaybe<BidNotificationChapterUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationClarifies?: InputMaybe<BidNotificationClarifyUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationResultGoodsPrices?: InputMaybe<BidNotificationResultGoodsPriceUpdateManyWithoutBidNotificationNestedInput>;
+  bidNotificationResultId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationStatus?: InputMaybe<CatBidNotificationStatusUpdateOneWithoutBidNotificationsNestedInput>;
+  bidPackage?: InputMaybe<BidPackageUpdateOneWithoutBidNotificationsNestedInput>;
+  bidPackageCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPackageName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
+  bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
+  bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelDecisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  processApply?: InputMaybe<CatProcessApplyUpdateOneWithoutBidNotificationsNestedInput>;
+  processApplyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntity?: InputMaybe<OrganizationUpdateOneWithoutProcuringEntityNestedInput>;
+  procuringEntityCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntityName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  receiveLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
+  statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -3010,6 +5067,10 @@ export type BidNotificationUpdateWithoutProcessApplyInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -3018,29 +5079,42 @@ export type BidNotificationUpdateWithoutProcessApplyInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -3053,6 +5127,7 @@ export type BidNotificationUpdateWithoutProcessApplyInput = {
   result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -3074,6 +5149,10 @@ export type BidNotificationUpdateWithoutProcuringEntityInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -3082,29 +5161,42 @@ export type BidNotificationUpdateWithoutProcuringEntityInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -3117,6 +5209,7 @@ export type BidNotificationUpdateWithoutProcuringEntityInput = {
   result?: InputMaybe<BidNotificationResultUpdateManyWithoutBidNotificationNestedInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -3138,6 +5231,10 @@ export type BidNotificationUpdateWithoutResultInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorUpdateManyWithoutBidNotificationNestedInput>;
   bidPreConferences?: InputMaybe<BidPreConferenceUpdateManyWithoutBidNotificationNestedInput>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput>;
+  briefFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  briefFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelDecisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -3146,29 +5243,42 @@ export type BidNotificationUpdateWithoutResultInput = {
   cancelDecisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelDecisionNo?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   cancelReason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
-  cancelStatusId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   cancelType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   closeDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  constructionType?: InputMaybe<CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput>;
+  constructionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractors?: InputMaybe<BidNotificationContractorUpdateManyWithoutBidNotificationNestedInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgencyEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNoEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   guaranteeForm?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guaranteeValue?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
-  investField?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investField?: InputMaybe<CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput>;
+  investFieldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   isInviteInterest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isPreNotification?: InputMaybe<BoolFieldUpdateOperationsInput>;
   issueLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   openDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   openLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileIdEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  otherFileNameEn?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   planVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -3181,6 +5291,7 @@ export type BidNotificationUpdateWithoutResultInput = {
   receiveLocation?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   submitFee?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  totalContractor?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   validityPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
@@ -3197,6 +5308,24 @@ export type BidNotificationUpsertWithWhereUniqueWithoutBidPackageInput = {
 export type BidNotificationUpsertWithWhereUniqueWithoutBidSelectionPlanInput = {
   create: BidNotificationCreateWithoutBidSelectionPlanInput;
   update: BidNotificationUpdateWithoutBidSelectionPlanInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
+export type BidNotificationUpsertWithWhereUniqueWithoutConstructionTypeInput = {
+  create: BidNotificationCreateWithoutConstructionTypeInput;
+  update: BidNotificationUpdateWithoutConstructionTypeInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
+export type BidNotificationUpsertWithWhereUniqueWithoutInvestFieldInput = {
+  create: BidNotificationCreateWithoutInvestFieldInput;
+  update: BidNotificationUpdateWithoutInvestFieldInput;
+  where: BidNotificationWhereUniqueInput;
+};
+
+export type BidNotificationUpsertWithWhereUniqueWithoutInvestorInput = {
+  create: BidNotificationCreateWithoutInvestorInput;
+  update: BidNotificationUpdateWithoutInvestorInput;
   where: BidNotificationWhereUniqueInput;
 };
 
@@ -3245,6 +5374,10 @@ export type BidNotificationWhereInput = {
   bidPetitionContractors?: InputMaybe<BidPetitionContractorListRelationFilter>;
   bidPreConferences?: InputMaybe<BidPreConferenceListRelationFilter>;
   bidSelectionPlan?: InputMaybe<BidSelectionPlanWhereInput>;
+  briefFileId?: InputMaybe<StringNullableFilter>;
+  briefFileIdEn?: InputMaybe<StringNullableFilter>;
+  briefFileName?: InputMaybe<StringNullableFilter>;
+  briefFileNameEn?: InputMaybe<StringNullableFilter>;
   cancelByCode?: InputMaybe<StringNullableFilter>;
   cancelDate?: InputMaybe<DateTimeNullableFilter>;
   cancelDecisionAgency?: InputMaybe<StringNullableFilter>;
@@ -3253,29 +5386,45 @@ export type BidNotificationWhereInput = {
   cancelDecisionFileName?: InputMaybe<StringNullableFilter>;
   cancelDecisionNo?: InputMaybe<DateTimeNullableFilter>;
   cancelReason?: InputMaybe<StringNullableFilter>;
-  cancelStatusCode?: InputMaybe<StringNullableFilter>;
-  cancelStatusId?: InputMaybe<StringNullableFilter>;
   cancelType?: InputMaybe<StringNullableFilter>;
   closeDate?: InputMaybe<DateTimeNullableFilter>;
   code?: InputMaybe<StringNullableFilter>;
+  constructionType?: InputMaybe<CatConstructionTypeWhereInput>;
+  constructionTypeCode?: InputMaybe<StringNullableFilter>;
+  constructionTypeId?: InputMaybe<StringNullableFilter>;
   contractors?: InputMaybe<BidNotificationContractorListRelationFilter>;
   createdAt?: InputMaybe<DateTimeNullableFilter>;
   createdBy?: InputMaybe<StringNullableFilter>;
   decisionAgency?: InputMaybe<StringNullableFilter>;
+  decisionAgencyEn?: InputMaybe<StringNullableFilter>;
   decisionDate?: InputMaybe<DateTimeNullableFilter>;
   decisionFileId?: InputMaybe<StringNullableFilter>;
+  decisionFileIdEn?: InputMaybe<StringNullableFilter>;
   decisionFileName?: InputMaybe<StringNullableFilter>;
+  decisionFileNameEn?: InputMaybe<StringNullableFilter>;
   decisionNo?: InputMaybe<StringNullableFilter>;
+  decisionNoEn?: InputMaybe<StringNullableFilter>;
   deletedAt?: InputMaybe<DateTimeNullableFilter>;
   guaranteeForm?: InputMaybe<StringNullableFilter>;
   guaranteeValue?: InputMaybe<BigIntNullableFilter>;
   id?: InputMaybe<StringFilter>;
-  investField?: InputMaybe<StringNullableFilter>;
+  investField?: InputMaybe<CatBidFieldWhereInput>;
+  investFieldCode?: InputMaybe<StringNullableFilter>;
+  investFieldId?: InputMaybe<StringNullableFilter>;
+  investor?: InputMaybe<OrganizationWhereInput>;
+  investorCode?: InputMaybe<StringNullableFilter>;
+  investorId?: InputMaybe<StringNullableFilter>;
+  investorName?: InputMaybe<StringNullableFilter>;
   isInviteInterest?: InputMaybe<BoolFilter>;
+  isLatest?: InputMaybe<BoolFilter>;
   isPreNotification?: InputMaybe<BoolFilter>;
   issueLocation?: InputMaybe<StringNullableFilter>;
   openDate?: InputMaybe<DateTimeNullableFilter>;
   openLocation?: InputMaybe<StringNullableFilter>;
+  otherFileId?: InputMaybe<StringNullableFilter>;
+  otherFileIdEn?: InputMaybe<StringNullableFilter>;
+  otherFileName?: InputMaybe<StringNullableFilter>;
+  otherFileNameEn?: InputMaybe<StringNullableFilter>;
   planCode?: InputMaybe<StringNullableFilter>;
   planId?: InputMaybe<StringNullableFilter>;
   planName?: InputMaybe<StringNullableFilter>;
@@ -3293,6 +5442,7 @@ export type BidNotificationWhereInput = {
   statusCode?: InputMaybe<StringNullableFilter>;
   statusId?: InputMaybe<StringNullableFilter>;
   submitFee?: InputMaybe<BigIntNullableFilter>;
+  totalContractor?: InputMaybe<IntNullableFilter>;
   updatedAt?: InputMaybe<DateTimeNullableFilter>;
   updatedBy?: InputMaybe<StringNullableFilter>;
   validityPeriod?: InputMaybe<IntNullableFilter>;
@@ -3301,7 +5451,6 @@ export type BidNotificationWhereInput = {
 };
 
 export type BidNotificationWhereUniqueInput = {
-  code?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -3373,9 +5522,13 @@ export type BidPackage = {
   provinceId?: Maybe<Scalars['String']['output']>;
   reciprocalCapital?: Maybe<Scalars['String']['output']>;
   reciprocalCapitalUnit?: Maybe<Scalars['String']['output']>;
+  shoppingAgency?: Maybe<CatAgency>;
   shoppingAgencyCode?: Maybe<Scalars['String']['output']>;
+  shoppingAgencyId?: Maybe<Scalars['String']['output']>;
   supervisor?: Maybe<Scalars['String']['output']>;
+  underUnit?: Maybe<CatMinistry>;
   underUnitCode?: Maybe<Scalars['String']['output']>;
+  underUnitId?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
   updatedBy?: Maybe<Scalars['String']['output']>;
   ward?: Maybe<CatArea>;
@@ -3454,8 +5607,10 @@ export type BidPackageCreateInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -3519,8 +5674,10 @@ export type BidPackageCreateManyBidFieldInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -3588,8 +5745,10 @@ export type BidPackageCreateManyBidFormInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -3657,8 +5816,10 @@ export type BidPackageCreateManyBidModeInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -3726,8 +5887,10 @@ export type BidPackageCreateManyBidSelectionPlanInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -3795,8 +5958,10 @@ export type BidPackageCreateManyContractTypeInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -3864,8 +6029,10 @@ export type BidPackageCreateManyDistrictInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -3933,8 +6100,10 @@ export type BidPackageCreateManyProcessApplyInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -4002,8 +6171,10 @@ export type BidPackageCreateManyProvinceInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -4072,8 +6243,10 @@ export type BidPackageCreateManyWardInput = {
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgencyId?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
+  underUnitId?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   wardCode?: InputMaybe<Scalars['String']['input']>;
@@ -4271,8 +6444,10 @@ export type BidPackageCreateWithoutBidFieldInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4337,8 +6512,10 @@ export type BidPackageCreateWithoutBidFormInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4403,8 +6580,10 @@ export type BidPackageCreateWithoutBidModeInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4469,8 +6648,10 @@ export type BidPackageCreateWithoutBidNotificationsInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4535,8 +6716,10 @@ export type BidPackageCreateWithoutBidPackageLotsInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4601,8 +6784,10 @@ export type BidPackageCreateWithoutBidSelectionPlanInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4667,8 +6852,10 @@ export type BidPackageCreateWithoutContractTypeInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4733,8 +6920,10 @@ export type BidPackageCreateWithoutDistrictInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4799,8 +6988,10 @@ export type BidPackageCreateWithoutProcessApplyInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4865,8 +7056,10 @@ export type BidPackageCreateWithoutProvinceInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4932,8 +7125,10 @@ export type BidPackageCreateWithoutWardInput = {
   provinceCode?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapital?: InputMaybe<Scalars['String']['input']>;
   reciprocalCapitalUnit?: InputMaybe<Scalars['String']['input']>;
+  shoppingAgency?: InputMaybe<CatAgencyCreateNestedOneWithoutBidPackagesInput>;
   shoppingAgencyCode?: InputMaybe<Scalars['String']['input']>;
   supervisor?: InputMaybe<Scalars['String']['input']>;
+  underUnit?: InputMaybe<CatMinistryCreateNestedOneWithoutBidPackagesInput>;
   underUnitCode?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
@@ -4948,7 +7143,9 @@ export type BidPackageListRelationFilter = {
 
 export type BidPackageLot = {
   __typename?: 'BidPackageLot';
+  _count: BidPackageLotCount;
   action?: Maybe<Scalars['String']['output']>;
+  bidLotResults?: Maybe<Array<BidLotResult>>;
   code?: Maybe<Scalars['String']['output']>;
   contractPeriod?: Maybe<Scalars['Int']['output']>;
   contractPeriodUnit?: Maybe<Scalars['String']['output']>;
@@ -4982,8 +7179,14 @@ export type BidPackageLotConnection = {
   totalCount: Scalars['Int']['output'];
 };
 
+export type BidPackageLotCount = {
+  __typename?: 'BidPackageLotCount';
+  bidLotResults: Scalars['Int']['output'];
+};
+
 export type BidPackageLotCreateInput = {
   action?: InputMaybe<Scalars['String']['input']>;
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidPackgeLotInput>;
   code?: InputMaybe<Scalars['String']['input']>;
   contractPeriod?: InputMaybe<Scalars['Int']['input']>;
   contractPeriodUnit?: InputMaybe<Scalars['String']['input']>;
@@ -5047,13 +7250,52 @@ export type BidPackageLotCreateNestedManyWithoutPackageInput = {
   createMany?: InputMaybe<BidPackageLotCreateManyPackageInputEnvelope>;
 };
 
+export type BidPackageLotCreateNestedOneWithoutBidLotResultsInput = {
+  connect?: InputMaybe<BidPackageLotWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidPackageLotCreateOrConnectWithoutBidLotResultsInput>;
+  create?: InputMaybe<BidPackageLotCreateWithoutBidLotResultsInput>;
+};
+
+export type BidPackageLotCreateOrConnectWithoutBidLotResultsInput = {
+  create: BidPackageLotCreateWithoutBidLotResultsInput;
+  where: BidPackageLotWhereUniqueInput;
+};
+
 export type BidPackageLotCreateOrConnectWithoutPackageInput = {
   create: BidPackageLotCreateWithoutPackageInput;
   where: BidPackageLotWhereUniqueInput;
 };
 
+export type BidPackageLotCreateWithoutBidLotResultsInput = {
+  action?: InputMaybe<Scalars['String']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  contractPeriod?: InputMaybe<Scalars['Int']['input']>;
+  contractPeriodUnit?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  dangBaoChe?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  duongDung?: InputMaybe<Scalars['String']['input']>;
+  estimatePrice?: InputMaybe<Scalars['String']['input']>;
+  groupMedicine?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  medicineCode?: InputMaybe<Scalars['String']['input']>;
+  medicines?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  nongDo?: InputMaybe<Scalars['String']['input']>;
+  package?: InputMaybe<BidPackageCreateNestedOneWithoutBidPackageLotsInput>;
+  packageCode?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  pricePlan?: InputMaybe<Scalars['String']['input']>;
+  quantity?: InputMaybe<Scalars['Int']['input']>;
+  uom?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type BidPackageLotCreateWithoutPackageInput = {
   action?: InputMaybe<Scalars['String']['input']>;
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidPackgeLotInput>;
   code?: InputMaybe<Scalars['String']['input']>;
   contractPeriod?: InputMaybe<Scalars['Int']['input']>;
   contractPeriodUnit?: InputMaybe<Scalars['String']['input']>;
@@ -5090,6 +7332,7 @@ export type BidPackageLotOrderByRelationAggregateInput = {
 
 export type BidPackageLotOrderByWithRelationInput = {
   action?: InputMaybe<SortOrderInput>;
+  bidLotResults?: InputMaybe<BidLotResultOrderByRelationAggregateInput>;
   code?: InputMaybe<SortOrderInput>;
   contractPeriod?: InputMaybe<SortOrderInput>;
   contractPeriodUnit?: InputMaybe<SortOrderInput>;
@@ -5175,6 +7418,7 @@ export type BidPackageLotScalarWhereInput = {
 
 export type BidPackageLotUpdateInput = {
   action?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidPackgeLotNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   contractPeriodUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -5245,13 +7489,51 @@ export type BidPackageLotUpdateManyWithoutPackageNestedInput = {
   upsert?: InputMaybe<Array<BidPackageLotUpsertWithWhereUniqueWithoutPackageInput>>;
 };
 
+export type BidPackageLotUpdateOneWithoutBidLotResultsNestedInput = {
+  connect?: InputMaybe<BidPackageLotWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidPackageLotCreateOrConnectWithoutBidLotResultsInput>;
+  create?: InputMaybe<BidPackageLotCreateWithoutBidLotResultsInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<BidPackageLotUpdateWithoutBidLotResultsInput>;
+  upsert?: InputMaybe<BidPackageLotUpsertWithoutBidLotResultsInput>;
+};
+
 export type BidPackageLotUpdateWithWhereUniqueWithoutPackageInput = {
   data: BidPackageLotUpdateWithoutPackageInput;
   where: BidPackageLotWhereUniqueInput;
 };
 
+export type BidPackageLotUpdateWithoutBidLotResultsInput = {
+  action?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  contractPeriodUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  dangBaoChe?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  duongDung?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  estimatePrice?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  groupMedicine?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  medicineCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  medicines?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  nongDo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  package?: InputMaybe<BidPackageUpdateOneWithoutBidPackageLotsNestedInput>;
+  packageCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  price?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
+  pricePlan?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  quantity?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  uom?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
 export type BidPackageLotUpdateWithoutPackageInput = {
   action?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidPackgeLotNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   contractPeriod?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   contractPeriodUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -5282,11 +7564,17 @@ export type BidPackageLotUpsertWithWhereUniqueWithoutPackageInput = {
   where: BidPackageLotWhereUniqueInput;
 };
 
+export type BidPackageLotUpsertWithoutBidLotResultsInput = {
+  create: BidPackageLotCreateWithoutBidLotResultsInput;
+  update: BidPackageLotUpdateWithoutBidLotResultsInput;
+};
+
 export type BidPackageLotWhereInput = {
   AND?: InputMaybe<Array<BidPackageLotWhereInput>>;
   NOT?: InputMaybe<Array<BidPackageLotWhereInput>>;
   OR?: InputMaybe<Array<BidPackageLotWhereInput>>;
   action?: InputMaybe<StringNullableFilter>;
+  bidLotResults?: InputMaybe<BidLotResultListRelationFilter>;
   code?: InputMaybe<StringNullableFilter>;
   contractPeriod?: InputMaybe<IntNullableFilter>;
   contractPeriodUnit?: InputMaybe<StringNullableFilter>;
@@ -5387,9 +7675,13 @@ export type BidPackageOrderByWithRelationInput = {
   provinceId?: InputMaybe<SortOrderInput>;
   reciprocalCapital?: InputMaybe<SortOrderInput>;
   reciprocalCapitalUnit?: InputMaybe<SortOrderInput>;
+  shoppingAgency?: InputMaybe<CatAgencyOrderByWithRelationInput>;
   shoppingAgencyCode?: InputMaybe<SortOrderInput>;
+  shoppingAgencyId?: InputMaybe<SortOrderInput>;
   supervisor?: InputMaybe<SortOrderInput>;
+  underUnit?: InputMaybe<CatMinistryOrderByWithRelationInput>;
   underUnitCode?: InputMaybe<SortOrderInput>;
+  underUnitId?: InputMaybe<SortOrderInput>;
   updatedAt?: InputMaybe<SortOrderInput>;
   updatedBy?: InputMaybe<SortOrderInput>;
   ward?: InputMaybe<CatAreaOrderByWithRelationInput>;
@@ -5454,8 +7746,10 @@ export enum BidPackageScalarFieldEnum {
   ReciprocalCapital = 'reciprocalCapital',
   ReciprocalCapitalUnit = 'reciprocalCapitalUnit',
   ShoppingAgencyCode = 'shoppingAgencyCode',
+  ShoppingAgencyId = 'shoppingAgencyId',
   Supervisor = 'supervisor',
   UnderUnitCode = 'underUnitCode',
+  UnderUnitId = 'underUnitId',
   UpdatedAt = 'updatedAt',
   UpdatedBy = 'updatedBy',
   WardCode = 'wardCode',
@@ -5522,8 +7816,10 @@ export type BidPackageScalarWhereInput = {
   reciprocalCapital?: InputMaybe<StringNullableFilter>;
   reciprocalCapitalUnit?: InputMaybe<StringNullableFilter>;
   shoppingAgencyCode?: InputMaybe<StringNullableFilter>;
+  shoppingAgencyId?: InputMaybe<StringNullableFilter>;
   supervisor?: InputMaybe<StringNullableFilter>;
   underUnitCode?: InputMaybe<StringNullableFilter>;
+  underUnitId?: InputMaybe<StringNullableFilter>;
   updatedAt?: InputMaybe<DateTimeNullableFilter>;
   updatedBy?: InputMaybe<StringNullableFilter>;
   wardCode?: InputMaybe<StringNullableFilter>;
@@ -5588,8 +7884,10 @@ export type BidPackageUpdateInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -5946,8 +8244,10 @@ export type BidPackageUpdateWithoutBidFieldInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6012,8 +8312,10 @@ export type BidPackageUpdateWithoutBidFormInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6078,8 +8380,10 @@ export type BidPackageUpdateWithoutBidModeInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6144,8 +8448,10 @@ export type BidPackageUpdateWithoutBidNotificationsInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6210,8 +8516,10 @@ export type BidPackageUpdateWithoutBidPackageLotsInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6276,8 +8584,10 @@ export type BidPackageUpdateWithoutBidSelectionPlanInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6342,8 +8652,10 @@ export type BidPackageUpdateWithoutContractTypeInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6408,8 +8720,10 @@ export type BidPackageUpdateWithoutDistrictInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6474,8 +8788,10 @@ export type BidPackageUpdateWithoutProcessApplyInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6540,8 +8856,10 @@ export type BidPackageUpdateWithoutProvinceInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6607,8 +8925,10 @@ export type BidPackageUpdateWithoutWardInput = {
   provinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapital?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   reciprocalCapitalUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  shoppingAgency?: InputMaybe<CatAgencyUpdateOneWithoutBidPackagesNestedInput>;
   shoppingAgencyCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   supervisor?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  underUnit?: InputMaybe<CatMinistryUpdateOneWithoutBidPackagesNestedInput>;
   underUnitCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -6748,9 +9068,13 @@ export type BidPackageWhereInput = {
   provinceId?: InputMaybe<StringNullableFilter>;
   reciprocalCapital?: InputMaybe<StringNullableFilter>;
   reciprocalCapitalUnit?: InputMaybe<StringNullableFilter>;
+  shoppingAgency?: InputMaybe<CatAgencyWhereInput>;
   shoppingAgencyCode?: InputMaybe<StringNullableFilter>;
+  shoppingAgencyId?: InputMaybe<StringNullableFilter>;
   supervisor?: InputMaybe<StringNullableFilter>;
+  underUnit?: InputMaybe<CatMinistryWhereInput>;
   underUnitCode?: InputMaybe<StringNullableFilter>;
+  underUnitId?: InputMaybe<StringNullableFilter>;
   updatedAt?: InputMaybe<DateTimeNullableFilter>;
   updatedBy?: InputMaybe<StringNullableFilter>;
   ward?: InputMaybe<CatAreaWhereInput>;
@@ -6811,6 +9135,61 @@ export type BidPetitionContractor = {
   status?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
   updatedByCode?: Maybe<Scalars['String']['output']>;
+};
+
+export type BidPetitionContractorConnection = {
+  __typename?: 'BidPetitionContractorConnection';
+  nodes?: Maybe<Array<BidPetitionContractor>>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
+export type BidPetitionContractorCreateInput = {
+  bidNotification?: InputMaybe<BidNotificationCreateNestedOneWithoutBidPetitionContractorsInput>;
+  bidNotificationCode?: InputMaybe<Scalars['String']['input']>;
+  bidNotificationVersion?: InputMaybe<Scalars['String']['input']>;
+  cancelFieldId?: InputMaybe<Scalars['String']['input']>;
+  cancelFieldName?: InputMaybe<Scalars['String']['input']>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  contractor?: InputMaybe<OrganizationCreateNestedOneWithoutBidPetitionContractorInput>;
+  contractorCode?: InputMaybe<Scalars['String']['input']>;
+  contractorName?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdByCode?: InputMaybe<Scalars['String']['input']>;
+  draft?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isDecision?: InputMaybe<Scalars['Boolean']['input']>;
+  isInternet?: InputMaybe<Scalars['Boolean']['input']>;
+  packageCode?: InputMaybe<Scalars['String']['input']>;
+  packageId?: InputMaybe<Scalars['String']['input']>;
+  packageLotCode?: InputMaybe<Scalars['String']['input']>;
+  packageLotName?: InputMaybe<Scalars['String']['input']>;
+  packageName?: InputMaybe<Scalars['String']['input']>;
+  personReceiveRequest?: InputMaybe<Scalars['String']['input']>;
+  petitionTypeCode?: InputMaybe<Scalars['String']['input']>;
+  planCode?: InputMaybe<Scalars['String']['input']>;
+  planId?: InputMaybe<Scalars['String']['input']>;
+  prepareUserId?: InputMaybe<Scalars['String']['input']>;
+  prepareUserInfo?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  requestCode?: InputMaybe<Scalars['String']['input']>;
+  requestContent?: InputMaybe<Scalars['String']['input']>;
+  requestDate?: InputMaybe<Scalars['DateTime']['input']>;
+  requestFileId?: InputMaybe<Scalars['String']['input']>;
+  requestFileName?: InputMaybe<Scalars['String']['input']>;
+  requestName?: InputMaybe<Scalars['String']['input']>;
+  requestVersion?: InputMaybe<Scalars['String']['input']>;
+  responseContent?: InputMaybe<Scalars['String']['input']>;
+  responseDate?: InputMaybe<Scalars['DateTime']['input']>;
+  responseFileId?: InputMaybe<Scalars['String']['input']>;
+  responseFileName?: InputMaybe<Scalars['String']['input']>;
+  resultPublicDate?: InputMaybe<Scalars['DateTime']['input']>;
+  senderUserId?: InputMaybe<Scalars['String']['input']>;
+  senderUserInfo?: InputMaybe<Scalars['String']['input']>;
+  signContent?: InputMaybe<Scalars['String']['input']>;
+  status?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedByCode?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type BidPetitionContractorCreateManyBidNotificationInput = {
@@ -7045,6 +9424,104 @@ export type BidPetitionContractorOrderByRelationAggregateInput = {
   _count?: InputMaybe<SortOrder>;
 };
 
+export type BidPetitionContractorOrderByWithRelationInput = {
+  bidNotification?: InputMaybe<BidNotificationOrderByWithRelationInput>;
+  bidNotificationCode?: InputMaybe<SortOrderInput>;
+  bidNotificationId?: InputMaybe<SortOrderInput>;
+  bidNotificationVersion?: InputMaybe<SortOrderInput>;
+  cancelFieldId?: InputMaybe<SortOrderInput>;
+  cancelFieldName?: InputMaybe<SortOrderInput>;
+  content?: InputMaybe<SortOrderInput>;
+  contractor?: InputMaybe<OrganizationOrderByWithRelationInput>;
+  contractorCode?: InputMaybe<SortOrderInput>;
+  contractorId?: InputMaybe<SortOrderInput>;
+  contractorName?: InputMaybe<SortOrderInput>;
+  createdAt?: InputMaybe<SortOrderInput>;
+  createdByCode?: InputMaybe<SortOrderInput>;
+  draft?: InputMaybe<SortOrderInput>;
+  id?: InputMaybe<SortOrder>;
+  isDecision?: InputMaybe<SortOrderInput>;
+  isInternet?: InputMaybe<SortOrderInput>;
+  packageCode?: InputMaybe<SortOrderInput>;
+  packageId?: InputMaybe<SortOrderInput>;
+  packageLotCode?: InputMaybe<SortOrderInput>;
+  packageLotName?: InputMaybe<SortOrderInput>;
+  packageName?: InputMaybe<SortOrderInput>;
+  personReceiveRequest?: InputMaybe<SortOrderInput>;
+  petitionTypeCode?: InputMaybe<SortOrderInput>;
+  planCode?: InputMaybe<SortOrderInput>;
+  planId?: InputMaybe<SortOrderInput>;
+  prepareUserId?: InputMaybe<SortOrderInput>;
+  prepareUserInfo?: InputMaybe<SortOrderInput>;
+  reason?: InputMaybe<SortOrderInput>;
+  requestCode?: InputMaybe<SortOrderInput>;
+  requestContent?: InputMaybe<SortOrderInput>;
+  requestDate?: InputMaybe<SortOrderInput>;
+  requestFileId?: InputMaybe<SortOrderInput>;
+  requestFileName?: InputMaybe<SortOrderInput>;
+  requestName?: InputMaybe<SortOrderInput>;
+  requestVersion?: InputMaybe<SortOrderInput>;
+  responseContent?: InputMaybe<SortOrderInput>;
+  responseDate?: InputMaybe<SortOrderInput>;
+  responseFileId?: InputMaybe<SortOrderInput>;
+  responseFileName?: InputMaybe<SortOrderInput>;
+  resultPublicDate?: InputMaybe<SortOrderInput>;
+  senderUserId?: InputMaybe<SortOrderInput>;
+  senderUserInfo?: InputMaybe<SortOrderInput>;
+  signContent?: InputMaybe<SortOrderInput>;
+  status?: InputMaybe<SortOrderInput>;
+  updatedAt?: InputMaybe<SortOrderInput>;
+  updatedByCode?: InputMaybe<SortOrderInput>;
+};
+
+export enum BidPetitionContractorScalarFieldEnum {
+  BidNotificationCode = 'bidNotificationCode',
+  BidNotificationId = 'bidNotificationId',
+  BidNotificationVersion = 'bidNotificationVersion',
+  CancelFieldId = 'cancelFieldId',
+  CancelFieldName = 'cancelFieldName',
+  Content = 'content',
+  ContractorCode = 'contractorCode',
+  ContractorId = 'contractorId',
+  ContractorName = 'contractorName',
+  CreatedAt = 'createdAt',
+  CreatedByCode = 'createdByCode',
+  Draft = 'draft',
+  Id = 'id',
+  IsDecision = 'isDecision',
+  IsInternet = 'isInternet',
+  PackageCode = 'packageCode',
+  PackageId = 'packageId',
+  PackageLotCode = 'packageLotCode',
+  PackageLotName = 'packageLotName',
+  PackageName = 'packageName',
+  PersonReceiveRequest = 'personReceiveRequest',
+  PetitionTypeCode = 'petitionTypeCode',
+  PlanCode = 'planCode',
+  PlanId = 'planId',
+  PrepareUserId = 'prepareUserId',
+  PrepareUserInfo = 'prepareUserInfo',
+  Reason = 'reason',
+  RequestCode = 'requestCode',
+  RequestContent = 'requestContent',
+  RequestDate = 'requestDate',
+  RequestFileId = 'requestFileId',
+  RequestFileName = 'requestFileName',
+  RequestName = 'requestName',
+  RequestVersion = 'requestVersion',
+  ResponseContent = 'responseContent',
+  ResponseDate = 'responseDate',
+  ResponseFileId = 'responseFileId',
+  ResponseFileName = 'responseFileName',
+  ResultPublicDate = 'resultPublicDate',
+  SenderUserId = 'senderUserId',
+  SenderUserInfo = 'senderUserInfo',
+  SignContent = 'signContent',
+  Status = 'status',
+  UpdatedAt = 'updatedAt',
+  UpdatedByCode = 'updatedByCode'
+}
+
 export type BidPetitionContractorScalarWhereInput = {
   AND?: InputMaybe<Array<BidPetitionContractorScalarWhereInput>>;
   NOT?: InputMaybe<Array<BidPetitionContractorScalarWhereInput>>;
@@ -7094,6 +9571,54 @@ export type BidPetitionContractorScalarWhereInput = {
   status?: InputMaybe<StringNullableFilter>;
   updatedAt?: InputMaybe<DateTimeNullableFilter>;
   updatedByCode?: InputMaybe<StringNullableFilter>;
+};
+
+export type BidPetitionContractorUpdateInput = {
+  bidNotification?: InputMaybe<BidNotificationUpdateOneWithoutBidPetitionContractorsNestedInput>;
+  bidNotificationCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  bidNotificationVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelFieldId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  cancelFieldName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  content?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractor?: InputMaybe<OrganizationUpdateOneWithoutBidPetitionContractorNestedInput>;
+  contractorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  contractorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  draft?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  isDecision?: InputMaybe<NullableBoolFieldUpdateOperationsInput>;
+  isInternet?: InputMaybe<NullableBoolFieldUpdateOperationsInput>;
+  packageCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  packageId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  packageLotCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  packageLotName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  packageName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  personReceiveRequest?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  petitionTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  planId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  prepareUserId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  prepareUserInfo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  requestCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  requestContent?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  requestDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  requestFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  requestFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  requestName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  requestVersion?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  responseContent?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  responseDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  responseFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  responseFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  resultPublicDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  senderUserId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  senderUserInfo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  signContent?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  status?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedByCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
 };
 
 export type BidPetitionContractorUpdateManyMutationInput = {
@@ -7527,6 +10052,7 @@ export type BidPreConferenceWhereUniqueInput = {
 export type BidSelectionPlan = {
   __typename?: 'BidSelectionPlan';
   _count: BidSelectionPlanCount;
+  bidLotResults?: Maybe<Array<BidLotResult>>;
   bidNotifications?: Maybe<Array<BidNotification>>;
   bidPackages?: Maybe<Array<BidPackage>>;
   code?: Maybe<Scalars['String']['output']>;
@@ -7576,11 +10102,13 @@ export type BidSelectionPlanConnection = {
 
 export type BidSelectionPlanCount = {
   __typename?: 'BidSelectionPlanCount';
+  bidLotResults: Scalars['Int']['output'];
   bidNotifications: Scalars['Int']['output'];
   bidPackages: Scalars['Int']['output'];
 };
 
 export type BidSelectionPlanCreateInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
@@ -7841,6 +10369,12 @@ export type BidSelectionPlanCreateNestedManyWithoutTypeInput = {
   createMany?: InputMaybe<BidSelectionPlanCreateManyTypeInputEnvelope>;
 };
 
+export type BidSelectionPlanCreateNestedOneWithoutBidLotResultsInput = {
+  connect?: InputMaybe<BidSelectionPlanWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidSelectionPlanCreateOrConnectWithoutBidLotResultsInput>;
+  create?: InputMaybe<BidSelectionPlanCreateWithoutBidLotResultsInput>;
+};
+
 export type BidSelectionPlanCreateNestedOneWithoutBidNotificationsInput = {
   connect?: InputMaybe<BidSelectionPlanWhereUniqueInput>;
   connectOrCreate?: InputMaybe<BidSelectionPlanCreateOrConnectWithoutBidNotificationsInput>;
@@ -7851,6 +10385,11 @@ export type BidSelectionPlanCreateNestedOneWithoutBidPackagesInput = {
   connect?: InputMaybe<BidSelectionPlanWhereUniqueInput>;
   connectOrCreate?: InputMaybe<BidSelectionPlanCreateOrConnectWithoutBidPackagesInput>;
   create?: InputMaybe<BidSelectionPlanCreateWithoutBidPackagesInput>;
+};
+
+export type BidSelectionPlanCreateOrConnectWithoutBidLotResultsInput = {
+  create: BidSelectionPlanCreateWithoutBidLotResultsInput;
+  where: BidSelectionPlanWhereUniqueInput;
 };
 
 export type BidSelectionPlanCreateOrConnectWithoutBidNotificationsInput = {
@@ -7888,7 +10427,44 @@ export type BidSelectionPlanCreateOrConnectWithoutTypeInput = {
   where: BidSelectionPlanWhereUniqueInput;
 };
 
+export type BidSelectionPlanCreateWithoutBidLotResultsInput = {
+  bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
+  bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  decisionAgency?: InputMaybe<Scalars['String']['input']>;
+  decisionDate?: InputMaybe<Scalars['DateTime']['input']>;
+  decisionFileId?: InputMaybe<Scalars['String']['input']>;
+  decisionFileName?: InputMaybe<Scalars['String']['input']>;
+  decisionNo?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investor?: InputMaybe<OrganizationCreateNestedOneWithoutInvestorBidSelectionPlansInput>;
+  investorCode?: InputMaybe<Scalars['String']['input']>;
+  investorName?: InputMaybe<Scalars['String']['input']>;
+  isLatest?: InputMaybe<Scalars['Boolean']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  numberOfBidPackage?: InputMaybe<Scalars['Int']['input']>;
+  procuringEntity?: InputMaybe<OrganizationCreateNestedOneWithoutProcuringEntityBidSelectionPlansInput>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityName?: InputMaybe<Scalars['String']['input']>;
+  project?: InputMaybe<ProjectCreateNestedOneWithoutBidSelectionPlansInput>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  status?: InputMaybe<CatBidSelectionPlanStatusCreateNestedOneWithoutBidSelectionPlansInput>;
+  statusCode?: InputMaybe<Scalars['String']['input']>;
+  totalInvestment?: InputMaybe<Scalars['Decimal']['input']>;
+  totalInvestmentEx?: InputMaybe<Scalars['Decimal']['input']>;
+  totalInvestmentUnit?: InputMaybe<Scalars['String']['input']>;
+  type?: InputMaybe<CatBidSelectionPlanTypeCreateNestedOneWithoutBidSelectionPlansInput>;
+  typeCode?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  version?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type BidSelectionPlanCreateWithoutBidNotificationsInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -7924,6 +10500,7 @@ export type BidSelectionPlanCreateWithoutBidNotificationsInput = {
 };
 
 export type BidSelectionPlanCreateWithoutBidPackagesInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -7959,6 +10536,7 @@ export type BidSelectionPlanCreateWithoutBidPackagesInput = {
 };
 
 export type BidSelectionPlanCreateWithoutInvestorInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
@@ -7994,6 +10572,7 @@ export type BidSelectionPlanCreateWithoutInvestorInput = {
 };
 
 export type BidSelectionPlanCreateWithoutProcuringEntityInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
@@ -8029,6 +10608,7 @@ export type BidSelectionPlanCreateWithoutProcuringEntityInput = {
 };
 
 export type BidSelectionPlanCreateWithoutProjectInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
@@ -8064,6 +10644,7 @@ export type BidSelectionPlanCreateWithoutProjectInput = {
 };
 
 export type BidSelectionPlanCreateWithoutStatusInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
@@ -8099,6 +10680,7 @@ export type BidSelectionPlanCreateWithoutStatusInput = {
 };
 
 export type BidSelectionPlanCreateWithoutTypeInput = {
+  bidLotResults?: InputMaybe<BidLotResultCreateNestedManyWithoutBidSelectionPlanInput>;
   bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutBidSelectionPlanInput>;
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidSelectionPlanInput>;
   code?: InputMaybe<Scalars['String']['input']>;
@@ -8144,6 +10726,7 @@ export type BidSelectionPlanOrderByRelationAggregateInput = {
 };
 
 export type BidSelectionPlanOrderByWithRelationInput = {
+  bidLotResults?: InputMaybe<BidLotResultOrderByRelationAggregateInput>;
   bidNotifications?: InputMaybe<BidNotificationOrderByRelationAggregateInput>;
   bidPackages?: InputMaybe<BidPackageOrderByRelationAggregateInput>;
   code?: InputMaybe<SortOrderInput>;
@@ -8256,6 +10839,7 @@ export type BidSelectionPlanScalarWhereInput = {
 };
 
 export type BidSelectionPlanUpdateInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -8415,6 +10999,16 @@ export type BidSelectionPlanUpdateManyWithoutTypeNestedInput = {
   upsert?: InputMaybe<Array<BidSelectionPlanUpsertWithWhereUniqueWithoutTypeInput>>;
 };
 
+export type BidSelectionPlanUpdateOneWithoutBidLotResultsNestedInput = {
+  connect?: InputMaybe<BidSelectionPlanWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<BidSelectionPlanCreateOrConnectWithoutBidLotResultsInput>;
+  create?: InputMaybe<BidSelectionPlanCreateWithoutBidLotResultsInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<BidSelectionPlanUpdateWithoutBidLotResultsInput>;
+  upsert?: InputMaybe<BidSelectionPlanUpsertWithoutBidLotResultsInput>;
+};
+
 export type BidSelectionPlanUpdateOneWithoutBidNotificationsNestedInput = {
   connect?: InputMaybe<BidSelectionPlanWhereUniqueInput>;
   connectOrCreate?: InputMaybe<BidSelectionPlanCreateOrConnectWithoutBidNotificationsInput>;
@@ -8460,7 +11054,44 @@ export type BidSelectionPlanUpdateWithWhereUniqueWithoutTypeInput = {
   where: BidSelectionPlanWhereUniqueInput;
 };
 
+export type BidSelectionPlanUpdateWithoutBidLotResultsInput = {
+  bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
+  bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  createdBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionAgency?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  decisionFileId?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionFileName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  decisionNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investor?: InputMaybe<OrganizationUpdateOneWithoutInvestorBidSelectionPlansNestedInput>;
+  investorCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  investorName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  isLatest?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  numberOfBidPackage?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  procuringEntity?: InputMaybe<OrganizationUpdateOneWithoutProcuringEntityBidSelectionPlansNestedInput>;
+  procuringEntityCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntityName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  project?: InputMaybe<ProjectUpdateOneWithoutBidSelectionPlansNestedInput>;
+  publishedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  status?: InputMaybe<CatBidSelectionPlanStatusUpdateOneWithoutBidSelectionPlansNestedInput>;
+  statusCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  totalInvestment?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  totalInvestmentEx?: InputMaybe<NullableDecimalFieldUpdateOperationsInput>;
+  totalInvestmentUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  type?: InputMaybe<CatBidSelectionPlanTypeUpdateOneWithoutBidSelectionPlansNestedInput>;
+  typeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedBy?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  version?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
 export type BidSelectionPlanUpdateWithoutBidNotificationsInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
@@ -8496,6 +11127,7 @@ export type BidSelectionPlanUpdateWithoutBidNotificationsInput = {
 };
 
 export type BidSelectionPlanUpdateWithoutBidPackagesInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
@@ -8531,6 +11163,7 @@ export type BidSelectionPlanUpdateWithoutBidPackagesInput = {
 };
 
 export type BidSelectionPlanUpdateWithoutInvestorInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -8566,6 +11199,7 @@ export type BidSelectionPlanUpdateWithoutInvestorInput = {
 };
 
 export type BidSelectionPlanUpdateWithoutProcuringEntityInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -8601,6 +11235,7 @@ export type BidSelectionPlanUpdateWithoutProcuringEntityInput = {
 };
 
 export type BidSelectionPlanUpdateWithoutProjectInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -8636,6 +11271,7 @@ export type BidSelectionPlanUpdateWithoutProjectInput = {
 };
 
 export type BidSelectionPlanUpdateWithoutStatusInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -8671,6 +11307,7 @@ export type BidSelectionPlanUpdateWithoutStatusInput = {
 };
 
 export type BidSelectionPlanUpdateWithoutTypeInput = {
+  bidLotResults?: InputMaybe<BidLotResultUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutBidSelectionPlanNestedInput>;
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidSelectionPlanNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -8735,6 +11372,11 @@ export type BidSelectionPlanUpsertWithWhereUniqueWithoutTypeInput = {
   where: BidSelectionPlanWhereUniqueInput;
 };
 
+export type BidSelectionPlanUpsertWithoutBidLotResultsInput = {
+  create: BidSelectionPlanCreateWithoutBidLotResultsInput;
+  update: BidSelectionPlanUpdateWithoutBidLotResultsInput;
+};
+
 export type BidSelectionPlanUpsertWithoutBidNotificationsInput = {
   create: BidSelectionPlanCreateWithoutBidNotificationsInput;
   update: BidSelectionPlanUpdateWithoutBidNotificationsInput;
@@ -8749,6 +11391,7 @@ export type BidSelectionPlanWhereInput = {
   AND?: InputMaybe<Array<BidSelectionPlanWhereInput>>;
   NOT?: InputMaybe<Array<BidSelectionPlanWhereInput>>;
   OR?: InputMaybe<Array<BidSelectionPlanWhereInput>>;
+  bidLotResults?: InputMaybe<BidLotResultListRelationFilter>;
   bidNotifications?: InputMaybe<BidNotificationListRelationFilter>;
   bidPackages?: InputMaybe<BidPackageListRelationFilter>;
   code?: InputMaybe<StringNullableFilter>;
@@ -8915,6 +11558,80 @@ export type BusinessWhereInput = {
 };
 
 export type BusinessWhereUniqueInput = {
+  code?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CatAgency = {
+  __typename?: 'CatAgency';
+  _count: CatAgencyCount;
+  bidPackages?: Maybe<Array<BidPackage>>;
+  code?: Maybe<Scalars['String']['output']>;
+  id: Scalars['String']['output'];
+  name?: Maybe<Scalars['String']['output']>;
+};
+
+export type CatAgencyCount = {
+  __typename?: 'CatAgencyCount';
+  bidPackages: Scalars['Int']['output'];
+};
+
+export type CatAgencyCreateNestedOneWithoutBidPackagesInput = {
+  connect?: InputMaybe<CatAgencyWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatAgencyCreateOrConnectWithoutBidPackagesInput>;
+  create?: InputMaybe<CatAgencyCreateWithoutBidPackagesInput>;
+};
+
+export type CatAgencyCreateOrConnectWithoutBidPackagesInput = {
+  create: CatAgencyCreateWithoutBidPackagesInput;
+  where: CatAgencyWhereUniqueInput;
+};
+
+export type CatAgencyCreateWithoutBidPackagesInput = {
+  code?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CatAgencyOrderByWithRelationInput = {
+  bidPackages?: InputMaybe<BidPackageOrderByRelationAggregateInput>;
+  code?: InputMaybe<SortOrderInput>;
+  id?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrderInput>;
+};
+
+export type CatAgencyUpdateOneWithoutBidPackagesNestedInput = {
+  connect?: InputMaybe<CatAgencyWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatAgencyCreateOrConnectWithoutBidPackagesInput>;
+  create?: InputMaybe<CatAgencyCreateWithoutBidPackagesInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<CatAgencyUpdateWithoutBidPackagesInput>;
+  upsert?: InputMaybe<CatAgencyUpsertWithoutBidPackagesInput>;
+};
+
+export type CatAgencyUpdateWithoutBidPackagesInput = {
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type CatAgencyUpsertWithoutBidPackagesInput = {
+  create: CatAgencyCreateWithoutBidPackagesInput;
+  update: CatAgencyUpdateWithoutBidPackagesInput;
+};
+
+export type CatAgencyWhereInput = {
+  AND?: InputMaybe<Array<CatAgencyWhereInput>>;
+  NOT?: InputMaybe<Array<CatAgencyWhereInput>>;
+  OR?: InputMaybe<Array<CatAgencyWhereInput>>;
+  bidPackages?: InputMaybe<BidPackageListRelationFilter>;
+  code?: InputMaybe<StringNullableFilter>;
+  id?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringNullableFilter>;
+};
+
+export type CatAgencyWhereUniqueInput = {
   code?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
 };
@@ -9855,6 +12572,7 @@ export type CatBidField = {
   code?: Maybe<Scalars['String']['output']>;
   documentTemplates?: Maybe<Array<DocumentTemplate>>;
   id: Scalars['String']['output'];
+  investBidNotifications?: Maybe<Array<BidNotification>>;
   name?: Maybe<Scalars['String']['output']>;
 };
 
@@ -9869,6 +12587,7 @@ export type CatBidFieldCount = {
   __typename?: 'CatBidFieldCount';
   bidPackages: Scalars['Int']['output'];
   documentTemplates: Scalars['Int']['output'];
+  investBidNotifications: Scalars['Int']['output'];
 };
 
 export type CatBidFieldCreateInput = {
@@ -9876,6 +12595,7 @@ export type CatBidFieldCreateInput = {
   code?: InputMaybe<Scalars['String']['input']>;
   documentTemplates?: InputMaybe<DocumentTemplateCreateNestedManyWithoutBidFieldInput>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investBidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestFieldInput>;
   name?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -9891,6 +12611,12 @@ export type CatBidFieldCreateNestedOneWithoutDocumentTemplatesInput = {
   create?: InputMaybe<CatBidFieldCreateWithoutDocumentTemplatesInput>;
 };
 
+export type CatBidFieldCreateNestedOneWithoutInvestBidNotificationsInput = {
+  connect?: InputMaybe<CatBidFieldWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatBidFieldCreateOrConnectWithoutInvestBidNotificationsInput>;
+  create?: InputMaybe<CatBidFieldCreateWithoutInvestBidNotificationsInput>;
+};
+
 export type CatBidFieldCreateOrConnectWithoutBidPackagesInput = {
   create: CatBidFieldCreateWithoutBidPackagesInput;
   where: CatBidFieldWhereUniqueInput;
@@ -9901,16 +12627,31 @@ export type CatBidFieldCreateOrConnectWithoutDocumentTemplatesInput = {
   where: CatBidFieldWhereUniqueInput;
 };
 
+export type CatBidFieldCreateOrConnectWithoutInvestBidNotificationsInput = {
+  create: CatBidFieldCreateWithoutInvestBidNotificationsInput;
+  where: CatBidFieldWhereUniqueInput;
+};
+
 export type CatBidFieldCreateWithoutBidPackagesInput = {
   code?: InputMaybe<Scalars['String']['input']>;
   documentTemplates?: InputMaybe<DocumentTemplateCreateNestedManyWithoutBidFieldInput>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investBidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestFieldInput>;
   name?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CatBidFieldCreateWithoutDocumentTemplatesInput = {
   bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidFieldInput>;
   code?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investBidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestFieldInput>;
+  name?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CatBidFieldCreateWithoutInvestBidNotificationsInput = {
+  bidPackages?: InputMaybe<BidPackageCreateNestedManyWithoutBidFieldInput>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  documentTemplates?: InputMaybe<DocumentTemplateCreateNestedManyWithoutBidFieldInput>;
   id?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
 };
@@ -9920,6 +12661,7 @@ export type CatBidFieldOrderByWithRelationInput = {
   code?: InputMaybe<SortOrderInput>;
   documentTemplates?: InputMaybe<DocumentTemplateOrderByRelationAggregateInput>;
   id?: InputMaybe<SortOrder>;
+  investBidNotifications?: InputMaybe<BidNotificationOrderByRelationAggregateInput>;
   name?: InputMaybe<SortOrderInput>;
 };
 
@@ -9934,6 +12676,7 @@ export type CatBidFieldUpdateInput = {
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   documentTemplates?: InputMaybe<DocumentTemplateUpdateManyWithoutBidFieldNestedInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investBidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutInvestFieldNestedInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
 };
 
@@ -9957,16 +12700,36 @@ export type CatBidFieldUpdateOneWithoutDocumentTemplatesNestedInput = {
   upsert?: InputMaybe<CatBidFieldUpsertWithoutDocumentTemplatesInput>;
 };
 
+export type CatBidFieldUpdateOneWithoutInvestBidNotificationsNestedInput = {
+  connect?: InputMaybe<CatBidFieldWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatBidFieldCreateOrConnectWithoutInvestBidNotificationsInput>;
+  create?: InputMaybe<CatBidFieldCreateWithoutInvestBidNotificationsInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<CatBidFieldUpdateWithoutInvestBidNotificationsInput>;
+  upsert?: InputMaybe<CatBidFieldUpsertWithoutInvestBidNotificationsInput>;
+};
+
 export type CatBidFieldUpdateWithoutBidPackagesInput = {
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   documentTemplates?: InputMaybe<DocumentTemplateUpdateManyWithoutBidFieldNestedInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investBidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutInvestFieldNestedInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
 };
 
 export type CatBidFieldUpdateWithoutDocumentTemplatesInput = {
   bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidFieldNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investBidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutInvestFieldNestedInput>;
+  name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type CatBidFieldUpdateWithoutInvestBidNotificationsInput = {
+  bidPackages?: InputMaybe<BidPackageUpdateManyWithoutBidFieldNestedInput>;
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  documentTemplates?: InputMaybe<DocumentTemplateUpdateManyWithoutBidFieldNestedInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
 };
@@ -9981,6 +12744,11 @@ export type CatBidFieldUpsertWithoutDocumentTemplatesInput = {
   update: CatBidFieldUpdateWithoutDocumentTemplatesInput;
 };
 
+export type CatBidFieldUpsertWithoutInvestBidNotificationsInput = {
+  create: CatBidFieldCreateWithoutInvestBidNotificationsInput;
+  update: CatBidFieldUpdateWithoutInvestBidNotificationsInput;
+};
+
 export type CatBidFieldWhereInput = {
   AND?: InputMaybe<Array<CatBidFieldWhereInput>>;
   NOT?: InputMaybe<Array<CatBidFieldWhereInput>>;
@@ -9989,6 +12757,7 @@ export type CatBidFieldWhereInput = {
   code?: InputMaybe<StringNullableFilter>;
   documentTemplates?: InputMaybe<DocumentTemplateListRelationFilter>;
   id?: InputMaybe<StringFilter>;
+  investBidNotifications?: InputMaybe<BidNotificationListRelationFilter>;
   name?: InputMaybe<StringNullableFilter>;
 };
 
@@ -10647,6 +13416,8 @@ export type CatBusinessTypeWhereUniqueInput = {
 
 export type CatConstructionType = {
   __typename?: 'CatConstructionType';
+  _count: CatConstructionTypeCount;
+  bidNotifications?: Maybe<Array<BidNotification>>;
   code?: Maybe<Scalars['String']['output']>;
   id: Scalars['String']['output'];
   name?: Maybe<Scalars['String']['output']>;
@@ -10659,13 +13430,37 @@ export type CatConstructionTypeConnection = {
   totalCount: Scalars['Int']['output'];
 };
 
+export type CatConstructionTypeCount = {
+  __typename?: 'CatConstructionTypeCount';
+  bidNotifications: Scalars['Int']['output'];
+};
+
 export type CatConstructionTypeCreateInput = {
+  bidNotifications?: InputMaybe<BidNotificationCreateNestedManyWithoutConstructionTypeInput>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CatConstructionTypeCreateNestedOneWithoutBidNotificationsInput = {
+  connect?: InputMaybe<CatConstructionTypeWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatConstructionTypeCreateOrConnectWithoutBidNotificationsInput>;
+  create?: InputMaybe<CatConstructionTypeCreateWithoutBidNotificationsInput>;
+};
+
+export type CatConstructionTypeCreateOrConnectWithoutBidNotificationsInput = {
+  create: CatConstructionTypeCreateWithoutBidNotificationsInput;
+  where: CatConstructionTypeWhereUniqueInput;
+};
+
+export type CatConstructionTypeCreateWithoutBidNotificationsInput = {
   code?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CatConstructionTypeOrderByWithRelationInput = {
+  bidNotifications?: InputMaybe<BidNotificationOrderByRelationAggregateInput>;
   code?: InputMaybe<SortOrderInput>;
   id?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrderInput>;
@@ -10678,15 +13473,38 @@ export enum CatConstructionTypeScalarFieldEnum {
 }
 
 export type CatConstructionTypeUpdateInput = {
+  bidNotifications?: InputMaybe<BidNotificationUpdateManyWithoutConstructionTypeNestedInput>;
   code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type CatConstructionTypeUpdateOneWithoutBidNotificationsNestedInput = {
+  connect?: InputMaybe<CatConstructionTypeWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatConstructionTypeCreateOrConnectWithoutBidNotificationsInput>;
+  create?: InputMaybe<CatConstructionTypeCreateWithoutBidNotificationsInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<CatConstructionTypeUpdateWithoutBidNotificationsInput>;
+  upsert?: InputMaybe<CatConstructionTypeUpsertWithoutBidNotificationsInput>;
+};
+
+export type CatConstructionTypeUpdateWithoutBidNotificationsInput = {
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type CatConstructionTypeUpsertWithoutBidNotificationsInput = {
+  create: CatConstructionTypeCreateWithoutBidNotificationsInput;
+  update: CatConstructionTypeUpdateWithoutBidNotificationsInput;
 };
 
 export type CatConstructionTypeWhereInput = {
   AND?: InputMaybe<Array<CatConstructionTypeWhereInput>>;
   NOT?: InputMaybe<Array<CatConstructionTypeWhereInput>>;
   OR?: InputMaybe<Array<CatConstructionTypeWhereInput>>;
+  bidNotifications?: InputMaybe<BidNotificationListRelationFilter>;
   code?: InputMaybe<StringNullableFilter>;
   id?: InputMaybe<StringFilter>;
   name?: InputMaybe<StringNullableFilter>;
@@ -11047,6 +13865,80 @@ export type CatInvestmentFormWhereInput = {
 };
 
 export type CatInvestmentFormWhereUniqueInput = {
+  code?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CatMinistry = {
+  __typename?: 'CatMinistry';
+  _count: CatMinistryCount;
+  bidPackages?: Maybe<Array<BidPackage>>;
+  code?: Maybe<Scalars['String']['output']>;
+  id: Scalars['String']['output'];
+  name?: Maybe<Scalars['String']['output']>;
+};
+
+export type CatMinistryCount = {
+  __typename?: 'CatMinistryCount';
+  bidPackages: Scalars['Int']['output'];
+};
+
+export type CatMinistryCreateNestedOneWithoutBidPackagesInput = {
+  connect?: InputMaybe<CatMinistryWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatMinistryCreateOrConnectWithoutBidPackagesInput>;
+  create?: InputMaybe<CatMinistryCreateWithoutBidPackagesInput>;
+};
+
+export type CatMinistryCreateOrConnectWithoutBidPackagesInput = {
+  create: CatMinistryCreateWithoutBidPackagesInput;
+  where: CatMinistryWhereUniqueInput;
+};
+
+export type CatMinistryCreateWithoutBidPackagesInput = {
+  code?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CatMinistryOrderByWithRelationInput = {
+  bidPackages?: InputMaybe<BidPackageOrderByRelationAggregateInput>;
+  code?: InputMaybe<SortOrderInput>;
+  id?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrderInput>;
+};
+
+export type CatMinistryUpdateOneWithoutBidPackagesNestedInput = {
+  connect?: InputMaybe<CatMinistryWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<CatMinistryCreateOrConnectWithoutBidPackagesInput>;
+  create?: InputMaybe<CatMinistryCreateWithoutBidPackagesInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<CatMinistryUpdateWithoutBidPackagesInput>;
+  upsert?: InputMaybe<CatMinistryUpsertWithoutBidPackagesInput>;
+};
+
+export type CatMinistryUpdateWithoutBidPackagesInput = {
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+};
+
+export type CatMinistryUpsertWithoutBidPackagesInput = {
+  create: CatMinistryCreateWithoutBidPackagesInput;
+  update: CatMinistryUpdateWithoutBidPackagesInput;
+};
+
+export type CatMinistryWhereInput = {
+  AND?: InputMaybe<Array<CatMinistryWhereInput>>;
+  NOT?: InputMaybe<Array<CatMinistryWhereInput>>;
+  OR?: InputMaybe<Array<CatMinistryWhereInput>>;
+  bidPackages?: InputMaybe<BidPackageListRelationFilter>;
+  code?: InputMaybe<StringNullableFilter>;
+  id?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringNullableFilter>;
+};
+
+export type CatMinistryWhereUniqueInput = {
   code?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
 };
@@ -11641,6 +14533,25 @@ export type DateTimeNullableFilter = {
   lte?: InputMaybe<Scalars['DateTime']['input']>;
   not?: InputMaybe<NestedDateTimeNullableFilter>;
   notIn?: InputMaybe<Array<Scalars['DateTime']['input']>>;
+};
+
+export type DecimalFieldUpdateOperationsInput = {
+  decrement?: InputMaybe<Scalars['Decimal']['input']>;
+  divide?: InputMaybe<Scalars['Decimal']['input']>;
+  increment?: InputMaybe<Scalars['Decimal']['input']>;
+  multiply?: InputMaybe<Scalars['Decimal']['input']>;
+  set?: InputMaybe<Scalars['Decimal']['input']>;
+};
+
+export type DecimalFilter = {
+  equals?: InputMaybe<Scalars['Decimal']['input']>;
+  gt?: InputMaybe<Scalars['Decimal']['input']>;
+  gte?: InputMaybe<Scalars['Decimal']['input']>;
+  in?: InputMaybe<Array<Scalars['Decimal']['input']>>;
+  lt?: InputMaybe<Scalars['Decimal']['input']>;
+  lte?: InputMaybe<Scalars['Decimal']['input']>;
+  not?: InputMaybe<NestedDecimalFilter>;
+  notIn?: InputMaybe<Array<Scalars['Decimal']['input']>>;
 };
 
 export type DecimalNullableFilter = {
@@ -12567,6 +15478,7 @@ export type Mutation = {
   deleteBidNotificationResult: Scalars['Int']['output'];
   deleteBidPackage: Scalars['Int']['output'];
   deleteBidPackageLot: Scalars['Int']['output'];
+  deleteBidPetitionContractor: Scalars['Int']['output'];
   deleteBidSelectionPlan: Scalars['Int']['output'];
   deleteBusiness: Scalars['Int']['output'];
   deleteCatBidForm: Scalars['Int']['output'];
@@ -12596,6 +15508,7 @@ export type Mutation = {
   saveBidNotificationResult: BidNotificationResult;
   saveBidPackage: BidPackage;
   saveBidPackageLot: BidPackageLot;
+  saveBidPetitionContractor: BidPetitionContractor;
   saveBidSelectionPlan: BidSelectionPlan;
   saveBusiness: Business;
   saveCatBidForm: CatBidForm;
@@ -12621,6 +15534,7 @@ export type Mutation = {
   updateBidNotificationResult: BidNotificationResult;
   updateBidPackage: BidPackage;
   updateBidPackageLot: BidPackageLot;
+  updateBidPetitionContractor: BidPetitionContractor;
   updateBidSelectionPlan: BidSelectionPlan;
   updateBusiness: Business;
   updateCatBidForm: CatBidForm;
@@ -12670,6 +15584,11 @@ export type MutationDeleteBidPackageArgs = {
 
 export type MutationDeleteBidPackageLotArgs = {
   where: BidPackageLotWhereUniqueInput;
+};
+
+
+export type MutationDeleteBidPetitionContractorArgs = {
+  where: BidPetitionContractorWhereUniqueInput;
 };
 
 
@@ -12799,7 +15718,7 @@ export type MutationSaveBidNotificationArgs = {
 
 
 export type MutationSaveBidNotificationContractorArgs = {
-  data?: InputMaybe<BidNotificationContractorCreateInput>;
+  data: BidNotificationContractorCreateInput;
 };
 
 
@@ -12815,6 +15734,11 @@ export type MutationSaveBidPackageArgs = {
 
 export type MutationSaveBidPackageLotArgs = {
   data?: InputMaybe<BidPackageLotCreateInput>;
+};
+
+
+export type MutationSaveBidPetitionContractorArgs = {
+  data?: InputMaybe<BidPetitionContractorCreateInput>;
 };
 
 
@@ -12946,6 +15870,12 @@ export type MutationUpdateBidPackageArgs = {
 export type MutationUpdateBidPackageLotArgs = {
   data: BidPackageLotUpdateInput;
   where: BidPackageLotWhereUniqueInput;
+};
+
+
+export type MutationUpdateBidPetitionContractorArgs = {
+  data: BidPetitionContractorUpdateInput;
+  where: BidPetitionContractorWhereUniqueInput;
 };
 
 
@@ -13094,6 +16024,17 @@ export type NestedDateTimeNullableFilter = {
   notIn?: InputMaybe<Array<Scalars['DateTime']['input']>>;
 };
 
+export type NestedDecimalFilter = {
+  equals?: InputMaybe<Scalars['Decimal']['input']>;
+  gt?: InputMaybe<Scalars['Decimal']['input']>;
+  gte?: InputMaybe<Scalars['Decimal']['input']>;
+  in?: InputMaybe<Array<Scalars['Decimal']['input']>>;
+  lt?: InputMaybe<Scalars['Decimal']['input']>;
+  lte?: InputMaybe<Scalars['Decimal']['input']>;
+  not?: InputMaybe<NestedDecimalFilter>;
+  notIn?: InputMaybe<Array<Scalars['Decimal']['input']>>;
+};
+
 export type NestedDecimalNullableFilter = {
   equals?: InputMaybe<Scalars['Decimal']['input']>;
   gt?: InputMaybe<Scalars['Decimal']['input']>;
@@ -13217,6 +16158,7 @@ export type Organization = {
   deletedAt?: Maybe<Scalars['DateTime']['output']>;
   enName?: Maybe<Scalars['String']['output']>;
   id: Scalars['String']['output'];
+  investorBidNotification?: Maybe<Array<BidNotification>>;
   investorBidSelectionPlans?: Maybe<Array<BidSelectionPlan>>;
   isAgencies?: Maybe<Scalars['Int']['output']>;
   isBidderInvestor: Scalars['Boolean']['output'];
@@ -13502,6 +16444,7 @@ export type OrganizationConnection = {
 export type OrganizationCount = {
   __typename?: 'OrganizationCount';
   bidPetitionContractor: Scalars['Int']['output'];
+  investorBidNotification: Scalars['Int']['output'];
   investorBidSelectionPlans: Scalars['Int']['output'];
   organizationBusiness: Scalars['Int']['output'];
   procuringEntity: Scalars['Int']['output'];
@@ -13527,6 +16470,7 @@ export type OrganizationCreateInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14077,6 +17021,12 @@ export type OrganizationCreateNestedOneWithoutBidPetitionContractorInput = {
   create?: InputMaybe<OrganizationCreateWithoutBidPetitionContractorInput>;
 };
 
+export type OrganizationCreateNestedOneWithoutInvestorBidNotificationInput = {
+  connect?: InputMaybe<OrganizationWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<OrganizationCreateOrConnectWithoutInvestorBidNotificationInput>;
+  create?: InputMaybe<OrganizationCreateWithoutInvestorBidNotificationInput>;
+};
+
 export type OrganizationCreateNestedOneWithoutInvestorBidSelectionPlansInput = {
   connect?: InputMaybe<OrganizationWhereUniqueInput>;
   connectOrCreate?: InputMaybe<OrganizationCreateOrConnectWithoutInvestorBidSelectionPlansInput>;
@@ -14109,6 +17059,11 @@ export type OrganizationCreateNestedOneWithoutProjectsInput = {
 
 export type OrganizationCreateOrConnectWithoutBidPetitionContractorInput = {
   create: OrganizationCreateWithoutBidPetitionContractorInput;
+  where: OrganizationWhereUniqueInput;
+};
+
+export type OrganizationCreateOrConnectWithoutInvestorBidNotificationInput = {
+  create: OrganizationCreateWithoutInvestorBidNotificationInput;
   where: OrganizationWhereUniqueInput;
 };
 
@@ -14171,6 +17126,83 @@ export type OrganizationCreateWithoutBidPetitionContractorInput = {
   accountingType?: InputMaybe<Scalars['String']['input']>;
   agencyName?: InputMaybe<Scalars['String']['input']>;
   authenType?: InputMaybe<Scalars['Int']['input']>;
+  briefName?: InputMaybe<Scalars['String']['input']>;
+  budgetCode?: InputMaybe<Scalars['String']['input']>;
+  businessStatus?: InputMaybe<Scalars['String']['input']>;
+  businessType?: InputMaybe<CatBusinessTypeCreateNestedOneWithoutOrganizationsInput>;
+  businessTypeCode?: InputMaybe<Scalars['String']['input']>;
+  caRegister?: InputMaybe<Scalars['Boolean']['input']>;
+  chapterCode?: InputMaybe<Scalars['String']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  countryCode?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  enName?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
+  investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
+  isAgencies?: InputMaybe<Scalars['Int']['input']>;
+  isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
+  isBidderInvite?: InputMaybe<Scalars['Boolean']['input']>;
+  isBiddingFacility?: InputMaybe<Scalars['Boolean']['input']>;
+  isCompetentAuthorities?: InputMaybe<Scalars['Boolean']['input']>;
+  isContractor?: InputMaybe<Scalars['Boolean']['input']>;
+  isForeignInvestor?: InputMaybe<Scalars['Boolean']['input']>;
+  isInvestor?: InputMaybe<Scalars['Boolean']['input']>;
+  isPlanInvest?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  officeAddress?: InputMaybe<Scalars['String']['input']>;
+  officeDistrict?: InputMaybe<CatAreaCreateNestedOneWithoutOfficeDistrictOrganizationsInput>;
+  officeDistrictCode?: InputMaybe<Scalars['String']['input']>;
+  officePhone?: InputMaybe<Scalars['String']['input']>;
+  officeProvince?: InputMaybe<CatAreaCreateNestedOneWithoutOfficeProvinceOrganizationsInput>;
+  officeProvinceCode?: InputMaybe<Scalars['String']['input']>;
+  officeWard?: InputMaybe<CatAreaCreateNestedOneWithoutOfficeWardOrganizationsInput>;
+  officeWardCode?: InputMaybe<Scalars['String']['input']>;
+  officeWeb?: InputMaybe<Scalars['String']['input']>;
+  officeZipcode?: InputMaybe<Scalars['String']['input']>;
+  oldCode?: InputMaybe<Scalars['String']['input']>;
+  organizationBusiness?: InputMaybe<OrganizationBusinessCreateNestedManyWithoutOrganizationInput>;
+  proManagementUnit?: InputMaybe<Scalars['String']['input']>;
+  procuringEntity?: InputMaybe<BidNotificationCreateNestedManyWithoutProcuringEntityInput>;
+  procuringEntityBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutProcuringEntityInput>;
+  projects?: InputMaybe<ProjectCreateNestedManyWithoutInvestorInput>;
+  rawFiles?: InputMaybe<Scalars['JSON']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  receiverAddress?: InputMaybe<Scalars['String']['input']>;
+  receiverByOffice?: InputMaybe<Scalars['Int']['input']>;
+  receiverDistrict?: InputMaybe<CatAreaCreateNestedOneWithoutReceiverDistrictOrganizationsInput>;
+  receiverDistrictCode?: InputMaybe<Scalars['String']['input']>;
+  receiverEmail?: InputMaybe<Scalars['String']['input']>;
+  receiverEmailElecInvo?: InputMaybe<Scalars['String']['input']>;
+  receiverIdDate?: InputMaybe<Scalars['String']['input']>;
+  receiverIdNo?: InputMaybe<Scalars['String']['input']>;
+  receiverName?: InputMaybe<Scalars['String']['input']>;
+  receiverPhone?: InputMaybe<Scalars['String']['input']>;
+  receiverProvince?: InputMaybe<CatAreaCreateNestedOneWithoutReceiverProvinceOrganizationsInput>;
+  receiverProvinceCode?: InputMaybe<Scalars['String']['input']>;
+  receiverWard?: InputMaybe<CatAreaCreateNestedOneWithoutReceiverWardOrganizationsInput>;
+  receiverWardCode?: InputMaybe<Scalars['String']['input']>;
+  receiverZipcode?: InputMaybe<Scalars['String']['input']>;
+  repEmail?: InputMaybe<Scalars['String']['input']>;
+  repFullName?: InputMaybe<Scalars['String']['input']>;
+  repIdCountryCode?: InputMaybe<Scalars['String']['input']>;
+  repIdDate?: InputMaybe<Scalars['String']['input']>;
+  repIdNo?: InputMaybe<Scalars['String']['input']>;
+  repIdType?: InputMaybe<Scalars['String']['input']>;
+  repPhone?: InputMaybe<Scalars['String']['input']>;
+  repPosition?: InputMaybe<Scalars['String']['input']>;
+  taxCode?: InputMaybe<Scalars['String']['input']>;
+  taxCodeStatus?: InputMaybe<Scalars['String']['input']>;
+  taxDate?: InputMaybe<Scalars['DateTime']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type OrganizationCreateWithoutInvestorBidNotificationInput = {
+  accountingType?: InputMaybe<Scalars['String']['input']>;
+  agencyName?: InputMaybe<Scalars['String']['input']>;
+  authenType?: InputMaybe<Scalars['Int']['input']>;
+  bidPetitionContractor?: InputMaybe<BidPetitionContractorCreateNestedManyWithoutContractorInput>;
   briefName?: InputMaybe<Scalars['String']['input']>;
   budgetCode?: InputMaybe<Scalars['String']['input']>;
   businessStatus?: InputMaybe<Scalars['String']['input']>;
@@ -14260,6 +17292,7 @@ export type OrganizationCreateWithoutInvestorBidSelectionPlansInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
   isBidderInvite?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14335,6 +17368,7 @@ export type OrganizationCreateWithoutOfficeDistrictInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14410,6 +17444,7 @@ export type OrganizationCreateWithoutOfficeProvinceInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14485,6 +17520,7 @@ export type OrganizationCreateWithoutOfficeWardInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14560,6 +17596,7 @@ export type OrganizationCreateWithoutOrganizationBusinessInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14635,6 +17672,7 @@ export type OrganizationCreateWithoutProcuringEntityBidSelectionPlansInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14710,6 +17748,7 @@ export type OrganizationCreateWithoutProcuringEntityInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14785,6 +17824,7 @@ export type OrganizationCreateWithoutProjectsInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14860,6 +17900,7 @@ export type OrganizationCreateWithoutReceiverDistrictInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -14935,6 +17976,7 @@ export type OrganizationCreateWithoutReceiverProvinceInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -15010,6 +18052,7 @@ export type OrganizationCreateWithoutReceiverWardInput = {
   deletedAt?: InputMaybe<Scalars['DateTime']['input']>;
   enName?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
+  investorBidNotification?: InputMaybe<BidNotificationCreateNestedManyWithoutInvestorInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanCreateNestedManyWithoutInvestorInput>;
   isAgencies?: InputMaybe<Scalars['Int']['input']>;
   isBidderInvestor?: InputMaybe<Scalars['Boolean']['input']>;
@@ -15096,6 +18139,7 @@ export type OrganizationOrderByWithRelationInput = {
   deletedAt?: InputMaybe<SortOrderInput>;
   enName?: InputMaybe<SortOrderInput>;
   id?: InputMaybe<SortOrder>;
+  investorBidNotification?: InputMaybe<BidNotificationOrderByRelationAggregateInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanOrderByRelationAggregateInput>;
   isAgencies?: InputMaybe<SortOrderInput>;
   isBidderInvestor?: InputMaybe<SortOrder>;
@@ -15321,6 +18365,7 @@ export type OrganizationUpdateInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -15566,6 +18611,16 @@ export type OrganizationUpdateOneWithoutBidPetitionContractorNestedInput = {
   upsert?: InputMaybe<OrganizationUpsertWithoutBidPetitionContractorInput>;
 };
 
+export type OrganizationUpdateOneWithoutInvestorBidNotificationNestedInput = {
+  connect?: InputMaybe<OrganizationWhereUniqueInput>;
+  connectOrCreate?: InputMaybe<OrganizationCreateOrConnectWithoutInvestorBidNotificationInput>;
+  create?: InputMaybe<OrganizationCreateWithoutInvestorBidNotificationInput>;
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  update?: InputMaybe<OrganizationUpdateWithoutInvestorBidNotificationInput>;
+  upsert?: InputMaybe<OrganizationUpsertWithoutInvestorBidNotificationInput>;
+};
+
 export type OrganizationUpdateOneWithoutInvestorBidSelectionPlansNestedInput = {
   connect?: InputMaybe<OrganizationWhereUniqueInput>;
   connectOrCreate?: InputMaybe<OrganizationCreateOrConnectWithoutInvestorBidSelectionPlansInput>;
@@ -15663,6 +18718,83 @@ export type OrganizationUpdateWithoutBidPetitionContractorInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
+  investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
+  isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isBidderInvite?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isBiddingFacility?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isCompetentAuthorities?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isContractor?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isForeignInvestor?: InputMaybe<NullableBoolFieldUpdateOperationsInput>;
+  isInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
+  isPlanInvest?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  officeAddress?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  officeDistrict?: InputMaybe<CatAreaUpdateOneWithoutOfficeDistrictOrganizationsNestedInput>;
+  officeDistrictCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  officePhone?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  officeProvince?: InputMaybe<CatAreaUpdateOneWithoutOfficeProvinceOrganizationsNestedInput>;
+  officeProvinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  officeWard?: InputMaybe<CatAreaUpdateOneWithoutOfficeWardOrganizationsNestedInput>;
+  officeWardCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  officeWeb?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  officeZipcode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  oldCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  organizationBusiness?: InputMaybe<OrganizationBusinessUpdateManyWithoutOrganizationNestedInput>;
+  proManagementUnit?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  procuringEntity?: InputMaybe<BidNotificationUpdateManyWithoutProcuringEntityNestedInput>;
+  procuringEntityBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutProcuringEntityNestedInput>;
+  projects?: InputMaybe<ProjectUpdateManyWithoutInvestorNestedInput>;
+  rawFiles?: InputMaybe<Scalars['JSON']['input']>;
+  reason?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverAddress?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverByOffice?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  receiverDistrict?: InputMaybe<CatAreaUpdateOneWithoutReceiverDistrictOrganizationsNestedInput>;
+  receiverDistrictCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverEmail?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverEmailElecInvo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverIdDate?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverIdNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverPhone?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverProvince?: InputMaybe<CatAreaUpdateOneWithoutReceiverProvinceOrganizationsNestedInput>;
+  receiverProvinceCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverWard?: InputMaybe<CatAreaUpdateOneWithoutReceiverWardOrganizationsNestedInput>;
+  receiverWardCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  receiverZipcode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repEmail?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repFullName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repIdCountryCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repIdDate?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repIdNo?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repIdType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repPhone?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  repPosition?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  taxCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  taxCodeStatus?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  taxDate?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  updatedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+};
+
+export type OrganizationUpdateWithoutInvestorBidNotificationInput = {
+  accountingType?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  agencyName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  authenType?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
+  bidPetitionContractor?: InputMaybe<BidPetitionContractorUpdateManyWithoutContractorNestedInput>;
+  briefName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  budgetCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  businessStatus?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  businessType?: InputMaybe<CatBusinessTypeUpdateOneWithoutOrganizationsNestedInput>;
+  businessTypeCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  caRegister?: InputMaybe<NullableBoolFieldUpdateOperationsInput>;
+  chapterCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  code?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  countryCode?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  createdAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
+  enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  id?: InputMaybe<StringFieldUpdateOperationsInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -15739,6 +18871,7 @@ export type OrganizationUpdateWithoutInvestorBidSelectionPlansInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
   isBidderInvite?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -15814,6 +18947,7 @@ export type OrganizationUpdateWithoutOfficeDistrictInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -15889,6 +19023,7 @@ export type OrganizationUpdateWithoutOfficeProvinceInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -15964,6 +19099,7 @@ export type OrganizationUpdateWithoutOfficeWardInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16039,6 +19175,7 @@ export type OrganizationUpdateWithoutOrganizationBusinessInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16114,6 +19251,7 @@ export type OrganizationUpdateWithoutProcuringEntityBidSelectionPlansInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16189,6 +19327,7 @@ export type OrganizationUpdateWithoutProcuringEntityInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16264,6 +19403,7 @@ export type OrganizationUpdateWithoutProjectsInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16339,6 +19479,7 @@ export type OrganizationUpdateWithoutReceiverDistrictInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16414,6 +19555,7 @@ export type OrganizationUpdateWithoutReceiverProvinceInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16489,6 +19631,7 @@ export type OrganizationUpdateWithoutReceiverWardInput = {
   deletedAt?: InputMaybe<NullableDateTimeFieldUpdateOperationsInput>;
   enName?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<StringFieldUpdateOperationsInput>;
+  investorBidNotification?: InputMaybe<BidNotificationUpdateManyWithoutInvestorNestedInput>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanUpdateManyWithoutInvestorNestedInput>;
   isAgencies?: InputMaybe<NullableIntFieldUpdateOperationsInput>;
   isBidderInvestor?: InputMaybe<BoolFieldUpdateOperationsInput>;
@@ -16587,6 +19730,11 @@ export type OrganizationUpsertWithoutBidPetitionContractorInput = {
   update: OrganizationUpdateWithoutBidPetitionContractorInput;
 };
 
+export type OrganizationUpsertWithoutInvestorBidNotificationInput = {
+  create: OrganizationCreateWithoutInvestorBidNotificationInput;
+  update: OrganizationUpdateWithoutInvestorBidNotificationInput;
+};
+
 export type OrganizationUpsertWithoutInvestorBidSelectionPlansInput = {
   create: OrganizationCreateWithoutInvestorBidSelectionPlansInput;
   update: OrganizationUpdateWithoutInvestorBidSelectionPlansInput;
@@ -16634,6 +19782,7 @@ export type OrganizationWhereInput = {
   deletedAt?: InputMaybe<DateTimeNullableFilter>;
   enName?: InputMaybe<StringNullableFilter>;
   id?: InputMaybe<StringFilter>;
+  investorBidNotification?: InputMaybe<BidNotificationListRelationFilter>;
   investorBidSelectionPlans?: InputMaybe<BidSelectionPlanListRelationFilter>;
   isAgencies?: InputMaybe<IntNullableFilter>;
   isBidderInvestor?: InputMaybe<BoolFilter>;
@@ -18396,6 +21545,8 @@ export type Query = {
   bidPackageLot: BidPackageLot;
   bidPackageLots: BidPackageLotConnection;
   bidPackages: BidPackageConnection;
+  bidPetitionContractor: BidPetitionContractor;
+  bidPetitionContractors: BidPetitionContractorConnection;
   bidSelectionPlan: BidSelectionPlan;
   bidSelectionPlans: BidSelectionPlanConnection;
   business: Business;
@@ -18430,13 +21581,18 @@ export type Query = {
   catProjectGroups: CatProjectGroupConnection;
   catProjectManagementForm: CatProjectManagementForm;
   catProjectManagementForms: CatProjectManagementFormConnection;
+  competeContractors: StatisticOrganizationConnection;
   getUserPermissions: Array<Scalars['String']['output']>;
+  inviteBidders: StatisticBidNotificationContractorConnection;
   organization: Organization;
   organizations: OrganizationConnection;
   project: Project;
   projects: ProjectConnection;
   statisticAnalysis: StatisticAnalysis;
-  statisticBidNotificationContractors: StatisticBidNotificationContractorConnection;
+  statisticBidNotificationResult: StatisticBidNotificationResult;
+  statisticBidNotificationResults: StatisticBidNotificationResultConnection;
+  statisticBidNotifications: StatisticBidNotificationConnection;
+  statisticBidSelectionPlans: StatisticBidSelectionPlanConnection;
   statisticOrganization: StatisticOrganization;
   statisticOrganizations: StatisticOrganizationConnection;
 };
@@ -18529,6 +21685,21 @@ export type QueryBidPackagesArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   take?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<BidPackageWhereInput>;
+};
+
+
+export type QueryBidPetitionContractorArgs = {
+  where: BidPetitionContractorWhereUniqueInput;
+};
+
+
+export type QueryBidPetitionContractorsArgs = {
+  cursor?: InputMaybe<BidPetitionContractorWhereUniqueInput>;
+  distinct?: InputMaybe<Array<BidPetitionContractorScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<BidPetitionContractorOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BidPetitionContractorWhereInput>;
 };
 
 
@@ -18787,6 +21958,26 @@ export type QueryCatProjectManagementFormsArgs = {
 };
 
 
+export type QueryCompeteContractorsArgs = {
+  cursor?: InputMaybe<OrganizationWhereUniqueInput>;
+  distinct?: InputMaybe<Array<OrganizationScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<StatisticOrganizationOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<StatisticOrganizationWhereInput>;
+};
+
+
+export type QueryInviteBiddersArgs = {
+  cursor?: InputMaybe<BidNotificationContractorWhereUniqueInput>;
+  distinct?: InputMaybe<Array<BidNotificationContractorScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<BidNotificationContractorOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BidNotificationContractorWhereInput>;
+};
+
+
 export type QueryOrganizationArgs = {
   where: OrganizationWhereUniqueInput;
 };
@@ -18817,13 +22008,43 @@ export type QueryProjectsArgs = {
 };
 
 
-export type QueryStatisticBidNotificationContractorsArgs = {
-  cursor?: InputMaybe<BidNotificationContractorWhereUniqueInput>;
-  distinct?: InputMaybe<Array<BidNotificationContractorScalarFieldEnum>>;
-  orderBy?: InputMaybe<Array<BidNotificationContractorOrderByWithRelationInput>>;
+export type QueryStatisticBidNotificationResultArgs = {
+  cursor?: InputMaybe<BidNotificationResultWhereUniqueInput>;
+  distinct?: InputMaybe<Array<BidNotificationResultScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<BidNotificationResultOrderByWithRelationInput>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   take?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<BidNotificationContractorWhereInput>;
+  where?: InputMaybe<BidNotificationResultWhereInput>;
+};
+
+
+export type QueryStatisticBidNotificationResultsArgs = {
+  cursor?: InputMaybe<BidNotificationResultWhereUniqueInput>;
+  distinct?: InputMaybe<Array<BidNotificationResultScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<BidNotificationResultOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BidNotificationResultWhereInput>;
+};
+
+
+export type QueryStatisticBidNotificationsArgs = {
+  cursor?: InputMaybe<BidNotificationWhereUniqueInput>;
+  distinct?: InputMaybe<Array<BidNotificationScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<BidNotificationOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BidNotificationWhereInput>;
+};
+
+
+export type QueryStatisticBidSelectionPlansArgs = {
+  cursor?: InputMaybe<BidSelectionPlanWhereUniqueInput>;
+  distinct?: InputMaybe<Array<BidSelectionPlanScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<BidSelectionPlanOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BidSelectionPlanWhereInput>;
 };
 
 
@@ -18941,6 +22162,7 @@ export type StatisticBidNotification = {
   id: Scalars['String']['output'];
   investField?: Maybe<Scalars['String']['output']>;
   isInviteInterest: Scalars['Boolean']['output'];
+  isLatest: Scalars['Boolean']['output'];
   isPreNotification: Scalars['Boolean']['output'];
   issueLocation?: Maybe<Scalars['String']['output']>;
   openDate?: Maybe<Scalars['DateTime']['output']>;
@@ -18967,6 +22189,14 @@ export type StatisticBidNotification = {
   validityPeriod?: Maybe<Scalars['Int']['output']>;
   validityPeriodUnit?: Maybe<Scalars['String']['output']>;
   version?: Maybe<Scalars['String']['output']>;
+  versions?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatisticBidNotificationConnection = {
+  __typename?: 'StatisticBidNotificationConnection';
+  nodes?: Maybe<Array<StatisticBidNotification>>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
 };
 
 export type StatisticBidNotificationContractor = {
@@ -19000,6 +22230,89 @@ export type StatisticBidNotificationContractorConnection = {
   totalCount: Scalars['Int']['output'];
 };
 
+export type StatisticBidNotificationResult = {
+  __typename?: 'StatisticBidNotificationResult';
+  _count: BidNotificationResultCount;
+  bidNotification?: Maybe<BidNotification>;
+  bidNotificationCode?: Maybe<Scalars['String']['output']>;
+  bidNotificationContractors?: Maybe<Array<BidNotificationContractor>>;
+  bidNotificationId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  createdBy?: Maybe<Scalars['String']['output']>;
+  decisionAgency?: Maybe<Scalars['String']['output']>;
+  decisionDate?: Maybe<Scalars['DateTime']['output']>;
+  decisionFileId?: Maybe<Scalars['String']['output']>;
+  decisionFileName?: Maybe<Scalars['String']['output']>;
+  decisionNo?: Maybe<Scalars['String']['output']>;
+  deletedAt?: Maybe<Scalars['DateTime']['output']>;
+  id: Scalars['String']['output'];
+  publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  selectedContractors?: Maybe<Array<StatisticOrganization>>;
+  statusCode?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  updatedBy?: Maybe<Scalars['String']['output']>;
+  version?: Maybe<Scalars['String']['output']>;
+};
+
+export type StatisticBidNotificationResultConnection = {
+  __typename?: 'StatisticBidNotificationResultConnection';
+  nodes?: Maybe<Array<StatisticBidNotificationResult>>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
+export type StatisticBidSelectionPlan = {
+  __typename?: 'StatisticBidSelectionPlan';
+  _count: BidSelectionPlanCount;
+  bidLotResults?: Maybe<Array<BidLotResult>>;
+  bidNotifications?: Maybe<Array<BidNotification>>;
+  bidPackages?: Maybe<Array<BidPackage>>;
+  bidPackagesAmount?: Maybe<Scalars['Int']['output']>;
+  code?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  createdBy?: Maybe<Scalars['String']['output']>;
+  decisionAgency?: Maybe<Scalars['String']['output']>;
+  decisionDate?: Maybe<Scalars['DateTime']['output']>;
+  decisionFileId?: Maybe<Scalars['String']['output']>;
+  decisionFileName?: Maybe<Scalars['String']['output']>;
+  decisionNo?: Maybe<Scalars['String']['output']>;
+  deletedAt?: Maybe<Scalars['DateTime']['output']>;
+  id: Scalars['String']['output'];
+  investor?: Maybe<Organization>;
+  investorCode?: Maybe<Scalars['String']['output']>;
+  investorId?: Maybe<Scalars['String']['output']>;
+  investorName?: Maybe<Scalars['String']['output']>;
+  isLatest: Scalars['Boolean']['output'];
+  name?: Maybe<Scalars['String']['output']>;
+  numberOfBidPackage?: Maybe<Scalars['Int']['output']>;
+  procuringEntity?: Maybe<Organization>;
+  procuringEntityCode?: Maybe<Scalars['String']['output']>;
+  procuringEntityId?: Maybe<Scalars['String']['output']>;
+  procuringEntityName?: Maybe<Scalars['String']['output']>;
+  project?: Maybe<Project>;
+  projectId?: Maybe<Scalars['String']['output']>;
+  publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  status?: Maybe<CatBidSelectionPlanStatus>;
+  statusCode?: Maybe<Scalars['String']['output']>;
+  statusId?: Maybe<Scalars['String']['output']>;
+  totalInvestment?: Maybe<Scalars['Decimal']['output']>;
+  totalInvestmentEx?: Maybe<Scalars['Decimal']['output']>;
+  totalInvestmentUnit?: Maybe<Scalars['String']['output']>;
+  type?: Maybe<CatBidSelectionPlanType>;
+  typeCode?: Maybe<Scalars['String']['output']>;
+  typeId?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  updatedBy?: Maybe<Scalars['String']['output']>;
+  version?: Maybe<Scalars['String']['output']>;
+};
+
+export type StatisticBidSelectionPlanConnection = {
+  __typename?: 'StatisticBidSelectionPlanConnection';
+  nodes?: Maybe<Array<StatisticBidSelectionPlan>>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
 export type StatisticOrganization = {
   __typename?: 'StatisticOrganization';
   _count: OrganizationCount;
@@ -19017,6 +22330,7 @@ export type StatisticOrganization = {
   averatedAttendedBidPackageContractors?: Maybe<Scalars['Int']['output']>;
   bidPackageCompeteContractors?: Maybe<Scalars['Int']['output']>;
   bidPackageVentureContractors?: Maybe<Scalars['Int']['output']>;
+  bidPetitionContractor?: Maybe<Array<BidPetitionContractor>>;
   briefName?: Maybe<Scalars['String']['output']>;
   budgetCode?: Maybe<Scalars['String']['output']>;
   businessStatus?: Maybe<Scalars['String']['output']>;
@@ -19041,6 +22355,7 @@ export type StatisticOrganization = {
   goodsBidInviteRate?: Maybe<Scalars['Int']['output']>;
   id: Scalars['String']['output'];
   investedProjects?: Maybe<Scalars['Int']['output']>;
+  investorBidNotification?: Maybe<Array<BidNotification>>;
   investorBidSelectionPlans?: Maybe<Array<BidSelectionPlan>>;
   isAgencies?: Maybe<Scalars['Int']['output']>;
   isBidderInvestor: Scalars['Boolean']['output'];
@@ -19083,6 +22398,7 @@ export type StatisticOrganization = {
   otherBidNotifications?: Maybe<Scalars['Int']['output']>;
   ownBidNotifications?: Maybe<Scalars['Int']['output']>;
   proManagementUnit?: Maybe<Scalars['String']['output']>;
+  procuringEntity?: Maybe<Array<BidNotification>>;
   procuringEntityBidSelectionPlans?: Maybe<Array<BidSelectionPlan>>;
   projects?: Maybe<Array<Project>>;
   publishedBidSelectionPlans?: Maybe<Scalars['Int']['output']>;
@@ -19107,7 +22423,7 @@ export type StatisticOrganization = {
   receiverWardId?: Maybe<Scalars['String']['output']>;
   receiverZipcode?: Maybe<Scalars['String']['output']>;
   relatedContractors?: Maybe<Scalars['Int']['output']>;
-  relatedInviteBiddings?: Maybe<Scalars['Int']['output']>;
+  relatedInviteBidders?: Maybe<Scalars['Int']['output']>;
   repEmail?: Maybe<Scalars['String']['output']>;
   repFullName?: Maybe<Scalars['String']['output']>;
   repIdCountryCode?: Maybe<Scalars['String']['output']>;
@@ -19400,6 +22716,29 @@ export type UserCount = {
   updatedUsers: Scalars['Int']['output'];
 };
 
+export type StatisticBidNotificationsQueryVariables = Exact<{
+  orderBy?: InputMaybe<Array<BidNotificationOrderByWithRelationInput> | BidNotificationOrderByWithRelationInput>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BidNotificationWhereInput>;
+}>;
+
+
+export type StatisticBidNotificationsQuery = { __typename?: 'Query', statisticBidNotifications: { __typename?: 'StatisticBidNotificationConnection', totalCount: number, nodes?: Array<{ __typename?: 'StatisticBidNotification', id: string, isLatest: boolean, version?: string | null, code?: string | null, isPreNotification: boolean, statusCode?: string | null, versions?: number | null, closeDate?: any | null, openDate?: any | null, decisionDate?: any | null, bidPackage?: { __typename?: 'BidPackage', id: string, bidFieldCode?: string | null, bidFormCode?: string | null, name?: string | null, bidPrice?: any | null, provinceId?: string | null, isInternet: boolean, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', id: string, project?: { __typename?: 'Project', name?: string | null, investor?: { __typename?: 'Organization', name?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } | null } | null } | null } | null }> | null } };
+
+export type BidNotificationQueryVariables = Exact<{
+  where: BidNotificationWhereUniqueInput;
+}>;
+
+
+export type BidNotificationQuery = { __typename?: 'Query', bidNotification: { __typename?: 'BidNotification', id: string, isLatest: boolean, code?: string | null, isPreNotification: boolean, statusCode?: string | null, closeDate?: any | null, openDate?: any | null, decisionDate?: any | null, bidPackage?: { __typename?: 'BidPackage', id: string, bidFieldCode?: string | null, bidFormCode?: string | null, name?: string | null, bidPrice?: any | null, provinceId?: string | null, isInternet: boolean, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', id: string, project?: { __typename?: 'Project', name?: string | null, investor?: { __typename?: 'Organization', name?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } | null } | null } | null } | null } };
+
+export type ProjectFieldsFragment = { __typename?: 'Project', id: string, name?: string | null, investorName?: string | null, totalInvestment?: any | null, provinceCode?: string | null, groupCode?: string | null, publishedAt?: any | null, province?: { __typename?: 'CatArea', code: string } | null };
+
+export type StatisticBidNotificationFieldsFragment = { __typename?: 'StatisticBidNotification', id: string, isLatest: boolean, version?: string | null, code?: string | null, isPreNotification: boolean, statusCode?: string | null, versions?: number | null, closeDate?: any | null, openDate?: any | null, decisionDate?: any | null, bidPackage?: { __typename?: 'BidPackage', id: string, bidFieldCode?: string | null, bidFormCode?: string | null, name?: string | null, bidPrice?: any | null, provinceId?: string | null, isInternet: boolean, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', id: string, project?: { __typename?: 'Project', name?: string | null, investor?: { __typename?: 'Organization', name?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } | null } | null } | null } | null };
+
+export type BidNotificationFieldsFragment = { __typename?: 'BidNotification', id: string, isLatest: boolean, code?: string | null, isPreNotification: boolean, statusCode?: string | null, closeDate?: any | null, openDate?: any | null, decisionDate?: any | null, bidPackage?: { __typename?: 'BidPackage', id: string, bidFieldCode?: string | null, bidFormCode?: string | null, name?: string | null, bidPrice?: any | null, provinceId?: string | null, isInternet: boolean, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', id: string, project?: { __typename?: 'Project', name?: string | null, investor?: { __typename?: 'Organization', name?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } | null } | null } | null } | null };
+
 export type ProjectsQueryVariables = Exact<{
   where?: InputMaybe<ProjectWhereInput>;
   skip?: InputMaybe<Scalars['Int']['input']>;
@@ -19410,26 +22749,160 @@ export type ProjectsQueryVariables = Exact<{
 
 export type ProjectsQuery = { __typename?: 'Query', projects: { __typename?: 'ProjectConnection', totalCount: number, nodes?: Array<{ __typename?: 'Project', id: string, name?: string | null, investorName?: string | null, totalInvestment?: any | null, provinceCode?: string | null, groupCode?: string | null, publishedAt?: any | null, province?: { __typename?: 'CatArea', code: string } | null }> | null } };
 
-
-export const ProjectsDocument = `
-    query projects($where: ProjectWhereInput, $skip: Int, $take: Int, $orderBy: [ProjectOrderByWithRelationInput!]) {
-  projects(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
-    nodes {
+export const ProjectFieldsFragmentDoc = `
+    fragment ProjectFields on Project {
+  id
+  name
+  investorName
+  totalInvestment
+  provinceCode
+  province {
+    code
+  }
+  groupCode
+  publishedAt
+}
+    `;
+export const StatisticBidNotificationFieldsFragmentDoc = `
+    fragment StatisticBidNotificationFields on StatisticBidNotification {
+  id
+  isLatest
+  version
+  code
+  isPreNotification
+  statusCode
+  versions
+  closeDate
+  openDate
+  bidPackage {
+    id
+    bidFieldCode
+    bidFormCode
+    name
+    bidPrice
+    provinceId
+    isInternet
+    bidSelectionPlan {
       id
-      name
-      investorName
-      totalInvestment
-      provinceCode
-      province {
-        code
+      project {
+        name
+        investor {
+          name
+          businessType {
+            name
+          }
+        }
       }
-      groupCode
-      publishedAt
+    }
+  }
+  openDate
+  decisionDate
+}
+    `;
+export const BidNotificationFieldsFragmentDoc = `
+    fragment BidNotificationFields on BidNotification {
+  id
+  isLatest
+  code
+  isPreNotification
+  statusCode
+  closeDate
+  openDate
+  bidPackage {
+    id
+    bidFieldCode
+    bidFormCode
+    name
+    bidPrice
+    provinceId
+    isInternet
+    bidSelectionPlan {
+      id
+      project {
+        name
+        investor {
+          name
+          businessType {
+            name
+          }
+        }
+      }
+    }
+  }
+  openDate
+  decisionDate
+}
+    `;
+export const StatisticBidNotificationsDocument = `
+    query statisticBidNotifications($orderBy: [BidNotificationOrderByWithRelationInput!], $take: Int, $skip: Int, $where: BidNotificationWhereInput) {
+  statisticBidNotifications(
+    where: $where
+    skip: $skip
+    take: $take
+    orderBy: $orderBy
+  ) {
+    nodes {
+      ...StatisticBidNotificationFields
     }
     totalCount
   }
 }
-    `;
+    ${StatisticBidNotificationFieldsFragmentDoc}`;
+export const useStatisticBidNotificationsQuery = <
+      TData = StatisticBidNotificationsQuery,
+      TError = unknown
+    >(
+      variables?: StatisticBidNotificationsQueryVariables,
+      options?: UseQueryOptions<StatisticBidNotificationsQuery, TError, TData>
+    ) =>
+    useQuery<StatisticBidNotificationsQuery, TError, TData>(
+      variables === undefined ? ['statisticBidNotifications'] : ['statisticBidNotifications', variables],
+      useFetchData<StatisticBidNotificationsQuery, StatisticBidNotificationsQueryVariables>(StatisticBidNotificationsDocument, variables),
+      options
+    );
+useStatisticBidNotificationsQuery.document = StatisticBidNotificationsDocument;
+
+
+useStatisticBidNotificationsQuery.getKey = (variables?: StatisticBidNotificationsQueryVariables) => variables === undefined ? ['statisticBidNotifications'] : ['statisticBidNotifications', variables];
+;
+
+useStatisticBidNotificationsQuery.fetcher = (variables?: StatisticBidNotificationsQueryVariables, options?: RequestInit['headers']) => useFetchData<StatisticBidNotificationsQuery, StatisticBidNotificationsQueryVariables>(StatisticBidNotificationsDocument, variables, options);
+export const BidNotificationDocument = `
+    query bidNotification($where: BidNotificationWhereUniqueInput!) {
+  bidNotification(where: $where) {
+    ...BidNotificationFields
+  }
+}
+    ${BidNotificationFieldsFragmentDoc}`;
+export const useBidNotificationQuery = <
+      TData = BidNotificationQuery,
+      TError = unknown
+    >(
+      variables: BidNotificationQueryVariables,
+      options?: UseQueryOptions<BidNotificationQuery, TError, TData>
+    ) =>
+    useQuery<BidNotificationQuery, TError, TData>(
+      ['bidNotification', variables],
+      useFetchData<BidNotificationQuery, BidNotificationQueryVariables>(BidNotificationDocument, variables),
+      options
+    );
+useBidNotificationQuery.document = BidNotificationDocument;
+
+
+useBidNotificationQuery.getKey = (variables: BidNotificationQueryVariables) => ['bidNotification', variables];
+;
+
+useBidNotificationQuery.fetcher = (variables: BidNotificationQueryVariables, options?: RequestInit['headers']) => useFetchData<BidNotificationQuery, BidNotificationQueryVariables>(BidNotificationDocument, variables, options);
+export const ProjectsDocument = `
+    query projects($where: ProjectWhereInput, $skip: Int, $take: Int, $orderBy: [ProjectOrderByWithRelationInput!]) {
+  projects(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
+    nodes {
+      ...ProjectFields
+    }
+    totalCount
+  }
+}
+    ${ProjectFieldsFragmentDoc}`;
 export const useProjectsQuery = <
       TData = ProjectsQuery,
       TError = unknown

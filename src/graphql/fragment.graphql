@@ -1,0 +1,110 @@
+fragment ProjectFields on Project {
+  id
+  name
+  investorName
+  totalInvestment
+  provinceCode
+  province {
+    code
+  }
+  groupCode
+  publishedAt
+}
+
+fragment StatisticBidNotificationFields on StatisticBidNotification {
+  id
+  isLatest
+  version
+  code
+  isPreNotification
+  # trạng thái TBMT
+  statusCode
+  # số lượng phiên bản
+  versions
+  # thời điểm đóng thầu
+  closeDate
+  # thời điểm mở thầu
+  openDate
+  bidPackage {
+    id
+    # lĩnh vực LCNT
+    bidFieldCode
+    # hình thức LCNT
+    bidFormCode
+    # tên gói thầu
+    name
+    # giá gói thầu
+    bidPrice
+    # địa điểm
+    provinceId
+    # hình thức dự thầu
+    isInternet
+    bidSelectionPlan {
+      id
+      project {
+        # tên dự án
+        name
+        # nhà đầu tư | chủ đầu tư
+        investor {
+          name
+          businessType {
+            name
+          }
+        }
+      }
+    }
+  }
+  # thời gian công bố
+  openDate
+  # ngày phê duyệt | thời gian công bố
+  decisionDate
+}
+
+fragment BidNotificationFields on BidNotification {
+  id
+  isLatest
+  # version
+  code
+  isPreNotification
+  # trạng thái TBMT
+  statusCode
+  # số lượng phiên bản
+  # versions
+  # thời điểm đóng thầu
+  closeDate
+  # thời điểm mở thầu
+  openDate
+  bidPackage {
+    id
+    # lĩnh vực LCNT
+    bidFieldCode
+    # hình thức LCNT
+    bidFormCode
+    # tên gói thầu
+    name
+    # giá gói thầu
+    bidPrice
+    # địa điểm
+    provinceId
+    # hình thức dự thầu
+    isInternet
+    bidSelectionPlan {
+      id
+      project {
+        # tên dự án
+        name
+        # nhà đầu tư | chủ đầu tư
+        investor {
+          name
+          businessType {
+            name
+          }
+        }
+      }
+    }
+  }
+  # thời gian công bố
+  openDate
+  # ngày phê duyệt | thời gian công bố
+  decisionDate
+}

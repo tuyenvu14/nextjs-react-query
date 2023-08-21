@@ -1,11 +1,11 @@
-import ProjectContent from './ProjectContent'
+import ProjectList from './ProjectList'
 import { ProjectFilter } from './ProjectFilter'
 
-export const InvestDevelop = () => {
+export const Project = () => {
   return (
     <>
       <ProjectFilter />
-      <ProjectContent />
+      <ProjectList />
     </>
   )
 }

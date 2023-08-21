@@ -15,7 +15,7 @@ import {
 } from 'antd'
 import { useState } from 'react'
 
-export const ProjectFilter = () => {
+export const BiddingNotificationFilter = () => {
   const [value, setValue] = useState(1)
   const [openSearchAdvance, setOpenSearchAdvance] = useState(false)
   const onChange = (e: RadioChangeEvent) => {
@@ -64,7 +64,6 @@ export const ProjectFilter = () => {
             <Select
               defaultValue="1"
               className="w-full"
-              // onChange={handleChange}
               size="large"
               options={[
                 { value: '1', label: 'Dự án đầu tư phát triển' },

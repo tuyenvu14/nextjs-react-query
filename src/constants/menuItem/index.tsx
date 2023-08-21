@@ -2,6 +2,7 @@ import { Dropdown, MenuProps } from 'antd'
 import {
   bidding,
   biddingContractor,
+  biddingContractorNotification,
   biddingInvestor,
   docs,
   home,
@@ -13,7 +14,7 @@ import {
   searchOrganization,
   searchOrganizationContractorPath,
   searchOrganizationInvestorAndBidSolicitorPath,
-} from '../routes/layout'
+} from '../routes'
 import Link from 'next/link'
 
 export const listNavItems = [
@@ -148,7 +149,10 @@ export const biddingItems: MenuProps['items'] = [
       {
         key: '1-5',
         label: (
-          <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
+          <Link
+            href={biddingContractorNotification}
+            className="inline-flex items-center text-sm font-medium"
+          >
             TB mời thầu
           </Link>
         ),
