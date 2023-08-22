@@ -14,6 +14,7 @@ import logo from '@/src/assets/logo.png'
 import { usePathname } from 'next/navigation'
 import {
   bidding,
+  biddingContractorNotification,
   home,
   project,
   projectInvestDevelopPath,
@@ -41,37 +42,6 @@ export const Menu = () => {
         <ul className="mb-0 mt-4 flex list-none flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-4 xl:space-x-8">
           {listNavItems.map((e) => {
             const isActive = pathname === e.path
-            // if (e.path === project) {
-            //   return (
-            //     <li key={e.id}>
-            //       <Dropdown
-            //         menu={{
-            //           items: projectItems,
-            //           onClick: () => setOpenArticles(false),
-            //         }}
-            //         placement="bottom"
-            //         onOpenChange={(e) => setOpenArticles(e)}
-            //         arrow
-            //         trigger={['hover']}
-            //       >
-            //         <span
-            //           className={` hover:text-main flex cursor-pointer py-2 pl-3 pr-3 text-base font-semibold ${
-            //             [projectInvestDevelopPath, projectNewlyAnnouncedPath].includes(pathname) &&
-            //             pathname !== home
-            //               ? '!text-main'
-            //               : 'text-default'
-            //           } ${openArticles ? '!text-main' : 'text-default'} `}
-            //         >
-            //           {e.name}
-            //           <span className="ml-2 flex items-center">
-            //             {openArticles ? <UpOutlined /> : <DownOutlined />}
-            //           </span>
-            //         </span>
-            //       </Dropdown>
-            //     </li>
-            //   )
-            // }
-
             if (e.path === searchOrganization) {
               return (
                 <li key={e.id}>
@@ -120,10 +90,7 @@ export const Menu = () => {
                   >
                     <span
                       className={` hover:text-main flex cursor-pointer py-2 pl-3 pr-3 text-base font-semibold ${
-                        [
-                          searchOrganizationContractorPath,
-                          searchOrganizationInvestorAndBidSolicitorPath,
-                        ].includes(pathname) && pathname !== home
+                        [biddingContractorNotification].includes(pathname) && pathname !== home
                           ? '!text-main'
                           : 'text-default'
                       } ${openBidding ? '!text-main' : 'text-default'} `}

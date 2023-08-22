@@ -15,17 +15,19 @@ export const BiddingNotificationItem = (props: IBiddingNotificationProps) => {
   return (
     <div>
       <div className="rounded-md border border-border">
-        <div className="p-2 bg-main text-sm flex justify-between">
+        <div className="p-2 bg-main flex justify-between">
           <div className="">
-            <span className="rounded-md border px-2 py-1 bg-white mr-2">
-              <CopyIcon className="mr-1 text-main" />
-              {data?.id} - <span className="text-main">{data?.version}</span>
+            <span>
+              <span className="rounded-md border px-2 py-1 bg-white text-sm mr-2">
+                <CopyIcon className="mr-1 text-main" />
+                {data?.id} - <span className="text-main">{data?.version}</span>
+              </span>
+              <span className="text-white text-sm">Còn lại: 10 ngày, 32 giờ</span>
             </span>
-            <span className="text-white">Còn lại: 10 ngày, 32 giờ</span>
           </div>
           <div className="text-main">
             <span className="rounded-md border px-2 py-1 bg-white">
-              <UsersIcon className="mr-1" />
+              <UsersIcon className="mr-1 text-sm" />
               <span>{data?.bidPackage?.isInternet}</span>
             </span>
           </div>
