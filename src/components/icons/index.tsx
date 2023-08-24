@@ -25,3 +25,7 @@ export const UsersIcon = ({ className }: { className?: string }) => (
 export const UserPlusIcon = ({ className }: { className?: string }) => (
   <span className={`tln_user-plus-01 ${className || ''}`} />
 )
+
+// export const UserPlusIcon = ({ className }: { className?: string }) => (
+//   <span className={`tln_user-plus-01 ${className || ''}`} />
+// )

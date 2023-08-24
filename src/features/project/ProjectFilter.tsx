@@ -25,7 +25,7 @@ export const ProjectFilter = () => {
   return (
     <div className="lg:col-span-3">
       <div className="rounded-md border border-border px-8 py-4">
-        <p className="mb-4 text-2xl font-semibold text-[#1F2937]">Tìm kiếm thông tin</p>
+        <p className="mb-4 text-2xl font-semibold text-primary">Tìm kiếm thông tin</p>
         <div className="mb-4">
           <Radio.Group onChange={onChange} value={value}>
             <Radio className="!text-base" value={1}>

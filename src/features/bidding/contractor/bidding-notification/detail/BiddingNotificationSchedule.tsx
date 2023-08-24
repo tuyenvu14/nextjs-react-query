@@ -50,7 +50,7 @@ export const BiddingNotificationSchedule = ({ data }: IBiddingNotificationSchedu
                 icon: <SmileOutlined />,
               },
               {
-                title: 'Thông báo mời thầu',
+                title: <span className="text-xs">Thông báo mời thầu</span>,
                 status: 'wait',
                 icon: <SmileOutlined />,
               },

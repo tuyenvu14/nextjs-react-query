@@ -15449,6 +15449,11 @@ export type IntNullableFilter = {
   notIn?: InputMaybe<Array<Scalars['Int']['input']>>;
 };
 
+export type InviteBidderBidPackageWhereInput = {
+  contractorCode?: InputMaybe<Scalars['String']['input']>;
+  procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type JsonNullableFilter = {
   array_contains?: InputMaybe<Scalars['JSON']['input']>;
   array_ends_with?: InputMaybe<Scalars['JSON']['input']>;
@@ -21583,6 +21588,7 @@ export type Query = {
   catProjectManagementForms: CatProjectManagementFormConnection;
   competeContractors: StatisticOrganizationConnection;
   getUserPermissions: Array<Scalars['String']['output']>;
+  inviteBidderBidPackages: BidPackageConnection;
   inviteBidders: StatisticBidNotificationContractorConnection;
   organization: Organization;
   organizations: OrganizationConnection;
@@ -21592,9 +21598,11 @@ export type Query = {
   statisticBidNotificationResult: StatisticBidNotificationResult;
   statisticBidNotificationResults: StatisticBidNotificationResultConnection;
   statisticBidNotifications: StatisticBidNotificationConnection;
+  statisticBidSelectionPlan: StatisticBidSelectionPlan;
   statisticBidSelectionPlans: StatisticBidSelectionPlanConnection;
   statisticOrganization: StatisticOrganization;
   statisticOrganizations: StatisticOrganizationConnection;
+  statisticProjects: StatisticProjectConnection;
 };
 
 
@@ -21968,6 +21976,16 @@ export type QueryCompeteContractorsArgs = {
 };
 
 
+export type QueryInviteBidderBidPackagesArgs = {
+  cursor?: InputMaybe<BidPackageWhereUniqueInput>;
+  distinct?: InputMaybe<Array<BidPackageScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<BidPackageOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<InviteBidderBidPackageWhereInput>;
+};
+
+
 export type QueryInviteBiddersArgs = {
   cursor?: InputMaybe<BidNotificationContractorWhereUniqueInput>;
   distinct?: InputMaybe<Array<BidNotificationContractorScalarFieldEnum>>;
@@ -22038,6 +22056,11 @@ export type QueryStatisticBidNotificationsArgs = {
 };
 
 
+export type QueryStatisticBidSelectionPlanArgs = {
+  where: BidSelectionPlanWhereUniqueInput;
+};
+
+
 export type QueryStatisticBidSelectionPlansArgs = {
   cursor?: InputMaybe<BidSelectionPlanWhereUniqueInput>;
   distinct?: InputMaybe<Array<BidSelectionPlanScalarFieldEnum>>;
@@ -22065,6 +22088,16 @@ export type QueryStatisticOrganizationsArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   take?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<StatisticOrganizationWhereInput>;
+};
+
+
+export type QueryStatisticProjectsArgs = {
+  cursor?: InputMaybe<ProjectWhereUniqueInput>;
+  distinct?: InputMaybe<Array<ProjectScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<ProjectOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ProjectWhereInput>;
 };
 
 export enum QueryMode {
@@ -22252,6 +22285,7 @@ export type StatisticBidNotificationResult = {
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
   updatedBy?: Maybe<Scalars['String']['output']>;
   version?: Maybe<Scalars['String']['output']>;
+  versions?: Maybe<Scalars['Int']['output']>;
 };
 
 export type StatisticBidNotificationResultConnection = {
@@ -22304,6 +22338,7 @@ export type StatisticBidSelectionPlan = {
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
   updatedBy?: Maybe<Scalars['String']['output']>;
   version?: Maybe<Scalars['String']['output']>;
+  versions?: Maybe<Scalars['Int']['output']>;
 };
 
 export type StatisticBidSelectionPlanConnection = {
@@ -22642,6 +22677,71 @@ export type StatisticOrganizationWhereInput = {
   winBidPackages?: InputMaybe<Scalars['Int']['input']>;
 };
 
+export type StatisticProject = {
+  __typename?: 'StatisticProject';
+  _count: ProjectCount;
+  bidSelectionPlans?: Maybe<Array<BidSelectionPlan>>;
+  code?: Maybe<Scalars['String']['output']>;
+  competentPerson?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  createdBy?: Maybe<Scalars['String']['output']>;
+  decisionAgency?: Maybe<Scalars['String']['output']>;
+  decisionDate?: Maybe<Scalars['DateTime']['output']>;
+  decisionFileId?: Maybe<Scalars['String']['output']>;
+  decisionFileName?: Maybe<Scalars['String']['output']>;
+  decisionNo?: Maybe<Scalars['String']['output']>;
+  deletedAt?: Maybe<Scalars['DateTime']['output']>;
+  district?: Maybe<CatArea>;
+  districtCode?: Maybe<Scalars['String']['output']>;
+  districtId?: Maybe<Scalars['String']['output']>;
+  group?: Maybe<CatProjectGroup>;
+  groupCode?: Maybe<Scalars['String']['output']>;
+  groupId?: Maybe<Scalars['String']['output']>;
+  groupName?: Maybe<Scalars['String']['output']>;
+  id: Scalars['String']['output'];
+  investmentForm?: Maybe<CatInvestmentForm>;
+  investmentFormCode?: Maybe<Scalars['String']['output']>;
+  investmentFormId?: Maybe<Scalars['String']['output']>;
+  investmentScale?: Maybe<Scalars['String']['output']>;
+  investmentTarget?: Maybe<Scalars['String']['output']>;
+  investor?: Maybe<Organization>;
+  investorCode?: Maybe<Scalars['String']['output']>;
+  investorId?: Maybe<Scalars['String']['output']>;
+  investorName?: Maybe<Scalars['String']['output']>;
+  isLatest: Scalars['Boolean']['output'];
+  isOda: Scalars['Boolean']['output'];
+  listPlanCode?: Maybe<Scalars['String']['output']>;
+  managementForm?: Maybe<CatProjectManagementForm>;
+  managementFormCode?: Maybe<Scalars['String']['output']>;
+  managementFormId?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  period?: Maybe<Scalars['Int']['output']>;
+  periodUnit?: Maybe<Scalars['String']['output']>;
+  province?: Maybe<CatArea>;
+  provinceCode?: Maybe<Scalars['String']['output']>;
+  provinceId?: Maybe<Scalars['String']['output']>;
+  publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  reciprocalCapital?: Maybe<Scalars['Decimal']['output']>;
+  reciprocalCapitalUnit?: Maybe<Scalars['String']['output']>;
+  status?: Maybe<CatProjectStatus>;
+  statusCode?: Maybe<Scalars['String']['output']>;
+  statusId?: Maybe<Scalars['String']['output']>;
+  totalInvestment?: Maybe<Scalars['Decimal']['output']>;
+  totalInvestmentEx?: Maybe<Scalars['Decimal']['output']>;
+  totalInvestmentUnit?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  updatedBy?: Maybe<Scalars['String']['output']>;
+  version?: Maybe<Scalars['String']['output']>;
+  versions?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatisticProjectConnection = {
+  __typename?: 'StatisticProjectConnection';
+  nodes?: Maybe<Array<StatisticProject>>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
 export type StringFieldUpdateOperationsInput = {
   set?: InputMaybe<Scalars['String']['input']>;
 };
@@ -22733,11 +22833,30 @@ export type BidNotificationQueryVariables = Exact<{
 
 export type BidNotificationQuery = { __typename?: 'Query', bidNotification: { __typename?: 'BidNotification', id: string, isLatest: boolean, code?: string | null, isPreNotification: boolean, statusCode?: string | null, closeDate?: any | null, openDate?: any | null, decisionDate?: any | null, bidPackage?: { __typename?: 'BidPackage', id: string, bidFieldCode?: string | null, bidFormCode?: string | null, name?: string | null, bidPrice?: any | null, provinceId?: string | null, isInternet: boolean, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', id: string, project?: { __typename?: 'Project', name?: string | null, investor?: { __typename?: 'Organization', name?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } | null } | null } | null } | null } };
 
+export type StatisticBidSelectionPlansQueryVariables = Exact<{
+  orderBy?: InputMaybe<Array<BidSelectionPlanOrderByWithRelationInput> | BidSelectionPlanOrderByWithRelationInput>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BidSelectionPlanWhereInput>;
+}>;
+
+
+export type StatisticBidSelectionPlansQuery = { __typename?: 'Query', statisticBidSelectionPlans: { __typename?: 'StatisticBidSelectionPlanConnection', totalCount: number, nodes?: Array<{ __typename?: 'StatisticBidSelectionPlan', id: string, version?: string | null, code?: string | null, investorName?: string | null, totalInvestment?: any | null, typeCode?: string | null, decisionDate?: any | null, procuringEntityName?: string | null, versions?: number | null, bidPackagesAmount?: number | null, procuringEntityCode?: string | null, project?: { __typename?: 'Project', name?: string | null, province?: { __typename?: 'CatArea', name: string } | null } | null }> | null } };
+
+export type StatisticBidSelectionPlanQueryVariables = Exact<{
+  where: BidSelectionPlanWhereUniqueInput;
+}>;
+
+
+export type StatisticBidSelectionPlanQuery = { __typename?: 'Query', statisticBidSelectionPlan: { __typename?: 'StatisticBidSelectionPlan', id: string, version?: string | null, code?: string | null, investorName?: string | null, totalInvestment?: any | null, typeCode?: string | null, decisionDate?: any | null, procuringEntityName?: string | null, versions?: number | null, bidPackagesAmount?: number | null, procuringEntityCode?: string | null, project?: { __typename?: 'Project', name?: string | null, province?: { __typename?: 'CatArea', name: string } | null } | null } };
+
 export type ProjectFieldsFragment = { __typename?: 'Project', id: string, name?: string | null, investorName?: string | null, totalInvestment?: any | null, provinceCode?: string | null, groupCode?: string | null, publishedAt?: any | null, province?: { __typename?: 'CatArea', code: string } | null };
 
 export type StatisticBidNotificationFieldsFragment = { __typename?: 'StatisticBidNotification', id: string, isLatest: boolean, version?: string | null, code?: string | null, isPreNotification: boolean, statusCode?: string | null, versions?: number | null, closeDate?: any | null, openDate?: any | null, decisionDate?: any | null, bidPackage?: { __typename?: 'BidPackage', id: string, bidFieldCode?: string | null, bidFormCode?: string | null, name?: string | null, bidPrice?: any | null, provinceId?: string | null, isInternet: boolean, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', id: string, project?: { __typename?: 'Project', name?: string | null, investor?: { __typename?: 'Organization', name?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } | null } | null } | null } | null };
 
 export type BidNotificationFieldsFragment = { __typename?: 'BidNotification', id: string, isLatest: boolean, code?: string | null, isPreNotification: boolean, statusCode?: string | null, closeDate?: any | null, openDate?: any | null, decisionDate?: any | null, bidPackage?: { __typename?: 'BidPackage', id: string, bidFieldCode?: string | null, bidFormCode?: string | null, name?: string | null, bidPrice?: any | null, provinceId?: string | null, isInternet: boolean, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', id: string, project?: { __typename?: 'Project', name?: string | null, investor?: { __typename?: 'Organization', name?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } | null } | null } | null } | null };
+
+export type StatisticBidSelectionPlanFieldsFragment = { __typename?: 'StatisticBidSelectionPlan', id: string, version?: string | null, code?: string | null, investorName?: string | null, totalInvestment?: any | null, typeCode?: string | null, decisionDate?: any | null, procuringEntityName?: string | null, versions?: number | null, bidPackagesAmount?: number | null, procuringEntityCode?: string | null, project?: { __typename?: 'Project', name?: string | null, province?: { __typename?: 'CatArea', name: string } | null } | null };
 
 export type ProjectsQueryVariables = Exact<{
   where?: InputMaybe<ProjectWhereInput>;
@@ -22833,6 +22952,28 @@ export const BidNotificationFieldsFragmentDoc = `
   decisionDate
 }
     `;
+export const StatisticBidSelectionPlanFieldsFragmentDoc = `
+    fragment StatisticBidSelectionPlanFields on StatisticBidSelectionPlan {
+  id
+  version
+  code
+  investorName
+  totalInvestment
+  typeCode
+  decisionDate
+  procuringEntityName
+  decisionDate
+  versions
+  bidPackagesAmount
+  project {
+    name
+    province {
+      name
+    }
+  }
+  procuringEntityCode
+}
+    `;
 export const StatisticBidNotificationsDocument = `
     query statisticBidNotifications($orderBy: [BidNotificationOrderByWithRelationInput!], $take: Int, $skip: Int, $where: BidNotificationWhereInput) {
   statisticBidNotifications(
@@ -22893,6 +23034,66 @@ useBidNotificationQuery.getKey = (variables: BidNotificationQueryVariables) => [
 ;
 
 useBidNotificationQuery.fetcher = (variables: BidNotificationQueryVariables, options?: RequestInit['headers']) => useFetchData<BidNotificationQuery, BidNotificationQueryVariables>(BidNotificationDocument, variables, options);
+export const StatisticBidSelectionPlansDocument = `
+    query statisticBidSelectionPlans($orderBy: [BidSelectionPlanOrderByWithRelationInput!], $take: Int, $skip: Int, $where: BidSelectionPlanWhereInput) {
+  statisticBidSelectionPlans(
+    where: $where
+    skip: $skip
+    take: $take
+    orderBy: $orderBy
+  ) {
+    nodes {
+      ...StatisticBidSelectionPlanFields
+    }
+    totalCount
+  }
+}
+    ${StatisticBidSelectionPlanFieldsFragmentDoc}`;
+export const useStatisticBidSelectionPlansQuery = <
+      TData = StatisticBidSelectionPlansQuery,
+      TError = unknown
+    >(
+      variables?: StatisticBidSelectionPlansQueryVariables,
+      options?: UseQueryOptions<StatisticBidSelectionPlansQuery, TError, TData>
+    ) =>
+    useQuery<StatisticBidSelectionPlansQuery, TError, TData>(
+      variables === undefined ? ['statisticBidSelectionPlans'] : ['statisticBidSelectionPlans', variables],
+      useFetchData<StatisticBidSelectionPlansQuery, StatisticBidSelectionPlansQueryVariables>(StatisticBidSelectionPlansDocument, variables),
+      options
+    );
+useStatisticBidSelectionPlansQuery.document = StatisticBidSelectionPlansDocument;
+
+
+useStatisticBidSelectionPlansQuery.getKey = (variables?: StatisticBidSelectionPlansQueryVariables) => variables === undefined ? ['statisticBidSelectionPlans'] : ['statisticBidSelectionPlans', variables];
+;
+
+useStatisticBidSelectionPlansQuery.fetcher = (variables?: StatisticBidSelectionPlansQueryVariables, options?: RequestInit['headers']) => useFetchData<StatisticBidSelectionPlansQuery, StatisticBidSelectionPlansQueryVariables>(StatisticBidSelectionPlansDocument, variables, options);
+export const StatisticBidSelectionPlanDocument = `
+    query statisticBidSelectionPlan($where: BidSelectionPlanWhereUniqueInput!) {
+  statisticBidSelectionPlan(where: $where) {
+    ...StatisticBidSelectionPlanFields
+  }
+}
+    ${StatisticBidSelectionPlanFieldsFragmentDoc}`;
+export const useStatisticBidSelectionPlanQuery = <
+      TData = StatisticBidSelectionPlanQuery,
+      TError = unknown
+    >(
+      variables: StatisticBidSelectionPlanQueryVariables,
+      options?: UseQueryOptions<StatisticBidSelectionPlanQuery, TError, TData>
+    ) =>
+    useQuery<StatisticBidSelectionPlanQuery, TError, TData>(
+      ['statisticBidSelectionPlan', variables],
+      useFetchData<StatisticBidSelectionPlanQuery, StatisticBidSelectionPlanQueryVariables>(StatisticBidSelectionPlanDocument, variables),
+      options
+    );
+useStatisticBidSelectionPlanQuery.document = StatisticBidSelectionPlanDocument;
+
+
+useStatisticBidSelectionPlanQuery.getKey = (variables: StatisticBidSelectionPlanQueryVariables) => ['statisticBidSelectionPlan', variables];
+;
+
+useStatisticBidSelectionPlanQuery.fetcher = (variables: StatisticBidSelectionPlanQueryVariables, options?: RequestInit['headers']) => useFetchData<StatisticBidSelectionPlanQuery, StatisticBidSelectionPlanQueryVariables>(StatisticBidSelectionPlanDocument, variables, options);
 export const ProjectsDocument = `
     query projects($where: ProjectWhereInput, $skip: Int, $take: Int, $orderBy: [ProjectOrderByWithRelationInput!]) {
   projects(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {

@@ -108,3 +108,36 @@ fragment BidNotificationFields on BidNotification {
   # ngày phê duyệt | thời gian công bố
   decisionDate
 }
+
+fragment StatisticBidSelectionPlanFields on StatisticBidSelectionPlan {
+  id
+  version
+  code
+  # tên chủ đầu tư
+  investorName
+  # tổng mức đầu tư
+  totalInvestment
+  # địa điểm
+  # loại dự án
+  typeCode
+  # thời điểm công bố
+  decisionDate
+  # bên mời thầu
+  procuringEntityName
+  # thời điểm phê duyệt
+  decisionDate
+  # số phiên bản
+  versions
+  # số gói thầu
+  bidPackagesAmount
+  # tên dự án
+  project {
+    name
+    province {
+      # địa điểm
+      name
+    }
+  }
+  procuringEntityCode
+}
+    

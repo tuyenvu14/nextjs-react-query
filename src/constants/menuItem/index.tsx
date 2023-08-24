@@ -3,6 +3,7 @@ import {
   bidding,
   biddingContractor,
   biddingContractorNotification,
+  biddingContractorSelectionPlan,
   biddingInvestor,
   docs,
   home,
@@ -117,7 +118,10 @@ export const biddingItems: MenuProps['items'] = [
       {
         key: '1-1',
         label: (
-          <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
+          <Link
+            href={biddingContractorSelectionPlan}
+            className="inline-flex items-center text-sm font-medium"
+          >
             Kế hoạch LCNT
           </Link>
         ),

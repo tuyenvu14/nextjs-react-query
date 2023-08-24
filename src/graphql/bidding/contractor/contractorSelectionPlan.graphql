@@ -1,0 +1,20 @@
+query statisticBidSelectionPlans(
+  $orderBy: [BidSelectionPlanOrderByWithRelationInput!]
+  $take: Int
+  $skip: Int
+  $where: BidSelectionPlanWhereInput
+) {
+  statisticBidSelectionPlans(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
+    nodes {
+      ...StatisticBidSelectionPlanFields
+    }
+    totalCount
+  }
+}
+
+# chi tiết kế hoạch lựa chọn nhà thầu
+query statisticBidSelectionPlan($where: BidSelectionPlanWhereUniqueInput!) {
+  statisticBidSelectionPlan(where: $where) {
+    ...StatisticBidSelectionPlanFields
+  }
+}

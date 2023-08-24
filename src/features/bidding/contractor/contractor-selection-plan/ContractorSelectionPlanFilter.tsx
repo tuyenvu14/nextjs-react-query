@@ -15,7 +15,7 @@ import {
 } from 'antd'
 import { useState } from 'react'
 
-export const BiddingNotificationFilter = () => {
+export const ContractorSelectionPlanFilter = () => {
   const [value, setValue] = useState(1)
   const [openSearchAdvance, setOpenSearchAdvance] = useState(false)
   const onChange = (e: RadioChangeEvent) => {

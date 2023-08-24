@@ -24,7 +24,7 @@ export default function ProjectList() {
   return (
     <>
       <div className="lg:col-span-2">
-        <p className="mb-2 text-2xl font-semibold text-[#1F2937]">Dự án</p>
+        <p className="mb-2 text-2xl font-semibold text-primary">Dự án</p>
         <p style={{ borderBottomWidth: 1 }} className="text-lg font-normal mb-4">
           Tất cả ({projects?.projects?.totalCount ?? '-'})
         </p>

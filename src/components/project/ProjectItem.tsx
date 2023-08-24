@@ -1,11 +1,11 @@
 import { Project } from '@/src/generated/graphql'
 import { CopyIcon, EyeIcon, ZapIcon } from '../icons'
 
-interface IProjectItemProps {
+interface IProjectProps {
   data: Project
 }
 
-export const ProjectItem = (props: IProjectItemProps) => {
+export const ProjectItem = (props: IProjectProps) => {
   const { data } = props
   return (
     <div>

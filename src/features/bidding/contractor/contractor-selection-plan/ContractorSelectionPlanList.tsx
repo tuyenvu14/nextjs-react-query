@@ -2,7 +2,10 @@
 import React from 'react'
 import {
   StatisticBidNotification,
+  StatisticBidSelectionPlan,
+  StatisticBidSelectionPlansQuery,
   useStatisticBidNotificationsQuery,
+  useStatisticBidSelectionPlansQuery,
 } from '@/src/generated/graphql'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { DataAnalysis } from '@/src/components/project/DataAnalysis'
@@ -10,20 +13,18 @@ import { ProjectFooter } from '@/src/components/project/ProjectFooter'
 import { useUpdateSearch } from '@/src/hooks/useSearchParams'
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
 import { BiddingNotificationItem } from '@/src/components/project/BiddingNotificationItem'
+import { ContractorSelectionPlanItem } from '@/src/components/project/ContractorSelectionPlanItem'
 
-export default function BiddingNotificationList() {
+export default function ContractorSelectionPlanList() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const { handleSearchClick } = useUpdateSearch(pathname, router)
 
-  const { data: statisticBidNotifications } = useStatisticBidNotificationsQuery({
+  const { data: statisticBidSelectionPlans } = useStatisticBidSelectionPlansQuery({
     where: {
       isLatest: {
         equals: true,
-      },
-      isPreNotification: {
-        equals: false,
       },
     },
     skip: DEFAULT_PAGE_INDEX,
@@ -33,13 +34,13 @@ export default function BiddingNotificationList() {
   return (
     <>
       <div className="lg:col-span-2">
-        <p className="mb-2 text-2xl font-semibold text-primary">Thông báo mời thầu</p>
+        <p className="mb-2 text-2xl font-semibold text-primary">Kế hoạch lựa chọn nhà thầu</p>
         <p style={{ borderBottomWidth: 1 }} className="text-lg font-normal mb-4">
-          Kết quả ({statisticBidNotifications?.statisticBidNotifications?.totalCount ?? '-'})
+          Kết quả ({statisticBidSelectionPlans?.statisticBidSelectionPlans?.totalCount ?? '-'})
         </p>
-        {statisticBidNotifications?.statisticBidNotifications?.nodes?.map((data) => (
+        {statisticBidSelectionPlans?.statisticBidSelectionPlans?.nodes?.map((data) => (
           <div className="mb-4" key={data.id}>
-            <BiddingNotificationItem data={data as StatisticBidNotification} />
+            <ContractorSelectionPlanItem data={data as StatisticBidSelectionPlan} />
           </div>
         ))}
         <div>
@@ -55,7 +56,7 @@ export default function BiddingNotificationList() {
               pageSize: 10,
               // pageIndex,
               // pageSize: initPageSize,
-              total: statisticBidNotifications?.statisticBidNotifications?.totalCount,
+              total: statisticBidSelectionPlans?.statisticBidSelectionPlans?.totalCount,
             }}
           />
         </div>

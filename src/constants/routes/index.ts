@@ -19,3 +19,4 @@ export const biddingContractor = '/bidding/contractor'
 export const biddingInvestor = '/bidding/investor'
 
 export const biddingContractorNotification = '/bidding/contractor/bidding-notification'
+export const biddingContractorSelectionPlan = '/bidding/contractor/contractor-selection-plan'

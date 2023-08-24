@@ -15,6 +15,7 @@ import { usePathname } from 'next/navigation'
 import {
   bidding,
   biddingContractorNotification,
+  biddingContractorSelectionPlan,
   home,
   project,
   projectInvestDevelopPath,
@@ -90,7 +91,9 @@ export const Menu = () => {
                   >
                     <span
                       className={` hover:text-main flex cursor-pointer py-2 pl-3 pr-3 text-base font-semibold ${
-                        [biddingContractorNotification].includes(pathname) && pathname !== home
+                        [biddingContractorNotification, biddingContractorSelectionPlan].includes(
+                          pathname,
+                        ) && pathname !== home
                           ? '!text-main'
                           : 'text-default'
                       } ${openBidding ? '!text-main' : 'text-default'} `}

@@ -4,6 +4,11 @@ import { Collapse } from 'antd'
 import { BiddingNotificationSchedule } from './detail/BiddingNotificationSchedule'
 import { BiddingNotificationInfo } from './detail/BiddingNotificationInfo'
 import { useBidNotificationQuery } from '@/src/generated/graphql'
+import { BiddingNotificationApproval } from './detail/BiddingNotificationApproval'
+import { BiddingNotificationParticipate } from './detail/BiddingNotificationParticipate'
+import { BiddingNotificationOpening } from './detail/BiddingNotificationOpening'
+import { BiddingNotificationGuarantee } from './detail/BiddingNotificationGuarantee'
+import { BiddingNotificationProfile } from './detail/BiddingNotificationProfile'
 
 interface IBiddingNotificationDetailProps {
   params: { biddingNotificationId: string }
@@ -24,37 +29,69 @@ export const BiddingNotificationDetail = (props: IBiddingNotificationDetailProps
       <Collapse
         className="!mb-4"
         defaultActiveKey={['1']}
-        items={[{ key: '1', label: 'THÔNG TIN CƠ BẢN', children: <BiddingNotificationInfo /> }]}
+        items={[
+          {
+            key: '1',
+            label: 'THÔNG TIN CƠ BẢN',
+            children: <BiddingNotificationInfo data={undefined} />,
+          },
+        ]}
       />
 
       <Collapse
         className="!mb-4"
         defaultActiveKey={['1']}
-        items={[{ key: '1', label: 'QUYẾT ĐỊNH PHÊ DUYỆT', children: <p>{'text'}</p> }]}
+        items={[
+          {
+            key: '1',
+            label: 'QUYẾT ĐỊNH PHÊ DUYỆT',
+            children: <BiddingNotificationApproval data={undefined} />,
+          },
+        ]}
       />
 
       <Collapse
         className="!mb-4"
         defaultActiveKey={['1']}
-        items={[{ key: '1', label: 'THAM DỰ THẦU ', children: <p>{'text'}</p> }]}
+        items={[
+          {
+            key: '1',
+            label: 'THAM DỰ THẦU ',
+            children: <BiddingNotificationParticipate data={undefined} />,
+          },
+        ]}
       />
 
       <Collapse
         className="!mb-4"
         defaultActiveKey={['1']}
-        items={[{ key: '1', label: 'MỞ THẦU', children: <p>{'text'}</p> }]}
+        items={[
+          { key: '1', label: 'MỞ THẦU', children: <BiddingNotificationOpening data={undefined} /> },
+        ]}
       />
 
       <Collapse
         className="!mb-4"
         defaultActiveKey={['1']}
-        items={[{ key: '1', label: 'ĐẢM BẢM DỰ THẦU ', children: <p>{'text'}</p> }]}
+        items={[
+          {
+            key: '1',
+            label: 'ĐẢM BẢM DỰ THẦU ',
+            children: <BiddingNotificationGuarantee data={undefined} />,
+          },
+        ]}
       />
 
       <Collapse
         className="!mb-4"
         defaultActiveKey={['1']}
-        items={[{ key: '1', label: 'HỒ SƠ MỜI THẦU', children: <p>{'text'}</p> }]}
+        items={[
+          {
+            key: '1',
+            label: 'HỒ SƠ MỜI THẦU',
+            children: <BiddingNotificationProfile data={undefined} />,
+          },
+        ]}
       />
 
       <Collapse
