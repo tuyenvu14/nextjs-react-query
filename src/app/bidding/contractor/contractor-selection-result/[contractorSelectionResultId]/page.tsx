@@ -1,8 +1,8 @@
 import { dehydrate } from '@tanstack/query-core'
 import Hydrate from '@/src/utils/hydrate.client'
 import getQueryClient from '@/src/utils/getQueryClient'
-import { useStatisticBidSelectionPlanQuery } from '@/src/generated/graphql'
-import { ContractorSelectionPlanDetail } from '@/src/features/bidding/contractor/contractor-selection-plan/ContractorSelectionPlanDetail'
+import { useStatisticBidNotificationResultQuery } from '@/src/generated/graphql'
+import { ContractorSelectionResultDetail } from '@/src/features/bidding/contractor/contractor-selection-result/ContractorSelectionResultDetail'
 
 // const ContractorSelectionPlanDetail = dynamic(() =>
 //   import(
@@ -14,18 +14,18 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: { contractorSelectionPlanId: string }
+  params: { contractorSelectionResultId: string }
   searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   const queryClient = getQueryClient()
   // use prefetchQuery when search query
   // console.log(searchParams, params)
   await queryClient.prefetchQuery(
-    useStatisticBidSelectionPlanQuery.getKey({
-      where: { id: params.contractorSelectionPlanId },
+    useStatisticBidNotificationResultQuery.getKey({
+      where: { id: params.contractorSelectionResultId },
     }),
-    useStatisticBidSelectionPlanQuery.fetcher({
-      where: { id: params.contractorSelectionPlanId },
+    useStatisticBidNotificationResultQuery.fetcher({
+      where: { id: params.contractorSelectionResultId },
     }),
   )
 
@@ -33,7 +33,7 @@ export default async function Page({
 
   return (
     <Hydrate state={dehydratedState}>
-      <ContractorSelectionPlanDetail searchParams={searchParams} params={params} />
+      <ContractorSelectionResultDetail searchParams={searchParams} params={params} />
     </Hydrate>
   )
 }

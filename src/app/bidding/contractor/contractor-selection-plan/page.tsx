@@ -1,11 +1,7 @@
 import { dehydrate } from '@tanstack/query-core'
 import Hydrate from '@/src/utils/hydrate.client'
 import getQueryClient from '@/src/utils/getQueryClient'
-import {
-  useProjectsQuery,
-  useStatisticBidNotificationsQuery,
-  useStatisticBidSelectionPlansQuery,
-} from '@/src/generated/graphql'
+import { useStatisticBidSelectionPlansQuery } from '@/src/generated/graphql'
 import dynamic from 'next/dynamic'
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
 // import { ContractorSelectionPlan } from '@/src/features/bidding/contractor/contractor-selection-plan/ContractorSelectionPlan'
@@ -25,7 +21,8 @@ export default async function Page({
 }) {
   const queryClient = getQueryClient()
   // use prefetchQuery when search query
-  // console.log(searchParams)
+  const page = searchParams?.page ?? DEFAULT_PAGE_INDEX
+  const pageSize = searchParams?.pageSize ?? DEFAULT_PAGE_SIZE
   await queryClient.prefetchQuery(
     useStatisticBidSelectionPlansQuery.getKey({
       where: {
@@ -33,8 +30,8 @@ export default async function Page({
           equals: true,
         },
       },
-      skip: DEFAULT_PAGE_INDEX,
-      take: DEFAULT_PAGE_SIZE,
+      skip: (+page - 1) * +pageSize,
+      take: +pageSize,
     }),
     useStatisticBidSelectionPlansQuery.fetcher({
       where: {
@@ -42,8 +39,8 @@ export default async function Page({
           equals: true,
         },
       },
-      skip: DEFAULT_PAGE_INDEX,
-      take: DEFAULT_PAGE_SIZE,
+      skip: (+page - 1) * +pageSize,
+      take: +pageSize,
     }),
   )
 

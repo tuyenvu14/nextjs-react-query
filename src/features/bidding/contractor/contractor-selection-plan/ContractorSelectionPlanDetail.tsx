@@ -10,7 +10,7 @@ import { ContractorSelectionPlanInfo } from './detail/ContractorSelectionPlanInf
 import { ContractorSelectionPlanEstimate } from './detail/ContractorSelectionPlanEstimate'
 import { ContractorSelectionPlanRelatedInfo } from './detail/ContractorSelectionPlanRelatedInfo'
 import { ContractorSelectionPlanApproval } from './detail/ContractorSelectionPlanApproval'
-import { StructureTree } from './detail/StructureTree'
+import { StructureTree } from '@/src/components/project/StructureTree'
 
 interface IContractorSelectionPlanDetailProps {
   params: { contractorSelectionPlanId: string }

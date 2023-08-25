@@ -16,6 +16,7 @@ import {
   bidding,
   biddingContractorNotification,
   biddingContractorSelectionPlan,
+  biddingContractorSelectionResult,
   home,
   project,
   projectInvestDevelopPath,
@@ -58,12 +59,7 @@ export const Menu = () => {
                   >
                     <span
                       className={` hover:text-main flex cursor-pointer py-2 pl-3 pr-3 text-base font-semibold ${
-                        [
-                          searchOrganizationContractorPath,
-                          searchOrganizationInvestorAndBidSolicitorPath,
-                        ].includes(pathname) && pathname !== home
-                          ? '!text-main'
-                          : 'text-default'
+                        pathname.includes(searchOrganization) ? '!text-main' : 'text-default'
                       } ${openSearchOrganization ? '!text-main' : 'text-default'} `}
                     >
                       {e.name}
@@ -91,11 +87,7 @@ export const Menu = () => {
                   >
                     <span
                       className={` hover:text-main flex cursor-pointer py-2 pl-3 pr-3 text-base font-semibold ${
-                        [biddingContractorNotification, biddingContractorSelectionPlan].includes(
-                          pathname,
-                        ) && pathname !== home
-                          ? '!text-main'
-                          : 'text-default'
+                        pathname.includes(bidding) ? '!text-main' : 'text-default'
                       } ${openBidding ? '!text-main' : 'text-default'} `}
                     >
                       {e.name}

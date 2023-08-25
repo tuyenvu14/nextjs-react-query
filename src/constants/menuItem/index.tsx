@@ -3,7 +3,9 @@ import {
   bidding,
   biddingContractor,
   biddingContractorNotification,
+  biddingContractorPreQualification,
   biddingContractorSelectionPlan,
+  biddingContractorSelectionResult,
   biddingInvestor,
   docs,
   home,
@@ -129,27 +131,30 @@ export const biddingItems: MenuProps['items'] = [
       {
         key: '1-2',
         label: (
-          <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
-            TB mời sơ tuyển
+          <Link
+            href={biddingContractorPreQualification}
+            className="inline-flex items-center text-sm font-medium"
+          >
+            Sơ tuyển
           </Link>
         ),
       },
-      {
-        key: '1-3',
-        label: (
-          <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
-            Kết quả mở sơ tuyển
-          </Link>
-        ),
-      },
-      {
-        key: '1-4',
-        label: (
-          <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
-            Kết quả sơ tuyển
-          </Link>
-        ),
-      },
+      // {
+      //   key: '1-3',
+      //   label: (
+      //     <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
+      //       Kết quả mở sơ tuyển
+      //     </Link>
+      //   ),
+      // },
+      // {
+      //   key: '1-4',
+      //   label: (
+      //     <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
+      //       Kết quả sơ tuyển
+      //     </Link>
+      //   ),
+      // },
       {
         key: '1-5',
         label: (
@@ -172,7 +177,10 @@ export const biddingItems: MenuProps['items'] = [
       {
         key: '1-7',
         label: (
-          <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
+          <Link
+            href={biddingContractorSelectionResult}
+            className="inline-flex items-center text-sm font-medium"
+          >
             Kết quả LCNT
           </Link>
         ),

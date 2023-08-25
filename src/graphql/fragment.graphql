@@ -140,4 +140,28 @@ fragment StatisticBidSelectionPlanFields on StatisticBidSelectionPlan {
   }
   procuringEntityCode
 }
+  
+fragment StatisticBidNotificationResultFields on StatisticBidNotificationResult {
+  id
+  version
+  versions
+  bidNotification {
+    bidPackage {
+      # tên gói thầu
+      name
+      bidSelectionPlan {
+        # bên mời thầu
+        procuringEntityName
+        procuringEntityCode
+      }
+    }
+  }
+  # thời gian công bố
+  publishedAt
+  # nhà thầu được chọn
+  selectedContractors {
+    id
+    name
+  }
+}
     

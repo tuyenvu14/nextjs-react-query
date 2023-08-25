@@ -20,3 +20,5 @@ export const biddingInvestor = '/bidding/investor'
 
 export const biddingContractorNotification = '/bidding/contractor/bidding-notification'
 export const biddingContractorSelectionPlan = '/bidding/contractor/contractor-selection-plan'
+export const biddingContractorSelectionResult = '/bidding/contractor/contractor-selection-result'
+export const biddingContractorPreQualification = '/bidding/contractor/pre-qualification'

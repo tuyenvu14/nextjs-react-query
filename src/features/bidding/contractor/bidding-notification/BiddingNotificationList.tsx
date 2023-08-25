@@ -6,7 +6,7 @@ import {
 } from '@/src/generated/graphql'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { DataAnalysis } from '@/src/components/project/DataAnalysis'
-import { ProjectFooter } from '@/src/components/project/ProjectFooter'
+import { FooterList } from '@/src/components/project/FooterList'
 import { useUpdateSearch } from '@/src/hooks/useSearchParams'
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
 import { BiddingNotificationItem } from '@/src/components/project/BiddingNotificationItem'
@@ -16,6 +16,8 @@ export default function BiddingNotificationList() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const { handleSearchClick } = useUpdateSearch(pathname, router)
+  const page = searchParams.get('page') ?? `${DEFAULT_PAGE_INDEX}`
+  const pageSize = searchParams.get('pageSize') ?? `${DEFAULT_PAGE_SIZE}`
 
   const { data: statisticBidNotifications } = useStatisticBidNotificationsQuery({
     where: {
@@ -26,8 +28,8 @@ export default function BiddingNotificationList() {
         equals: false,
       },
     },
-    skip: DEFAULT_PAGE_INDEX,
-    take: DEFAULT_PAGE_SIZE,
+    skip: (+page - 1) * +pageSize,
+    take: +pageSize,
   })
 
   return (
@@ -43,18 +45,16 @@ export default function BiddingNotificationList() {
           </div>
         ))}
         <div>
-          <ProjectFooter
+          <FooterList
             onPageChange={(page: number, pageSize: number) =>
               handleSearchClick({
-                pageIndex: page,
-                pageSize: pageSize,
+                page,
+                pageSize,
               })
             }
             pagination={{
-              pageIndex: 1,
-              pageSize: 10,
-              // pageIndex,
-              // pageSize: initPageSize,
+              pageIndex: parseInt(page ?? `${DEFAULT_PAGE_INDEX}`),
+              pageSize: parseInt(pageSize ?? `${DEFAULT_PAGE_SIZE}`),
               total: statisticBidNotifications?.statisticBidNotifications?.totalCount,
             }}
           />

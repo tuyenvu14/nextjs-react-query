@@ -24,6 +24,11 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
             colorBorder: '#FEDF89',
             colorText: '#B54708',
           },
+          Pagination: {
+            // colorBorder: '#F59E0B',
+            // colorBorderBg: '#F59E0B',
+            // colorPrimary: '#F59E0B',
+          },
         },
       }}
     >

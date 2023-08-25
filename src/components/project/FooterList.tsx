@@ -9,10 +9,8 @@ interface ProjectFooterProps {
   onPageChange(page: number, pageSize: number): void
 }
 
-export const ProjectFooter = (props: ProjectFooterProps) => {
-  // const router = useRouter()
+export const FooterList = (props: ProjectFooterProps) => {
   const onPageChange = (page: number, pageSize: number) => {
-    // console.log(page, pageSize, '-------------')
     props.onPageChange(page, pageSize)
   }
   return (

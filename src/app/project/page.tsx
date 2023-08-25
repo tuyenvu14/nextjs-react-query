@@ -3,6 +3,7 @@ import Hydrate from '@/src/utils/hydrate.client'
 import getQueryClient from '@/src/utils/getQueryClient'
 import { useProjectsQuery } from '@/src/generated/graphql'
 import dynamic from 'next/dynamic'
+import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
 // import { InvestDevelop } from '@/src/features/project/Project'
 
 const InvestDevelop = dynamic(() =>
@@ -17,18 +18,18 @@ export default async function Page({
   searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   const queryClient = getQueryClient()
-  // use in prefetchQuery when search query
-  // console.log(searchParams)
+  const page = searchParams?.page ?? DEFAULT_PAGE_INDEX
+  const pageSize = searchParams?.pageSize ?? DEFAULT_PAGE_SIZE
   await queryClient.prefetchQuery(
     useProjectsQuery.getKey({
       where: {},
-      skip: 0,
-      take: 10,
+      skip: (+page - 1) * +pageSize,
+      take: +pageSize,
     }),
     useProjectsQuery.fetcher({
       where: {},
-      skip: 0,
-      take: 10,
+      skip: (+page - 1) * +pageSize,
+      take: +pageSize,
     }),
   )
 

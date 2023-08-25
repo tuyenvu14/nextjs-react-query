@@ -1,15 +1,15 @@
 import { dehydrate } from '@tanstack/query-core'
 import Hydrate from '@/src/utils/hydrate.client'
 import getQueryClient from '@/src/utils/getQueryClient'
-import { useStatisticBidNotificationsQuery } from '@/src/generated/graphql'
+import { useStatisticBidNotificationResultsQuery } from '@/src/generated/graphql'
 import dynamic from 'next/dynamic'
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
-// import { BiddingNotification } from '@/src/features/bidding/contractor/bidding-notification/BiddingNotification'
+// import { ContractorSelectionResult } from '@/src/features/bidding/contractor/contractor-selection-result/ContractorSelectionResult'
 
-const BiddingNotification = dynamic(() =>
-  import('@/src/features/bidding/contractor/bidding-notification/BiddingNotification').then(
-    (mod) => mod.BiddingNotification,
-  ),
+const ContractorSelectionResult = dynamic(() =>
+  import(
+    '@/src/features/bidding/contractor/contractor-selection-result/ContractorSelectionResult'
+  ).then((mod) => mod.ContractorSelectionResult),
 )
 
 export default async function Page({
@@ -21,28 +21,33 @@ export default async function Page({
 }) {
   const queryClient = getQueryClient()
   // use prefetchQuery when search query
+  // console.log(searchParams)
   const page = searchParams?.page ?? DEFAULT_PAGE_INDEX
   const pageSize = searchParams?.pageSize ?? DEFAULT_PAGE_SIZE
   await queryClient.prefetchQuery(
-    useStatisticBidNotificationsQuery.getKey({
+    useStatisticBidNotificationResultsQuery.getKey({
       where: {
         isLatest: {
           equals: true,
         },
-        isPreNotification: {
-          equals: false,
+        bidNotification: {
+          isPreNotification: {
+            equals: false,
+          },
         },
       },
       skip: (+page - 1) * +pageSize,
       take: +pageSize,
     }),
-    useStatisticBidNotificationsQuery.fetcher({
+    useStatisticBidNotificationResultsQuery.fetcher({
       where: {
         isLatest: {
           equals: true,
         },
-        isPreNotification: {
-          equals: false,
+        bidNotification: {
+          isPreNotification: {
+            equals: false,
+          },
         },
       },
       skip: (+page - 1) * +pageSize,
@@ -54,7 +59,7 @@ export default async function Page({
 
   return (
     <Hydrate state={dehydratedState}>
-      <BiddingNotification />
+      <ContractorSelectionResult />
     </Hydrate>
   )
 }

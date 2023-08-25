@@ -1,6 +1,10 @@
-import React from 'react'
 import { Table } from 'antd'
-import type { ColumnsType } from 'antd/es/table'
+import { ColumnsType } from 'antd/es/table'
+
+interface IContractorSelectionResultContractProps {
+  data: any
+}
+
 interface DataType {
   key: string
   name: string
@@ -8,30 +12,28 @@ interface DataType {
   address: string
   tags: string[]
 }
-export const TenderNotice = () => {
+
+export const ContractorSelectionResultContract = (
+  props: IContractorSelectionResultContractProps,
+) => {
   const columns: ColumnsType<DataType> = [
     {
-      title: 'Mã TBMST',
-      dataIndex: 'stt',
+      title: 'STT',
+      dataIndex: 'key',
       key: 'stt',
-      render: (text) => <a>{text}</a>,
+      width: 100,
     },
     {
-      title: 'Tên dự án',
+      title: 'Nhà thầu',
       dataIndex: 'name',
       key: 'name',
-      width: 150,
+      width: 200,
     },
     {
-      title: 'Tên gói thầu',
+      title: 'Ngày ký hợp đồng',
       dataIndex: 'field',
       key: 'field',
-      width: 250,
-    },
-    {
-      title: 'Thời gian công bố',
-      dataIndex: 'field',
-      key: 'field',
+      width: 200,
     },
   ]
 
@@ -58,5 +60,5 @@ export const TenderNotice = () => {
       tags: ['cool', 'teacher'],
     },
   ]
-  return <Table scroll={{ x: 500 }} columns={columns} dataSource={data} />
+  return <Table columns={columns} dataSource={data} />
 }

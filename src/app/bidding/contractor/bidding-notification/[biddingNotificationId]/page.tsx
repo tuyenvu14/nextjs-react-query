@@ -1,13 +1,7 @@
 import { dehydrate } from '@tanstack/query-core'
 import Hydrate from '@/src/utils/hydrate.client'
 import getQueryClient from '@/src/utils/getQueryClient'
-import {
-  useBidNotificationQuery,
-  useProjectsQuery,
-  useStatisticBidNotificationsQuery,
-} from '@/src/generated/graphql'
-import dynamic from 'next/dynamic'
-import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
+import { useBidNotificationQuery } from '@/src/generated/graphql'
 import { BiddingNotificationDetail } from '@/src/features/bidding/contractor/bidding-notification/BiddingNotificationDetail'
 
 // const BiddingNotificationDetail = dynamic(() =>

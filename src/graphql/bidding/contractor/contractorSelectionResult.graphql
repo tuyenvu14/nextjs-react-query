@@ -1,0 +1,20 @@
+query statisticBidNotificationResults(
+  $orderBy: [BidNotificationResultOrderByWithRelationInput!]
+  $take: Int
+  $skip: Int
+  $where: BidNotificationResultWhereInput
+) {
+  statisticBidNotificationResults(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
+    nodes {
+      ...StatisticBidNotificationResultFields
+    }
+    totalCount
+  }
+}
+
+# chi tiết về kết quả lựa chọn nhà thầu
+query statisticBidNotificationResult($where: BidNotificationResultWhereUniqueInput!) {
+  statisticBidNotificationResult(where: $where) {
+    ...StatisticBidNotificationResultFields
+  }
+}
