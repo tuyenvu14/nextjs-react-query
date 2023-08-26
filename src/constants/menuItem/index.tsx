@@ -3,7 +3,9 @@ import {
   bidding,
   biddingContractor,
   biddingContractorNotification,
-  biddingContractorPreQualification,
+  biddingContractorPreQualificationNotification,
+  biddingContractorPreQualificationOpeningResult,
+  biddingContractorPreQualificationResult,
   biddingContractorSelectionPlan,
   biddingContractorSelectionResult,
   biddingInvestor,
@@ -132,29 +134,35 @@ export const biddingItems: MenuProps['items'] = [
         key: '1-2',
         label: (
           <Link
-            href={biddingContractorPreQualification}
+            href={biddingContractorPreQualificationNotification}
             className="inline-flex items-center text-sm font-medium"
           >
-            Sơ tuyển
+            TB mời sơ tuyển
           </Link>
         ),
       },
-      // {
-      //   key: '1-3',
-      //   label: (
-      //     <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
-      //       Kết quả mở sơ tuyển
-      //     </Link>
-      //   ),
-      // },
-      // {
-      //   key: '1-4',
-      //   label: (
-      //     <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
-      //       Kết quả sơ tuyển
-      //     </Link>
-      //   ),
-      // },
+      {
+        key: '1-3',
+        label: (
+          <Link
+            href={biddingContractorPreQualificationOpeningResult}
+            className="inline-flex items-center text-sm font-medium"
+          >
+            Kết quả mở sơ tuyển
+          </Link>
+        ),
+      },
+      {
+        key: '1-4',
+        label: (
+          <Link
+            href={biddingContractorPreQualificationResult}
+            className="inline-flex items-center text-sm font-medium"
+          >
+            Kết quả sơ tuyển
+          </Link>
+        ),
+      },
       {
         key: '1-5',
         label: (

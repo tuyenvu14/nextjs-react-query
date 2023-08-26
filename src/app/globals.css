@@ -17,3 +17,11 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+.ant-pagination-item-active {
+  border-color: #F59E0B!important;
+}
+
+.ant-pagination-item-active a {
+  color: #F59e0b!important; 
+}

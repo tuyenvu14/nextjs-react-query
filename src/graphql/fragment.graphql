@@ -164,4 +164,26 @@ fragment StatisticBidNotificationResultFields on StatisticBidNotificationResult 
     name
   }
 }
-    
+
+fragment BidOpenPreNotificationResultFields on StatisticBidNotificationResult {
+  id
+  bidNotification {
+    bidPackage {
+      # tên gói thầu
+      name
+      bidSelectionPlan {
+        procuringEntity {
+          # bên mời thầu
+          name
+        }
+      }
+    }
+    # thơi gian công bố
+    openDate
+  }
+  # nhà thầu được chọn
+  selectedContractors {
+    id
+    name
+  }
+}

@@ -1,0 +1,20 @@
+query bidOpenPreNotificationResults(
+  $orderBy: [BidNotificationResultOrderByWithRelationInput!]
+  $take: Int
+  $skip: Int
+  $where: CustomBidNotificationResultWhereInput
+) {
+  bidOpenPreNotificationResults(where: $where, skip: $skip, take: $take, orderBy: $orderBy) {
+    nodes {
+      ...BidOpenPreNotificationResultFields
+    }
+    totalCount
+  }
+}
+
+# chi tiết kết quả mờ thầu sơ tuyển | kết quả sơ tuyển
+query bidOpenPreNotificationResult($where: BidNotificationResultWhereUniqueInput!) {
+  bidOpenPreNotificationResult(where: $where) {
+    ...BidOpenPreNotificationResultFields
+  }
+}
