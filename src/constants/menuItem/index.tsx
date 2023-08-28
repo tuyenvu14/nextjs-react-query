@@ -2,6 +2,7 @@ import { Dropdown, MenuProps } from 'antd'
 import {
   bidding,
   biddingContractor,
+  biddingContractorBidOpeningResult,
   biddingContractorNotification,
   biddingContractorPreQualificationNotification,
   biddingContractorPreQualificationOpeningResult,
@@ -177,7 +178,10 @@ export const biddingItems: MenuProps['items'] = [
       {
         key: '1-6',
         label: (
-          <Link href={biddingContractor} className="inline-flex items-center text-sm font-medium">
+          <Link
+            href={biddingContractorBidOpeningResult}
+            className="inline-flex items-center text-sm font-medium"
+          >
             Kết quả mở thầu
           </Link>
         ),

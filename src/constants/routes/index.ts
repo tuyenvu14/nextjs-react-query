@@ -24,3 +24,4 @@ export const biddingContractorSelectionResult = '/bidding/contractor/contractor-
 export const biddingContractorPreQualificationNotification = '/bidding/contractor/pre-qualification-notification'
 export const biddingContractorPreQualificationOpeningResult = '/bidding/contractor/pre-qualification-opening-result'
 export const biddingContractorPreQualificationResult = '/bidding/contractor/pre-qualification-result'
+export const biddingContractorBidOpeningResult = '/bidding/contractor/bidding-opening-result'
