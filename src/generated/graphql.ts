@@ -15478,6 +15478,10 @@ export type IntNullableFilter = {
 
 export type InviteBidderBidPackageWhereInput = {
   contractorCode?: InputMaybe<Scalars['String']['input']>;
+  didCancel?: InputMaybe<BoolFilter>;
+  didLose?: InputMaybe<BoolFilter>;
+  didNoResult?: InputMaybe<BoolFilter>;
+  didWin?: InputMaybe<BoolFilter>;
   procuringEntityCode?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -21617,7 +21621,7 @@ export type Query = {
   catProjectManagementForms: CatProjectManagementFormConnection;
   competeContractors: StatisticOrganizationConnection;
   getUserPermissions: Array<Scalars['String']['output']>;
-  inviteBidderBidPackages: BidPackageConnection;
+  inviteBidderBidPackages: StatisticBidPackageConnection;
   inviteBidders: StatisticBidNotificationContractorConnection;
   organization: Organization;
   organizations: OrganizationConnection;
@@ -22123,12 +22127,7 @@ export type QueryStatisticBidSelectionPlansArgs = {
 
 
 export type QueryStatisticOrganizationArgs = {
-  cursor?: InputMaybe<OrganizationWhereUniqueInput>;
-  distinct?: InputMaybe<Array<OrganizationScalarFieldEnum>>;
-  orderBy?: InputMaybe<Array<OrganizationOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<OrganizationWhereInput>;
+  where: OrganizationWhereUniqueInput;
 };
 
 
@@ -22409,6 +22408,10 @@ export type StatisticBidPackage = {
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   createdBy?: Maybe<Scalars['String']['output']>;
   deletedAt?: Maybe<Scalars['DateTime']['output']>;
+  didCancel?: Maybe<Scalars['Boolean']['output']>;
+  didLose?: Maybe<Scalars['Boolean']['output']>;
+  didNoResult?: Maybe<Scalars['Boolean']['output']>;
+  didWin?: Maybe<Scalars['Boolean']['output']>;
   district?: Maybe<CatArea>;
   districtCode?: Maybe<Scalars['String']['output']>;
   districtId?: Maybe<Scalars['String']['output']>;
@@ -22448,6 +22451,13 @@ export type StatisticBidPackage = {
   ward?: Maybe<CatArea>;
   wardCode?: Maybe<Scalars['String']['output']>;
   wardId?: Maybe<Scalars['String']['output']>;
+};
+
+export type StatisticBidPackageConnection = {
+  __typename?: 'StatisticBidPackageConnection';
+  nodes?: Maybe<Array<StatisticBidPackage>>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
 };
 
 export type StatisticBidSelectionPlan = {
@@ -23051,6 +23061,8 @@ export type StatisticBidNotificationResultFieldsFragment = { __typename?: 'Stati
 
 export type BidOpenPreNotificationResultFieldsFragment = { __typename?: 'StatisticBidNotificationResult', id: string, bidNotification?: { __typename?: 'BidNotification', openDate?: any | null, bidPackage?: { __typename?: 'BidPackage', name?: string | null, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', procuringEntity?: { __typename?: 'Organization', name?: string | null } | null } | null } | null } | null, selectedContractors?: Array<{ __typename?: 'StatisticOrganization', id: string, name?: string | null }> | null };
 
+export type StatisticOrganizationFieldsFragment = { __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null };
+
 export type ProjectsQueryVariables = Exact<{
   where?: InputMaybe<ProjectWhereInput>;
   skip?: InputMaybe<Scalars['Int']['input']>;
@@ -23060,6 +23072,23 @@ export type ProjectsQueryVariables = Exact<{
 
 
 export type ProjectsQuery = { __typename?: 'Query', projects: { __typename?: 'ProjectConnection', totalCount: number, nodes?: Array<{ __typename?: 'Project', id: string, name?: string | null, investorName?: string | null, totalInvestment?: any | null, provinceCode?: string | null, groupCode?: string | null, publishedAt?: any | null, province?: { __typename?: 'CatArea', code: string } | null }> | null } };
+
+export type StatisticOrganizationsQueryVariables = Exact<{
+  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<StatisticOrganizationWhereInput>;
+  orderBy?: InputMaybe<Array<StatisticOrganizationOrderByWithRelationInput> | StatisticOrganizationOrderByWithRelationInput>;
+}>;
+
+
+export type StatisticOrganizationsQuery = { __typename?: 'Query', statisticOrganizations: { __typename?: 'StatisticOrganizationConnection', totalCount: number, nodes?: Array<{ __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null }> | null } };
+
+export type StatisticOrganizationQueryVariables = Exact<{
+  where: OrganizationWhereUniqueInput;
+}>;
+
+
+export type StatisticOrganizationQuery = { __typename?: 'Query', statisticOrganization: { __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } };
 
 export const ProjectFieldsFragmentDoc = `
     fragment ProjectFields on Project {
@@ -23204,6 +23233,23 @@ export const BidOpenPreNotificationResultFieldsFragmentDoc = `
   }
   selectedContractors {
     id
+    name
+  }
+}
+    `;
+export const StatisticOrganizationFieldsFragmentDoc = `
+    fragment StatisticOrganizationFields on StatisticOrganization {
+  id
+  name
+  code
+  waitingResultBidPackages
+  winBidPackages
+  loseBidPackages
+  relatedContractors
+  attendedBidPackages
+  officeAddress
+  repIdNo
+  businessType {
     name
   }
 }
@@ -23477,3 +23523,63 @@ useProjectsQuery.getKey = (variables?: ProjectsQueryVariables) => variables === 
 ;
 
 useProjectsQuery.fetcher = (variables?: ProjectsQueryVariables, options?: RequestInit['headers']) => useFetchData<ProjectsQuery, ProjectsQueryVariables>(ProjectsDocument, variables, options);
+export const StatisticOrganizationsDocument = `
+    query statisticOrganizations($take: Int, $skip: Int, $where: StatisticOrganizationWhereInput, $orderBy: [StatisticOrganizationOrderByWithRelationInput!]) {
+  statisticOrganizations(
+    take: $take
+    skip: $skip
+    where: $where
+    orderBy: $orderBy
+  ) {
+    nodes {
+      ...StatisticOrganizationFields
+    }
+    totalCount
+  }
+}
+    ${StatisticOrganizationFieldsFragmentDoc}`;
+export const useStatisticOrganizationsQuery = <
+      TData = StatisticOrganizationsQuery,
+      TError = unknown
+    >(
+      variables?: StatisticOrganizationsQueryVariables,
+      options?: UseQueryOptions<StatisticOrganizationsQuery, TError, TData>
+    ) =>
+    useQuery<StatisticOrganizationsQuery, TError, TData>(
+      variables === undefined ? ['statisticOrganizations'] : ['statisticOrganizations', variables],
+      useFetchData<StatisticOrganizationsQuery, StatisticOrganizationsQueryVariables>(StatisticOrganizationsDocument, variables),
+      options
+    );
+useStatisticOrganizationsQuery.document = StatisticOrganizationsDocument;
+
+
+useStatisticOrganizationsQuery.getKey = (variables?: StatisticOrganizationsQueryVariables) => variables === undefined ? ['statisticOrganizations'] : ['statisticOrganizations', variables];
+;
+
+useStatisticOrganizationsQuery.fetcher = (variables?: StatisticOrganizationsQueryVariables, options?: RequestInit['headers']) => useFetchData<StatisticOrganizationsQuery, StatisticOrganizationsQueryVariables>(StatisticOrganizationsDocument, variables, options);
+export const StatisticOrganizationDocument = `
+    query statisticOrganization($where: OrganizationWhereUniqueInput!) {
+  statisticOrganization(where: $where) {
+    ...StatisticOrganizationFields
+  }
+}
+    ${StatisticOrganizationFieldsFragmentDoc}`;
+export const useStatisticOrganizationQuery = <
+      TData = StatisticOrganizationQuery,
+      TError = unknown
+    >(
+      variables: StatisticOrganizationQueryVariables,
+      options?: UseQueryOptions<StatisticOrganizationQuery, TError, TData>
+    ) =>
+    useQuery<StatisticOrganizationQuery, TError, TData>(
+      ['statisticOrganization', variables],
+      useFetchData<StatisticOrganizationQuery, StatisticOrganizationQueryVariables>(StatisticOrganizationDocument, variables),
+      options
+    );
+useStatisticOrganizationQuery.document = StatisticOrganizationDocument;
+
+
+useStatisticOrganizationQuery.getKey = (variables: StatisticOrganizationQueryVariables) => ['statisticOrganization', variables];
+;
+
+useStatisticOrganizationQuery.fetcher = (variables: StatisticOrganizationQueryVariables, options?: RequestInit['headers']) => useFetchData<StatisticOrganizationQuery, StatisticOrganizationQueryVariables>(StatisticOrganizationDocument, variables, options);

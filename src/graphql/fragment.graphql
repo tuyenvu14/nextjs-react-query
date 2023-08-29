@@ -187,3 +187,27 @@ fragment BidOpenPreNotificationResultFields on StatisticBidNotificationResult {
     name
   }
 }
+
+fragment StatisticOrganizationFields on StatisticOrganization {
+  id
+  name
+  code
+  # số gói thầu chờ kết quả
+  waitingResultBidPackages
+  # gói trúng thầu
+  winBidPackages
+  # gói trượt thầu
+  loseBidPackages
+  # nhà thầu liên quan
+  relatedContractors
+  # số gói thầu tham gia
+  attendedBidPackages
+  # địa chỉ
+  officeAddress
+  # mã số thuế
+  repIdNo
+  # ngành nghề chính
+  businessType {
+    name
+  }
+}

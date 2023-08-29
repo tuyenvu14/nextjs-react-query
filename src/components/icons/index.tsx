@@ -26,6 +26,10 @@ export const UserPlusIcon = ({ className }: { className?: string }) => (
   <span className={`tln_user-plus-01 ${className || ''}`} />
 )
 
-// export const UserPlusIcon = ({ className }: { className?: string }) => (
-//   <span className={`tln_user-plus-01 ${className || ''}`} />
-// )
+export const LocationIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_location ${className || ''}`} />
+)
+
+export const ChartIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_bar-chart-10 ${className || ''}`} />
+)

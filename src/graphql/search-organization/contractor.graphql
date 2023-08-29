@@ -1,0 +1,19 @@
+query statisticOrganizations(
+  $take: Int
+  $skip: Int
+  $where: StatisticOrganizationWhereInput
+  $orderBy: [StatisticOrganizationOrderByWithRelationInput!]
+) {
+  statisticOrganizations(take: $take, skip: $skip, where: $where, orderBy: $orderBy) {
+    nodes {
+      ...StatisticOrganizationFields
+    }
+    totalCount
+  }
+}
+
+query statisticOrganization($where: OrganizationWhereUniqueInput!) {
+  statisticOrganization(where: $where) {
+    ...StatisticOrganizationFields
+  }
+}
