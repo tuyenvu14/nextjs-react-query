@@ -26562,7 +26562,7 @@ export type StatisticBidNotificationResultFieldsFragment = { __typename?: 'Stati
 
 export type BidOpenPreNotificationResultFieldsFragment = { __typename?: 'StatisticBidNotificationResult', id: string, bidNotification?: { __typename?: 'BidNotification', openDate?: any | null, bidPackage?: { __typename?: 'BidPackage', name?: string | null, bidSelectionPlan?: { __typename?: 'BidSelectionPlan', procuringEntity?: { __typename?: 'Organization', name?: string | null } | null } | null } | null } | null, selectedContractors?: Array<{ __typename?: 'StatisticOrganization', id: string, name?: string | null }> | null };
 
-export type StatisticOrganizationFieldsFragment = { __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null };
+export type StatisticOrganizationFieldsFragment = { __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, createdAt?: any | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null };
 
 export type ProjectsQueryVariables = Exact<{
   where?: InputMaybe<ProjectWhereInput>;
@@ -26582,14 +26582,14 @@ export type StatisticOrganizationsQueryVariables = Exact<{
 }>;
 
 
-export type StatisticOrganizationsQuery = { __typename?: 'Query', statisticOrganizations: { __typename?: 'StatisticOrganizationConnection', totalCount: number, nodes?: Array<{ __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null }> | null } };
+export type StatisticOrganizationsQuery = { __typename?: 'Query', statisticOrganizations: { __typename?: 'StatisticOrganizationConnection', totalCount: number, nodes?: Array<{ __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, createdAt?: any | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null }> | null } };
 
 export type StatisticOrganizationQueryVariables = Exact<{
   where: OrganizationWhereUniqueInput;
 }>;
 
 
-export type StatisticOrganizationQuery = { __typename?: 'Query', statisticOrganization: { __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } };
+export type StatisticOrganizationQuery = { __typename?: 'Query', statisticOrganization: { __typename?: 'StatisticOrganization', id: string, name?: string | null, code?: string | null, createdAt?: any | null, waitingResultBidPackages?: number | null, winBidPackages?: number | null, loseBidPackages?: number | null, relatedContractors?: number | null, attendedBidPackages?: number | null, officeAddress?: string | null, repIdNo?: string | null, businessType?: { __typename?: 'CatBusinessType', name?: string | null } | null } };
 
 export type StatisticAnalysisQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -26748,6 +26748,7 @@ export const StatisticOrganizationFieldsFragmentDoc = `
   id
   name
   code
+  createdAt
   waitingResultBidPackages
   winBidPackages
   loseBidPackages

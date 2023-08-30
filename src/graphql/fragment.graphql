@@ -192,6 +192,7 @@ fragment StatisticOrganizationFields on StatisticOrganization {
   id
   name
   code
+  createdAt
   # số gói thầu chờ kết quả
   waitingResultBidPackages
   # gói trúng thầu

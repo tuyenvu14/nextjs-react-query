@@ -11,7 +11,7 @@ export const ContractorSelectionPlanRelatedInfo = (
   props: IContractorSelectionPlanRelatedInfoProps,
 ) => {
   const onChange = (key: string) => {
-    console.log(key)
+    // console.log(key)
   }
   const items: TabsProps['items'] = [
     {

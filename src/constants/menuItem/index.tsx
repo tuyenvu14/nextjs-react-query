@@ -36,7 +36,7 @@ export const listNavItems = [
   },
   {
     id: 3,
-    name: 'Tra cứu tổ chức',
+    name: 'Tổ chức',
     path: searchOrganization,
   },
   {

@@ -41,7 +41,7 @@ export const TopWinContractor = (props: ITopWinContractorProps) => {
     ],
   })
 
-  console.log(statisticOrganizations, '-------')
+  // console.log(statisticOrganizations, '-------')
 
   const columns: ColumnsType<StatisticOrganization> = [
     {

@@ -1,16 +1,16 @@
 import { StatisticOrganization } from '@/src/generated/graphql'
-import { CopyIcon, EyeIcon, LocationIcon, UserPlusIcon, ZapIcon } from '../icons'
+import { CopyIcon, UserPlusIcon, ZapIcon } from '../icons'
 import Link from 'next/link'
 import {
-  biddingContractorNotification,
   searchOrganizationContractorPath,
+  searchOrganizationInvestorAndBidSolicitorPath,
 } from '@/src/constants/routes'
 
-interface IContractorItemProps {
+interface IInvestorAndBidSolicitorItemProps {
   data: StatisticOrganization
 }
 
-export const ContractorItem = (props: IContractorItemProps) => {
+export const InvestorAndBidSolicitorItem = (props: IInvestorAndBidSolicitorItemProps) => {
   const { data } = props
   return (
     <div>
@@ -25,10 +25,6 @@ export const ContractorItem = (props: IContractorItemProps) => {
             </span>
           </div>
           <div className="text-main">
-            <span className="rounded-md border px-2 py-1 bg-white mr-2">
-              <LocationIcon className="mr-1 text-sm" />
-              <span className="text-sm">Hà Nội</span>
-            </span>
             <span className="rounded-md border px-2 py-1 bg-white">
               <UserPlusIcon className="mr-1 text-sm" />
               <span className="text-sm">Theo dõi</span>
@@ -37,7 +33,7 @@ export const ContractorItem = (props: IContractorItemProps) => {
         </div>
         <div style={{ borderBottomWidth: 1 }} className="px-8 py-2">
           <p className="text-xl font-normal text-default mb-4">
-            <Link href={`${searchOrganizationContractorPath}/${data?.id}`}>
+            <Link href={`${searchOrganizationInvestorAndBidSolicitorPath}/${data?.code}`}>
               {data?.name ?? '-'}
             </Link>
           </p>
@@ -53,14 +49,14 @@ export const ContractorItem = (props: IContractorItemProps) => {
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
-                  Gói trúng thầu:
+                  Tổng số gói thầu:
                   <span className="ml-1 font-bold">{data?.winBidPackages ?? '-'}</span>
                 </span>
               </p>
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
-                  Gói trượt thầu:
+                  Tổng số dự án:
                   <span className="ml-1 font-bold"> {data?.loseBidPackages ?? '-'}</span>
                 </span>
               </p>
@@ -76,31 +72,31 @@ export const ContractorItem = (props: IContractorItemProps) => {
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
-                  Số gói thầu tham gia:
+                  Gói thầu chờ đấu thầu:
                   <span className="ml-1 font-bold">{data?.attendedBidPackages ?? '-'}</span>
                 </span>
               </p>
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
-                  Địa chỉ:
+                  Gói thầu năm 2023:
                   <span className="ml-1 font-bold">{data?.officeAddress ?? '-'}</span>
-                </span>
-              </p>
-              <p className="mb-2">
-                <ZapIcon className="text-main mr-2" />
-                <span>
-                  Mã số thuế:
-                  <span className="ml-1 font-bold">{data?.repIdNo ?? '-'}</span>
                 </span>
               </p>
               <p className="">
                 <ZapIcon className="text-main mr-2" />
                 <span>
-                  Ngành nghề chính:
-                  <span className="ml-1 font-bold">{data?.businessType?.name ?? '-'}</span>
+                  Kế hoạch LCNT:
+                  <span className="ml-1 font-bold">{data?.repIdNo ?? '-'}</span>
                 </span>
               </p>
+              {/* <p className="">
+                <ZapIcon className="text-main mr-2" />
+                <span>
+                  Ngành nghề chính:
+                  <span className="ml-1">{data?.businessType?.name ?? '-'}</span>
+                </span>
+              </p> */}
             </div>
           </div>
         </div>

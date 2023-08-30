@@ -4,27 +4,23 @@ import { Collapse, Divider } from 'antd'
 
 import { useStatisticOrganizationQuery } from '@/src/generated/graphql'
 import { ContractorTitleDetail } from '@/src/components/project/ContractorTitleDetail'
-import { ContractorInfo } from './detail/ContractorInfo'
-import { ContractorContact } from './detail/ContractorContact'
-import { ContractorIndustry } from './detail/ContractorIndustry'
-import { ContractorAnalysisResult } from './detail/ContractorAnalysisResult'
 import { DataAnalysis } from '@/src/components/project/DataAnalysis'
-import { ContractorPackageList } from './detail/ContractorPackageList'
-import { ContractorHistoryBidding } from './detail/ContractorHistoryBidding'
-import { ContractorBidSolicitorList } from './detail/ContractorBidSolicitorList'
-import { ContractorWinPackageList } from './detail/ContractorWinPackageList'
-import { ContractorFailPackageList } from './detail/ContractorFailPackageList'
-import { ContractorsCompetitivelyBidList } from './detail/ContractorsCompetitivelyBidList'
+import { InvestorAndBidSolicitorInfo } from './detail/InvestorAndBidSolicitorInfo'
+import { InvestorAndBidSolicitorContact } from './detail/InvestorAndBidSolicitorContact'
+import { InvestorAndBidSolicitorAnalysisResult } from './detail/InvestorAndBidSolicitorAnalysisResult'
+import { InvestorAndBidSolicitorOperationProcess } from './detail/InvestorAndBidSolicitorOperationProcess'
+import { InvestorAndBidSolicitorTimeline } from './detail/InvestorAndBidSolicitorTimeline'
+import { InvestorAndBidSolicitorKHLCNTList } from './detail/InvestorAndBidSolicitorKHLCNTList'
 
-interface IContractorDetailProps {
-  params: { contractorId: string }
+interface IInvestorAndBidSolicitorDetailProps {
+  params: { code: string }
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export const ContractorDetail = (props: IContractorDetailProps) => {
+export const InvestorAndBidSolicitorDetail = (props: IInvestorAndBidSolicitorDetailProps) => {
   const { params, searchParams } = props
-  const { contractorId } = params
-  const { data } = useStatisticOrganizationQuery({ where: { id: contractorId } })
+  const { code } = params
+  const { data } = useStatisticOrganizationQuery({ where: { code } })
   // console.log(data)
   return (
     <>
@@ -32,10 +28,11 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
         <div className="mb-4">
           <ContractorTitleDetail
             name={data?.statisticOrganization?.name}
-            title={'Thông tin nhà thầu'}
+            title={'Thông tin bên mời thầu'}
             isFollow={true}
           />
         </div>
+
         <Collapse
           className="!mb-4"
           defaultActiveKey={['1']}
@@ -43,10 +40,11 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
             {
               key: '1',
               label: 'THÔNG TIN CƠ BẢN',
-              children: <ContractorInfo data={undefined} />,
+              children: <InvestorAndBidSolicitorInfo />,
             },
           ]}
         />
+
         <Collapse
           className="!mb-4"
           defaultActiveKey={['1']}
@@ -54,7 +52,67 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
             {
               key: '1',
               label: 'THÔNG TIN LIÊN HỆ',
-              children: <ContractorContact data={undefined} />,
+              children: <InvestorAndBidSolicitorContact />,
+            },
+          ]}
+        />
+
+        <Collapse
+          className="!mb-4"
+          defaultActiveKey={['1']}
+          items={[
+            {
+              key: '1',
+              label: 'KẾT QUẢ PHÂN TÍCH',
+              children: <InvestorAndBidSolicitorAnalysisResult />,
+            },
+          ]}
+        />
+
+        <Collapse
+          className="!mb-4"
+          defaultActiveKey={['1']}
+          items={[
+            {
+              key: '1',
+              label: 'QUÁ TRÌNH HOẠT ĐỘNG',
+              children: <InvestorAndBidSolicitorOperationProcess />,
+            },
+          ]}
+        />
+
+        <Collapse
+          className="!mb-4"
+          defaultActiveKey={['1']}
+          items={[
+            {
+              key: '1',
+              label: 'TIMELINE',
+              children: <InvestorAndBidSolicitorTimeline />,
+            },
+          ]}
+        />
+
+        <Collapse
+          className="!mb-4"
+          defaultActiveKey={['1']}
+          items={[
+            {
+              key: '1',
+              label: 'DANH SÁCH KHLCNT ĐÃ ĐƯỢC BÊN MỜI THẦU ĐĂNG TẢI',
+              children: <InvestorAndBidSolicitorKHLCNTList procuringEntityCode={code} />,
+            },
+          ]}
+        />
+
+        <Collapse
+          className="!mb-4"
+          defaultActiveKey={['1']}
+          items={[
+            {
+              key: '1',
+              label: 'DANH SÁCH TBMT ĐÃ ĐƯỢC BÊN MỜI THẦU ĐĂNG TẢI',
+              children: <InvestorAndBidSolicitorTimeline />,
             },
           ]}
         />
@@ -64,8 +122,8 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
           items={[
             {
               key: '1',
-              label: 'NGÀNH NGHỀ',
-              children: <ContractorIndustry data={undefined} />,
+              label: 'DANH SÁCH BÊN MỜI THẦU MÀ CHỦ ĐẦU TƯ CÓ QUAN HỆ',
+              children: <InvestorAndBidSolicitorTimeline />,
             },
           ]}
         />
@@ -75,8 +133,8 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
           items={[
             {
               key: '1',
-              label: 'KẾT QUẢ PHÂN TÍCH NHÀ THẦU',
-              children: <ContractorAnalysisResult data={undefined} />,
+              label: 'DANH SÁCH TBMT MÀ BÊN MỜI THẦU NÀY LÀM CHỦ ĐẦU TƯ',
+              children: <InvestorAndBidSolicitorTimeline />,
             },
           ]}
         />
@@ -86,8 +144,8 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
           items={[
             {
               key: '1',
-              label: 'LỊCH SỬ ĐẤU THẦU CỦA NHÀ THẦU',
-              children: <ContractorHistoryBidding data={undefined} />,
+              label: 'DANH SÁCH KHLCNT MÀ BÊN MỜI THẦU NÀY LÀM CHỦ ĐẦU TƯ',
+              children: <InvestorAndBidSolicitorTimeline />,
             },
           ]}
         />
@@ -97,8 +155,8 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
           items={[
             {
               key: '1',
-              label: 'DANH SÁCH GÓI THẦU ĐÃ THAM GIA',
-              children: <ContractorPackageList data={undefined} />,
+              label: 'DANH SÁCH DỰ ÁN MÀ BÊN MỜI THẦU LÀM CHỦ ĐẦU TƯ',
+              children: <InvestorAndBidSolicitorTimeline />,
             },
           ]}
         />
@@ -108,41 +166,8 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
           items={[
             {
               key: '1',
-              label: 'DANH SÁCH BÊN MỜI THẦU MÀ NHÀ THẦU ĐÃ TỪNG DỰ THẦU',
-              children: <ContractorBidSolicitorList data={undefined} />,
-            },
-          ]}
-        />
-        <Collapse
-          className="!mb-4"
-          defaultActiveKey={['1']}
-          items={[
-            {
-              key: '1',
-              label: 'DANH SÁCH GÓI THẦU ĐÃ TRÚNG',
-              children: <ContractorWinPackageList data={undefined} />,
-            },
-          ]}
-        />
-        <Collapse
-          className="!mb-4"
-          defaultActiveKey={['1']}
-          items={[
-            {
-              key: '1',
-              label: 'DANH SÁCH GÓI THẦU ĐÃ TRƯỢT',
-              children: <ContractorFailPackageList data={undefined} />,
-            },
-          ]}
-        />
-        <Collapse
-          className="!mb-4"
-          defaultActiveKey={['1']}
-          items={[
-            {
-              key: '1',
-              label: 'DANH SÁCH NHÀ THẦU TỪNG ĐẤU',
-              children: <ContractorsCompetitivelyBidList data={undefined} />,
+              label: 'DANH SÁCH KIẾN NGHỊ',
+              children: <InvestorAndBidSolicitorTimeline />,
             },
           ]}
         />

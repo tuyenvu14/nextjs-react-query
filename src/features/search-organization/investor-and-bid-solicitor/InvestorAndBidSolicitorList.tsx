@@ -1,18 +1,24 @@
 'use client'
 import React from 'react'
-import { useStatisticOrganizationsQuery } from '@/src/generated/graphql'
+import {
+  StatisticBidNotification,
+  useStatisticBidNotificationsQuery,
+  useStatisticOrganizationsQuery,
+} from '@/src/generated/graphql'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { DataAnalysis } from '@/src/components/project/DataAnalysis'
 import { FooterList } from '@/src/components/project/FooterList'
 import { useUpdateSearch } from '@/src/hooks/useSearchParams'
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
+import { BiddingNotificationItem } from '@/src/components/project/BiddingNotificationItem'
 import { ContractorItem } from '@/src/components/project/ContractorItem'
 import { Button } from 'antd'
-import { ChartIcon } from '@/src/components/icons'
+import { ChartIcon, CopyIcon } from '@/src/components/icons'
 import Link from 'next/link'
 import { searchOrganizationTopContractorPath } from '@/src/constants/routes'
+import { InvestorAndBidSolicitorItem } from '@/src/components/project/InvestorAndBidSolicitorItem'
 
-export default function ContractorList() {
+export default function InvestorAndBidSolicitorList() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -22,7 +28,7 @@ export default function ContractorList() {
 
   const { data: statisticOrganizations } = useStatisticOrganizationsQuery({
     where: {
-      isContractor: {
+      isBidderInvite: {
         equals: true,
       },
     },
@@ -41,13 +47,13 @@ export default function ContractorList() {
             </Button>
           </Link>
         </div>
-        <p className="mb-2 text-2xl font-semibold text-primary">Nhà thầu</p>
+        <p className="mb-2 text-2xl font-semibold text-primary">Bên mời thầu</p>
         <p style={{ borderBottomWidth: 1 }} className="text-lg font-normal mb-4">
           Kết quả ({statisticOrganizations?.statisticOrganizations?.totalCount ?? '-'})
         </p>
         {statisticOrganizations?.statisticOrganizations?.nodes?.map((data) => (
           <div className="mb-4" key={data.id}>
-            <ContractorItem data={data as any} />
+            <InvestorAndBidSolicitorItem data={data as any} />
           </div>
         ))}
         <div>
