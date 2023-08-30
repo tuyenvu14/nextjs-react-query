@@ -41,7 +41,7 @@ export default function ContractorList() {
             </Button>
           </Link>
         </div>
-        <p className="mb-2 text-2xl font-semibold text-primary">Nhà thầu</p>
+        <p className="mb-2 text-2xl font-semibold text-primary">Tổ chức</p>
         <p style={{ borderBottomWidth: 1 }} className="text-lg font-normal mb-4">
           Kết quả ({statisticOrganizations?.statisticOrganizations?.totalCount ?? '-'})
         </p>

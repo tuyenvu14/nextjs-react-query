@@ -17,14 +17,14 @@ import { ContractorFailPackageList } from './detail/ContractorFailPackageList'
 import { ContractorsCompetitivelyBidList } from './detail/ContractorsCompetitivelyBidList'
 
 interface IContractorDetailProps {
-  params: { contractorId: string }
+  params: { organizationId: string }
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
 export const ContractorDetail = (props: IContractorDetailProps) => {
   const { params, searchParams } = props
-  const { contractorId } = params
-  const { data } = useStatisticOrganizationQuery({ where: { id: contractorId } })
+  const { organizationId } = params
+  const { data } = useStatisticOrganizationQuery({ where: { id: organizationId } })
   // console.log(data)
   return (
     <>

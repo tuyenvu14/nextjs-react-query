@@ -3,6 +3,7 @@ import { CopyIcon, EyeIcon, LocationIcon, UserPlusIcon, ZapIcon } from '../icons
 import Link from 'next/link'
 import {
   biddingContractorNotification,
+  organization,
   searchOrganizationContractorPath,
 } from '@/src/constants/routes'
 
@@ -37,9 +38,7 @@ export const ContractorItem = (props: IContractorItemProps) => {
         </div>
         <div style={{ borderBottomWidth: 1 }} className="px-8 py-2">
           <p className="text-xl font-normal text-default mb-4">
-            <Link href={`${searchOrganizationContractorPath}/${data?.id}`}>
-              {data?.name ?? '-'}
-            </Link>
+            <Link href={`${organization}/${data?.id}`}>{data?.name ?? '-'}</Link>
           </p>
           <div className="flex justify-between text-sm font-light">
             <div>

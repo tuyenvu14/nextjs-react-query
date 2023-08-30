@@ -1,6 +1,6 @@
 export const home = '/'
 export const project = '/project'
-export const searchOrganization = '/search-organization'
+export const organization = '/organization'
 export const bidding = '/bidding'
 export const price = '/price'
 export const docs = '/docs'
@@ -11,9 +11,9 @@ export const projectInvestDevelopPath = '/project/invest-develop'
 export const projectNewlyAnnouncedPath = '/project/newly-announced'
 
 //tra cứu tổ chức
-export const searchOrganizationContractorPath = `${searchOrganization}/contractor`
-export const searchOrganizationTopContractorPath = `${searchOrganization}/top-contractor`
-export const searchOrganizationInvestorAndBidSolicitorPath = `${searchOrganization}/investor-and-bid-solicitor`
+export const searchOrganizationContractorPath = `${organization}/contractor`
+export const searchOrganizationTopContractorPath = `${organization}/top-contractor`
+export const searchOrganizationInvestorAndBidSolicitorPath = `${organization}/investor-and-bid-solicitor`
 
 //đấu thầu
 export const biddingContractor = '/bidding/contractor'

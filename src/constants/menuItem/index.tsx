@@ -13,11 +13,11 @@ import {
   docs,
   home,
   intro,
+  organization,
   price,
   project,
   projectInvestDevelopPath,
   projectNewlyAnnouncedPath,
-  searchOrganization,
   searchOrganizationContractorPath,
   searchOrganizationInvestorAndBidSolicitorPath,
 } from '../routes'
@@ -37,7 +37,7 @@ export const listNavItems = [
   {
     id: 3,
     name: 'Tổ chức',
-    path: searchOrganization,
+    path: organization,
   },
   {
     id: 4,
