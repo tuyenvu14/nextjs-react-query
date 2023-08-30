@@ -14,6 +14,8 @@ import { BiddingNotificationItem } from '@/src/components/project/BiddingNotific
 import { ContractorItem } from '@/src/components/project/ContractorItem'
 import { Button } from 'antd'
 import { ChartIcon, CopyIcon } from '@/src/components/icons'
+import Link from 'next/link'
+import { searchOrganizationTopContractorPath } from '@/src/constants/routes'
 
 export default function ContractorList() {
   const router = useRouter()
@@ -37,10 +39,12 @@ export default function ContractorList() {
     <>
       <div className="lg:col-span-2">
         <div style={{ borderBottomWidth: 1 }} className="pb-2">
-          <Button type="primary" className=" text-white hover:!text-white" size="large">
-            <ChartIcon className="mr-2" />
-            Xem bảng thống kê
-          </Button>
+          <Link href={searchOrganizationTopContractorPath}>
+            <Button type="primary" className=" text-white hover:!text-white" size="large">
+              <ChartIcon className="mr-2" />
+              Xem bảng thống kê
+            </Button>
+          </Link>
         </div>
         <p className="mb-2 text-2xl font-semibold text-primary">Nhà thầu</p>
         <p style={{ borderBottomWidth: 1 }} className="text-lg font-normal mb-4">

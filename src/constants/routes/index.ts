@@ -11,8 +11,9 @@ export const projectInvestDevelopPath = '/project/invest-develop'
 export const projectNewlyAnnouncedPath = '/project/newly-announced'
 
 //tra cứu tổ chức
-export const searchOrganizationContractorPath = '/search-organization/contractor'
-export const searchOrganizationInvestorAndBidSolicitorPath = '/search-organization/investor-and-bid-solicitor'
+export const searchOrganizationContractorPath = `${searchOrganization}/contractor`
+export const searchOrganizationTopContractorPath = `${searchOrganization}/top-contractor`
+export const searchOrganizationInvestorAndBidSolicitorPath = `${searchOrganization}/investor-and-bid-solicitor`
 
 //đấu thầu
 export const biddingContractor = '/bidding/contractor'

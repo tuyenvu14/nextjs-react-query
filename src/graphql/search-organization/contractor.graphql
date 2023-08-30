@@ -17,3 +17,20 @@ query statisticOrganization($where: OrganizationWhereUniqueInput!) {
     ...StatisticOrganizationFields
   }
 }
+
+query statisticAnalysis {
+  statisticAnalysis {
+    allBidSelectionPlans
+    allBidNotifications
+    allBidNotificationContractors
+    allContractors
+    # kế hoạch lựa chọn nhà thầu
+    bidSelectionPlans
+    # thông báo mời thầu
+    bidNotifications
+    # kết quả lựa chọn nhà thầu
+    bidNotificationContractors
+    # nhà thầu tham gia
+    attendedContractors
+  }
+}
