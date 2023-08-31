@@ -12,7 +12,7 @@ import { ChartIcon } from '@/src/components/icons'
 import Link from 'next/link'
 import { searchOrganizationTopContractorPath } from '@/src/constants/routes'
 
-export default function ContractorList() {
+export default function OrganizationList() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -21,11 +21,7 @@ export default function ContractorList() {
   const pageSize = searchParams.get('pageSize') ?? `${DEFAULT_PAGE_SIZE}`
 
   const { data: statisticOrganizations } = useStatisticOrganizationsQuery({
-    where: {
-      isContractor: {
-        equals: true,
-      },
-    },
+    where: {},
     skip: (+page - 1) * +pageSize,
     take: +pageSize,
   })

@@ -6,8 +6,8 @@ import dynamic from 'next/dynamic'
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE } from '@/src/constants'
 // import { Contractor } from '@/src/features/search-organization/contractor/Contractor'
 
-const Contractor = dynamic(() =>
-  import('@/src/features/search-organization/contractor/Contractor').then((mod) => mod.Contractor),
+const Organization = dynamic(() =>
+  import('@/src/features/organization/Organization').then((mod) => mod.Organization),
 )
 
 export default async function Page({
@@ -23,20 +23,12 @@ export default async function Page({
   const pageSize = searchParams?.pageSize ?? DEFAULT_PAGE_SIZE
   await queryClient.prefetchQuery(
     useStatisticOrganizationsQuery.getKey({
-      where: {
-        isContractor: {
-          equals: true,
-        },
-      },
+      where: {},
       skip: (+page - 1) * +pageSize,
       take: +pageSize,
     }),
     useStatisticOrganizationsQuery.fetcher({
-      where: {
-        isContractor: {
-          equals: true,
-        },
-      },
+      where: {},
       skip: (+page - 1) * +pageSize,
       take: +pageSize,
     }),
@@ -46,7 +38,7 @@ export default async function Page({
 
   return (
     <Hydrate state={dehydratedState}>
-      <Contractor />
+      <Organization />
     </Hydrate>
   )
 }

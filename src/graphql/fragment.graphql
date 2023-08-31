@@ -190,25 +190,44 @@ fragment BidOpenPreNotificationResultFields on StatisticBidNotificationResult {
 
 fragment StatisticOrganizationFields on StatisticOrganization {
   id
-  name
+  # mã định danh
   code
-  createdAt
-  # số gói thầu chờ kết quả
-  waitingResultBidPackages
-  # gói trúng thầu
-  winBidPackages
-  # gói trượt thầu
-  loseBidPackages
-  # nhà thầu liên quan
-  relatedContractors
-  # số gói thầu tham gia
-  attendedBidPackages
-  # địa chỉ
-  officeAddress
+  # tên công ty
+  name
+  # tên viết tắt
+  briefName
   # mã số thuế
-  repIdNo
-  # ngành nghề chính
+  taxCode
+  # quốc gia cấp MST
+  countryCode
+  # loại hình cơ quan
   businessType {
+    name
+  }
+  # địa chỉ trụ sở
+  officeAddress
+  # lĩnh vực kinh doanh
+  businessTypeCode
+  # loại doanh nghiệp
+  businessType {
+    name
+  }
+  # ngày thành lập công ty
+  taxDate
+  # vốn điều lệ (éo tìm thấy - thông tin mơ hồ)
+  # ngày phê duyệt trên mạng đấu thầu quốc gia (éo tìm thấy)
+  # trạng thái nộp phí (tên field éo hiểu là gì)
+  # người đại diện pháp luật
+  repFullName
+  # số điện thoại
+  officePhone
+  # trang web
+  officeWeb
+  # ngành nghề
+  organizationBusiness {
+    id
+  }
+  officeProvince {
     name
   }
 }

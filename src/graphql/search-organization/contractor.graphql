@@ -34,3 +34,21 @@ query statisticAnalysis {
     attendedContractors
   }
 }
+
+query statisticOrganizationBusinesses(
+  $take: Int
+  $skip: Int
+  $where: OrganizationBusinessWhereInput
+) {
+  statisticOrganizationBusinesses(take: $take, skip: $skip, where: $where) {
+    nodes {
+      id
+      isMain
+      business {
+        # tên ngành nghề
+        name
+      }
+    }
+    totalCount
+  }
+}

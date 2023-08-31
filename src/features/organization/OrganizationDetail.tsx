@@ -2,9 +2,9 @@
 
 import { Collapse, Divider } from 'antd'
 
-import { useStatisticOrganizationQuery } from '@/src/generated/graphql'
+import { StatisticOrganization, useStatisticOrganizationQuery } from '@/src/generated/graphql'
 import { ContractorTitleDetail } from '@/src/components/project/ContractorTitleDetail'
-import { ContractorInfo } from './detail/ContractorInfo'
+import { OrganizationInfo } from './detail/OrganizationInfo'
 import { ContractorContact } from './detail/ContractorContact'
 import { ContractorIndustry } from './detail/ContractorIndustry'
 import { ContractorAnalysisResult } from './detail/ContractorAnalysisResult'
@@ -16,23 +16,25 @@ import { ContractorWinPackageList } from './detail/ContractorWinPackageList'
 import { ContractorFailPackageList } from './detail/ContractorFailPackageList'
 import { ContractorsCompetitivelyBidList } from './detail/ContractorsCompetitivelyBidList'
 
-interface IContractorDetailProps {
-  params: { organizationId: string }
+interface IOrganizationDetailProps {
+  params: { organizationCode: string }
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export const ContractorDetail = (props: IContractorDetailProps) => {
-  const { params, searchParams } = props
-  const { organizationId } = params
-  const { data } = useStatisticOrganizationQuery({ where: { id: organizationId } })
-  // console.log(data)
+export const OrganizationDetail = (props: IOrganizationDetailProps) => {
+  const { params } = props
+  const { organizationCode } = params
+  const { data } = useStatisticOrganizationQuery({ where: { code: organizationCode } })
   return (
     <>
       <div className="lg:col-span-2">
         <div className="mb-4">
           <ContractorTitleDetail
             name={data?.statisticOrganization?.name}
-            title={'Thông tin nhà thầu'}
+            title={'Thông tin tổ chức'}
+            publishedAt={'11:23 27/07/2023'}
+            viewCount={23}
+            followCount={200}
             isFollow={true}
           />
         </div>
@@ -43,7 +45,9 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
             {
               key: '1',
               label: 'THÔNG TIN CƠ BẢN',
-              children: <ContractorInfo data={undefined} />,
+              children: (
+                <OrganizationInfo data={data?.statisticOrganization as StatisticOrganization} />
+              ),
             },
           ]}
         />
@@ -54,7 +58,12 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
             {
               key: '1',
               label: 'THÔNG TIN LIÊN HỆ',
-              children: <ContractorContact data={undefined} />,
+              children: (
+                <ContractorContact
+                  officePhone={data?.statisticOrganization?.officePhone}
+                  officeWeb={data?.statisticOrganization?.officeWeb}
+                />
+              ),
             },
           ]}
         />
@@ -65,7 +74,7 @@ export const ContractorDetail = (props: IContractorDetailProps) => {
             {
               key: '1',
               label: 'NGÀNH NGHỀ',
-              children: <ContractorIndustry data={undefined} />,
+              children: <ContractorIndustry organizationCode={organizationCode} />,
             },
           ]}
         />

@@ -28,7 +28,7 @@ export const ContractorItem = (props: IContractorItemProps) => {
           <div className="text-main">
             <span className="rounded-md border px-2 py-1 bg-white mr-2">
               <LocationIcon className="mr-1 text-sm" />
-              <span className="text-sm">Hà Nội</span>
+              <span className="text-sm">{data?.officeProvince?.name}</span>
             </span>
             <span className="rounded-md border px-2 py-1 bg-white">
               <UserPlusIcon className="mr-1 text-sm" />
@@ -38,66 +38,66 @@ export const ContractorItem = (props: IContractorItemProps) => {
         </div>
         <div style={{ borderBottomWidth: 1 }} className="px-8 py-2">
           <p className="text-xl font-normal text-default mb-4">
-            <Link href={`${organization}/${data?.id}`}>{data?.name ?? '-'}</Link>
+            <Link href={`${organization}/${data?.code}`}>{data?.name ?? '-'}</Link>
           </p>
           <div className="flex justify-between text-sm font-light">
-            <div>
+            <div className="w-1/2">
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Số gói thầu chờ kết quả:
-                  <span className="ml-1 font-bold">{data?.waitingResultBidPackages ?? '-'}</span>
+                  <span className="ml-1 ">{data?.waitingResultBidPackages ?? '-'}</span>
                 </span>
               </p>
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Gói trúng thầu:
-                  <span className="ml-1 font-bold">{data?.winBidPackages ?? '-'}</span>
+                  <span className="ml-1 ">{data?.winBidPackages ?? '-'}</span>
                 </span>
               </p>
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Gói trượt thầu:
-                  <span className="ml-1 font-bold"> {data?.loseBidPackages ?? '-'}</span>
+                  <span className="ml-1 "> {data?.loseBidPackages ?? '-'}</span>
                 </span>
               </p>
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Nhà thầu liên quan
-                  <span className="ml-1 font-bold">{data?.relatedContractors ?? '-'}</span>
+                  <span className="ml-1 ">{data?.relatedContractors ?? '-'}</span>
                 </span>
               </p>
             </div>
-            <div>
+            <div className="w-1/2">
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Số gói thầu tham gia:
-                  <span className="ml-1 font-bold">{data?.attendedBidPackages ?? '-'}</span>
+                  <span className="ml-1 ">{data?.attendedBidPackages ?? '-'}</span>
                 </span>
               </p>
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Địa chỉ:
-                  <span className="ml-1 font-bold">{data?.officeAddress ?? '-'}</span>
+                  <span className="ml-1 ">{data?.officeAddress ?? '-'}</span>
                 </span>
               </p>
               <p className="mb-2">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Mã số thuế:
-                  <span className="ml-1 font-bold">{data?.repIdNo ?? '-'}</span>
+                  <span className="ml-1 ">{data?.taxCode ?? '-'}</span>
                 </span>
               </p>
               <p className="">
                 <ZapIcon className="text-main mr-2" />
                 <span>
                   Ngành nghề chính:
-                  <span className="ml-1 font-bold">{data?.businessType?.name ?? '-'}</span>
+                  <span className="ml-1 ">{data?.businessType?.name ?? '-'}</span>
                 </span>
               </p>
             </div>

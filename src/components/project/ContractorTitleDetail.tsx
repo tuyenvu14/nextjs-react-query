@@ -2,13 +2,19 @@ import { UserPlusIcon } from '@/src/components/icons'
 import { StatisticBidNotificationResult } from '@/src/generated/graphql'
 interface IContractorTitleDetailProps {
   name: string | null | undefined
+  publishedAt: string | null | undefined
   title: string
+  viewCount: number
+  followCount: number
   isFollow: boolean
 }
 
 export const ContractorTitleDetail = ({
   name,
   title,
+  viewCount,
+  followCount,
+  publishedAt,
   isFollow = true,
 }: IContractorTitleDetailProps) => {
   return (
@@ -27,16 +33,16 @@ export const ContractorTitleDetail = ({
       <div className="flex justify-between">
         <div className="flex text-sm">
           <p className="mr-4">
-            Đã xem: <span className="font-bold">231</span>
+            Đã xem: <span className="font-bold">{viewCount}</span>
           </p>
           <p>
-            Đã theo dõi: <span className="font-bold">23</span>
+            Đã theo dõi: <span className="font-bold">{followCount}</span>
           </p>
         </div>
         <div>
           <p className="text-end text-sm">
             Thời điểm tìm thấy:
-            <span className="font-semibold ml-1">11:23 27/07/2023</span>
+            <span className="font-semibold ml-1">{publishedAt}</span>
           </p>
         </div>
       </div>
