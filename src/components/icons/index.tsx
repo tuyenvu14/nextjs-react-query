@@ -33,3 +33,23 @@ export const LocationIcon = ({ className }: { className?: string }) => (
 export const ChartIcon = ({ className }: { className?: string }) => (
   <span className={`tln_bar-chart-10 ${className || ''}`} />
 )
+
+export const ShoppingBagIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_shopping-bag-01 ${className || ''}`} />
+)
+
+export const ShoppingCartIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_shopping-cart-01 ${className || ''}`} />
+)
+
+export const ChevronDownDoubleIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_chevron-down-double ${className || ''}`} />
+)
+
+export const ArrowBlockRightIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_arrow-block-right ${className || ''}`} />
+)
+
+export const WalletIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_wallet-02 ${className || ''}`} />
+)

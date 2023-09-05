@@ -5,8 +5,12 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { SlideShow } from './components/SlideShow'
 import { ConfigProvider } from 'antd'
+import { usePathname } from 'next/navigation'
+import { profile } from '@/src/constants/routes'
 
 export const MainLayout = ({ children }: { children: React.ReactNode }) => {
+  const pathname = usePathname()
+
   return (
     <ConfigProvider
       theme={{
@@ -37,7 +41,7 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
           <Header />
           <div className="m-auto w-3/5 py-8">
             <div className="grid grid-cols-1 gap-x-1 gap-y-4 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-6">
-              <SlideShow />
+              {pathname.includes(profile) ? null : <SlideShow />}
               {children}
             </div>
           </div>

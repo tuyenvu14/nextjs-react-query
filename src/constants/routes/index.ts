@@ -5,6 +5,8 @@ export const bidding = '/bidding'
 export const price = '/price'
 export const docs = '/docs'
 export const intro = '/intro'
+export const profile = '/profile'
+
 
 //dự án
 export const projectInvestDevelopPath = '/project/invest-develop'

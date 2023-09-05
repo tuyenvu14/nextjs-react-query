@@ -1,0 +1,40 @@
+import { dehydrate } from '@tanstack/query-core'
+import Hydrate from '@/src/utils/hydrate.client'
+import getQueryClient from '@/src/utils/getQueryClient'
+import { useBidNotificationQuery } from '@/src/generated/graphql'
+import { BiddingNotificationDetail } from '@/src/features/bidding/contractor/bidding-notification/BiddingNotificationDetail'
+import { Profile } from '@/src/features/profile/Profile'
+
+// const BiddingNotificationDetail = dynamic(() =>
+//   import('@/src/features/bidding/contractor/bidding-notification/BiddingNotificationDetail').then(
+//     (mod) => mod.BiddingNotificationDetail,
+//   ),
+// )
+
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: { id: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}) {
+  const queryClient = getQueryClient()
+  // use prefetchQuery when search query
+  // console.log(searchParams, params)
+  // await queryClient.prefetchQuery(
+  //   useBidNotificationQuery.getKey({
+  //     where: { id: params.biddingNotificationId },
+  //   }),
+  //   useBidNotificationQuery.fetcher({
+  //     where: { id: params.biddingNotificationId },
+  //   }),
+  // )
+
+  const dehydratedState = dehydrate(queryClient)
+
+  return (
+    <Hydrate state={dehydratedState}>
+      <Profile searchParams={searchParams} params={params} />
+    </Hydrate>
+  )
+}

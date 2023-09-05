@@ -1,6 +1,7 @@
-import { SearchOutlined, BellOutlined } from '@ant-design/icons'
-import { Badge } from 'antd'
+import { SearchOutlined, BellOutlined, UserOutlined } from '@ant-design/icons'
+import { Avatar, Badge } from 'antd'
 import Link from 'next/link'
+import { MyAvatarCard } from './MyAvatarCard'
 // import { MyAvatarCard } from "../avatar/MyAvatarCard";
 
 export const Info = () => {
@@ -14,7 +15,7 @@ export const Info = () => {
           <BellOutlined className="text-secondary text-xl" />
         </Badge>
       </Link>
-      {/* <MyAvatarCard profile={{}} handleLogout={() => {}} /> */}
+      <MyAvatarCard />
     </div>
   )
 }

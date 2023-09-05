@@ -1,30 +1,12 @@
 'use client'
 
-import {
-  biddingItems,
-  listNavItems,
-  projectItems,
-  searchOrganizationItems,
-} from '@/src/constants/menuItem'
+import { biddingItems, listNavItems } from '@/src/constants/menuItem'
 import { UpOutlined, DownOutlined } from '@ant-design/icons'
-import { Dropdown, MenuProps } from 'antd'
+import { Dropdown } from 'antd'
 import Link from 'next/link'
 import { useState } from 'react'
-import logo from '@/src/assets/logo.png'
 import { usePathname } from 'next/navigation'
-import {
-  bidding,
-  biddingContractorNotification,
-  biddingContractorSelectionPlan,
-  biddingContractorSelectionResult,
-  home,
-  project,
-  projectInvestDevelopPath,
-  projectNewlyAnnouncedPath,
-  organization,
-  searchOrganizationContractorPath,
-  searchOrganizationInvestorAndBidSolicitorPath,
-} from '@/src/constants/routes'
+import { bidding } from '@/src/constants/routes'
 
 export const Menu = () => {
   const pathname = usePathname()
