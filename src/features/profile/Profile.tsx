@@ -1,6 +1,6 @@
 'use client'
 
-import { Collapse } from 'antd'
+import { Button, Collapse } from 'antd'
 import { ProfilePersonalInfo } from './ProfilePersonalInfo'
 import { ProfileBusinessInfo } from './ProfileBusinessInfo'
 import { ProfileService } from './ProfileService'
@@ -39,6 +39,15 @@ export const Profile = ({ params, searchParams }: IProfileProps) => {
             },
           ]}
         />
+
+        <div className="flex bg-gray-200 p-2 ">
+          <Button size="large" className=" bg-white hover:bg-main hover:!text-white mr-2 ">
+            <span className="text-sm">Lưu thay đổi</span>
+          </Button>
+          <Button size="large" className="bg-white text-sm">
+            <span className="text-sm">Quay lại</span>
+          </Button>
+        </div>
       </div>
       <div className="lg:col-span-1">
         <div className="mb-4">

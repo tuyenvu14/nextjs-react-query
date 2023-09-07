@@ -12,7 +12,7 @@ export const graphqlRequest = async (query: any, variables?: any) => {
     }
   }
 
-  const graphqlRequestClient = new GraphQLClient('http://localhost:4000/graphql', {})
+  const graphqlRequestClient = new GraphQLClient(`${process.env.ENDPOINT_CODEGEN}`, {})
 
   // return await graphqlRequestClient.request(query, variables, headers)
   try {

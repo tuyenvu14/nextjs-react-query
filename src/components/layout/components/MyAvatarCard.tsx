@@ -10,27 +10,27 @@ export const MyAvatarCard = () => {
       key: '1',
     },
     {
-      label: <Link href={`${profile}/stringId`}>Ví tiền & giao dịch</Link>,
+      label: <Link href={``}>Ví tiền & giao dịch</Link>,
       key: '2',
     },
     {
-      label: <Link href={`${profile}/stringId`}>Dịch vụ đang sử dụng</Link>,
+      label: <Link href={``}>Dịch vụ đang sử dụng</Link>,
       key: '3',
     },
     {
-      label: <Link href={`${profile}/stringId`}>Bộ lọc đã lưu</Link>,
+      label: <Link href={``}>Bộ lọc đã lưu</Link>,
       key: '4',
     },
     {
-      label: <Link href={`${profile}/stringId`}>Nạp tiền vào tài khoản</Link>,
+      label: <Link href={``}>Nạp tiền vào tài khoản</Link>,
       key: '5',
     },
     {
-      label: <Link href={`${profile}/stringId`}>Đổi mật khẩu</Link>,
+      label: <Link href={``}>Đổi mật khẩu</Link>,
       key: '6',
     },
     {
-      label: <Link href={`${profile}/stringId`}>Đăng xuất</Link>,
+      label: <Link href={``}>Đăng xuất</Link>,
       key: '7',
     },
   ]

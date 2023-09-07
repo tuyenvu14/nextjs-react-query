@@ -6,7 +6,7 @@ import { Dropdown } from 'antd'
 import Link from 'next/link'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { bidding } from '@/src/constants/routes'
+import { bidding, home } from '@/src/constants/routes'
 
 export const Menu = () => {
   const pathname = usePathname()
@@ -25,34 +25,12 @@ export const Menu = () => {
       <div className="hidden w-full items-center justify-between py-3 lg:flex lg:w-auto">
         <ul className="mb-0 mt-4 flex list-none flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-4 xl:space-x-8">
           {listNavItems.map((e) => {
-            const isActive = pathname === e.path
-            // if (e.path === searchOrganization) {
-            //   return (
-            //     <li key={e.id}>
-            //       <Dropdown
-            //         menu={{
-            //           items: searchOrganizationItems,
-            //           onClick: () => setOpenSearchOrganization(false),
-            //         }}
-            //         placement="bottom"
-            //         onOpenChange={(e) => setOpenSearchOrganization(e)}
-            //         arrow
-            //         trigger={['hover']}
-            //       >
-            //         <span
-            //           className={` hover:text-main flex cursor-pointer py-2 pl-3 pr-3 text-base font-semibold ${
-            //             pathname.includes(searchOrganization) ? '!text-main' : 'text-default'
-            //           } ${openSearchOrganization ? '!text-main' : 'text-default'} `}
-            //         >
-            //           {e.name}
-            //           <span className="ml-2 flex items-center">
-            //             {openSearchOrganization ? <UpOutlined /> : <DownOutlined />}
-            //           </span>
-            //         </span>
-            //       </Dropdown>
-            //     </li>
-            //   )
-            // }
+            let isActive = false
+            if (e.path === home) {
+              isActive = pathname === home
+            } else {
+              isActive = pathname.includes(e.path)
+            }
 
             if (e.path === bidding) {
               return (

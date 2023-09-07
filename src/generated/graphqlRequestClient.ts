@@ -3,7 +3,7 @@ import { GraphQLClient } from 'graphql-request';
 
 // const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as string;
 
-const graphqlRequestClient = new GraphQLClient('http://localhost:4000/graphql', {
+const graphqlRequestClient = new GraphQLClient(`${process.env.ENDPOINT_CODEGEN}`, {
     credentials: 'include',
     mode: 'cors',
 });
