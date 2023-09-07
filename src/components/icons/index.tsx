@@ -53,3 +53,7 @@ export const ArrowBlockRightIcon = ({ className }: { className?: string }) => (
 export const WalletIcon = ({ className }: { className?: string }) => (
   <span className={`tln_wallet-02 ${className || ''}`} />
 )
+
+export const ViewIcon = ({ className }: { className?: string }) => (
+  <span className={`tln_view-more ${className || ''}`} />
+)
